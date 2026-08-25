@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Okechukwu Onyedikachi · DevOps / SRE</title>
+<meta name="description" content="DevOps/SRE portfolio: a production-discipline homelab — SLOs with error budgets, pull-based GitOps, 21 containers on 3.7 GB RAM, $0/month.">
+<style>
+  :root{--bg:#010409;--panel:#0d1117;--line:#21262d;--txt:#e6edf3;--dim:#8b949e;--acc:#3fb950;--warn:#d29922}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font:16px/1.6 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
+  h1{font-size:1.9rem;letter-spacing:-.02em}
+  h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--dim);margin:44px 0 14px;border-bottom:1px solid var(--line);padding-bottom:8px}
+  p.sub{color:var(--dim);margin-top:10px;max-width:62ch}
+  .pill{display:inline-block;background:#12261e;color:#7ee2b8;border:1px solid #1f4d33;border-radius:999px;padding:2px 12px;font-size:.78rem;margin:14px 6px 0 0}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  a.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;color:var(--txt);text-decoration:none;transition:border-color .15s}
+  a.card:hover{border-color:var(--acc)}
+  a.card .t{font-weight:600;margin-bottom:4px}
+  a.card .d{color:var(--dim);font-size:.86rem;line-height:1.45}
+  img{max-width:100%;border:1px solid var(--line);border-radius:10px;display:block;margin-bottom:14px}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  footer{margin-top:56px;color:var(--dim);font-size:.82rem;border-top:1px solid var(--line);padding-top:18px}
+  code{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Okechukwu Joshua Onyedikachi</h1>
+  <p class="sub">DevOps / SRE. I run a production-discipline homelab: SLOs with error budgets, a pull-based GitOps pipeline, honest postmortems — on hardware nobody else would dare.</p>
+  <span class="pill">$0/month</span><span class="pill">21 containers</span><span class="pill">i3-3220 · 3.7 GiB RAM</span><span class="pill">SLOs + error budgets</span>
+
+  <h2>Live</h2>
+  <div class="cards">
+    <a class="card" href="https://omo.colobus-fir.ts.net/status/portfolio">
+      <div class="t">● Public status page</div>
+      <div class="d">Curated Uptime Kuma page — six generic probes across Media Delivery, Automation Pipeline, Infrastructure. Scoped to exactly one public route.</div>
+    </a>
+    <a class="card" href="https://github.com/kaacchhiii/homelab">
+      <div class="t">homelab — the repo</div>
+      <div class="d">Compose + k8s manifests, SLO definitions, runbook, postmortems. Config in git, secrets in Vaultwarden.</div>
+    </a>
+  </div>
+
+  <h2>Case study</h2>
+  <p class="sub">The full narrative lives in the repo's <a href="https://github.com/kaacchhiii/homelab#readme" style="color:var(--acc)">README</a> — problem, architecture, decisions, what broke, what's next. Highlights:</p>
+  <div class="cards" style="margin-top:14px">
+    <a class="card" href="https://github.com/kaacchhiii/homelab#slos-and-uptime">
+      <div class="t">SLOs &amp; error budgets</div>
+      <div class="d">Three SLOs sized from a 43,200-minute month, burn-rate alerts, budget policy enforced socially and in Prometheus rules.</div>
+    </a>
+    <a class="card" href="https://github.com/kaacchhiii/homelab#resource-efficiency">
+      <div class="t">Resource engineering</div>
+      <div class="d">Per-container memory caps, Jellyfin transcode fencing, swappiness tuned to 10, swap-pressure alerting on measured baselines.</div>
+    </a>
+    <a class="card" href="https://github.com/kaacchhiii/homelab#incidents">
+      <div class="t">Incidents</div>
+      <div class="d">Real postmortems only: monitoring blind-spot audit, sudo lockout recovered through the GitOps pipeline itself.</div>
+    </a>
+    <a class="card" href="https://github.com/kaacchhiii/homelab#gitops-and-security-decisions">
+      <div class="t">GitOps &amp; security</div>
+      <div class="d">Pull-poller over self-hosted runners, one-route public surface, key-only SSH, procedural secret hygiene.</div>
+    </a>
+  </div>
+
+  <h2>Architecture &amp; evidence</h2>
+  <img src="assets/architecture.svg" alt="Homelab architecture diagram">
+  <div class="grid2">
+    <img src="assets/error-budgets.png" alt="Error budget remaining per SLO">
+    <img src="assets/swap-trend.png" alt="Swap usage trend, 7 days">
+  </div>
+  <p class="sub">Snapshots rendered daily from live Prometheus queries by a systemd timer — Grafana itself is never exposed publicly.</p>
+
+  <h2>Résumé</h2>
+  <div class="cards">
+    <a class="card" href="assets/Okechukwu_Joshua_Onyedikachi_Resume.pdf">
+      <div class="t">Résumé (PDF)</div>
+      <div class="d">Okechukwu_Joshua_Onyedikachi_Resume.pdf</div>
+    </a>
+  </div>
+
+  <footer>Built as a static hub — no trackers, no build step, GitHub Pages. The stack behind the status page runs on a 2012 HP Compaq 8300 SFF.</footer>
+</div>
+</body>
+</html>
