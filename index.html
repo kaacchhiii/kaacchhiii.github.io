@@ -3,705 +3,3114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Okechukwu Joshua Onyedikachi — DevOps Engineer / SRE</title>
+
+<meta name="description"
+      content="Okechukwu Joshua Onyedikachi — DevOps Engineer and SRE specializing in Kubernetes, AWS, Terraform, CI/CD, observability and cloud infrastructure.">
+
+<meta name="author" content="Okechukwu Joshua Onyedikachi">
+
+<title>Okechukwu Joshua Onyedikachi | DevOps Engineer & SRE</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --bg:#F2F5F9;
-    --bg-dot: rgba(43,95,224,0.10);
-    --paper:#FFFFFF;
-    --ink:#10151C;
-    --ink-soft:#4E5A6B;
-    --ink-faint:#8792A2;
-    --line:#D7DEE8;
-    --line-strong:#B9C4D6;
-    --accent:#2B5FE0;
-    --accent-soft:#E7EDFC;
-    --accent-ink:#1B3E96;
-    --status-green:#1C9A5B;
-    --status-green-soft:#E4F6ED;
-    --status-amber:#C98A2C;
-    --status-amber-soft:#FBF0DE;
-    --radius:10px;
-    --maxw:1080px;
+
+:root{
+  --bg:#07111f;
+  --bg-2:#0b1627;
+
+  --paper:#0f1d31;
+  --paper-2:#13243a;
+
+  --ink:#f4f8ff;
+  --ink-soft:#aebbd0;
+  --ink-faint:#708199;
+
+  --line:rgba(148,163,184,.15);
+  --line-strong:rgba(148,163,184,.28);
+
+  --accent:#4f8cff;
+  --accent-2:#6ea8ff;
+  --accent-soft:rgba(79,140,255,.12);
+
+  --cyan:#38d9ff;
+  --cyan-soft:rgba(56,217,255,.10);
+
+  --green:#36d98b;
+  --green-soft:rgba(54,217,139,.11);
+
+  --amber:#f3b85b;
+  --amber-soft:rgba(243,184,91,.10);
+
+  --dark:#050b14;
+  --dark-2:#0a1422;
+
+  --radius:14px;
+  --max:1120px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  color:var(--ink);
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(79,140,255,.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 18%,
+      rgba(56,217,255,.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #07111f 0%,
+      #081426 45%,
+      #06101d 100%
+    );
+
+  font-family:"IBM Plex Sans",sans-serif;
+  font-size:16px;
+  line-height:1.65;
+
+  min-height:100vh;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.28;
+
+  background-image:
+    linear-gradient(
+      rgba(79,140,255,.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(79,140,255,.035) 1px,
+      transparent 1px
+    );
+
+  background-size:40px 40px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+::selection{
+  background:var(--accent);
+  color:white;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font-family:inherit;
+}
+
+h1,
+h2,
+h3{
+  margin:0;
+  color:var(--ink);
+  font-family:"Space Grotesk",sans-serif;
+}
+
+p{
+  margin-top:0;
+}
+
+.mono{
+  font-family:"IBM Plex Mono",monospace;
+}
+
+.container{
+  width:min(var(--max),calc(100% - 48px));
+  margin:auto;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+
+  height:2px;
+  width:0;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent),
+      var(--cyan)
+    );
+
+  z-index:9999;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  border-bottom:1px solid var(--line);
+
+  background:
+    rgba(7,17,31,.78);
+
+  backdrop-filter:blur(14px);
+}
+
+.nav-inner{
+  height:64px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:13px;
+  font-weight:500;
+
+  color:var(--ink);
+}
+
+.logo span{
+  color:var(--cyan);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.nav-links a{
+  color:var(--ink-soft);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:12px;
+
+  transition:.2s ease;
+}
+
+.nav-links a:hover{
+  color:var(--cyan);
+}
+
+.nav-cta{
+  padding:8px 13px;
+
+  border:1px solid rgba(79,140,255,.35);
+  border-radius:7px;
+
+  background:rgba(79,140,255,.08);
+
+  color:var(--accent-2)!important;
+}
+
+.mobile-menu{
+  display:none;
+
+  border:0;
+  background:none;
+
+  color:white;
+
+  font-size:22px;
+
+  cursor:pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+  padding:92px 0 72px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+
+  gap:70px;
+
+  align-items:end;
+}
+
+.terminal-line{
+  display:flex;
+  align-items:center;
+
+  gap:9px;
+
+  margin-bottom:22px;
+
+  color:var(--green);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:13px;
+}
+
+.terminal-dot{
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:var(--green);
+
+  box-shadow:
+    0 0 0 5px var(--green-soft),
+    0 0 18px rgba(54,217,139,.35);
+}
+
+.hero h1{
+  max-width:800px;
+
+  color:#f7fbff;
+
+  font-size:clamp(42px,6vw,72px);
+
+  line-height:.98;
+
+  letter-spacing:-.045em;
+}
+
+.hero-role{
+  display:inline-flex;
+
+  margin-top:22px;
+
+  padding:7px 11px;
+
+  border:
+    1px solid
+    rgba(79,140,255,.2);
+
+  border-radius:7px;
+
+  background:var(--accent-soft);
+
+  color:var(--accent-2);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:13px;
+  font-weight:500;
+}
+
+.hero-description{
+  max-width:720px;
+
+  margin:24px 0 0;
+
+  color:var(--ink-soft);
+
+  font-size:18px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:9px;
+
+  min-height:42px;
+
+  padding:10px 16px;
+
+  border:
+    1px solid
+    var(--line-strong);
+
+  border-radius:8px;
+
+  background:rgba(255,255,255,.035);
+
+  color:var(--ink);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:12px;
+  font-weight:500;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+
+  border-color:var(--accent);
+
+  background:
+    rgba(79,140,255,.08);
+}
+
+.btn-primary{
+  background:
+    linear-gradient(
+      135deg,
+      #4f8cff,
+      #3472e8
+    );
+
+  border-color:#4f8cff;
+
+  color:white;
+
+  box-shadow:
+    0 8px 25px rgba(37,99,235,.25);
+}
+
+.btn-primary:hover{
+  background:
+    linear-gradient(
+      135deg,
+      #5b95ff,
+      #2869df
+    );
+
+  color:white;
+}
+
+.hero-meta{
+  border-left:1px solid var(--line-strong);
+
+  padding-left:26px;
+}
+
+.meta-item{
+  padding:15px 0;
+
+  border-bottom:1px solid var(--line);
+}
+
+.meta-item:last-child{
+  border-bottom:0;
+}
+
+.meta-label{
+  color:var(--ink-faint);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.meta-value{
+  margin-top:4px;
+
+  color:#e8f0fc;
+
+  font-family:"Space Grotesk",sans-serif;
+  font-size:17px;
+  font-weight:600;
+}
+
+
+/* =========================================
+   TECH STACK
+========================================= */
+
+.stack{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+
+  background:
+    rgba(5,11,20,.22);
+}
+
+.stack-inner{
+  display:flex;
+  align-items:center;
+
+  min-height:72px;
+
+  gap:28px;
+
+  overflow:hidden;
+}
+
+.stack-label{
+  flex:none;
+
+  color:var(--ink-faint);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.stack-items{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.stack-item{
+  padding:5px 9px;
+
+  border:1px solid var(--line);
+  border-radius:6px;
+
+  background:rgba(255,255,255,.035);
+
+  color:#aebbd0;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11px;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+section{
+  padding:92px 0;
+}
+
+.section-head{
+  margin-bottom:35px;
+}
+
+.eyebrow{
+  margin-bottom:8px;
+
+  color:var(--cyan);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11px;
+
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.section-title{
+  color:#f3f7fd;
+
+  font-size:34px;
+
+  letter-spacing:-.03em;
+}
+
+.section-description{
+  max-width:680px;
+
+  margin-top:10px;
+
+  color:var(--ink-soft);
+}
+
+
+/* =========================================
+   EXPERIENCE
+========================================= */
+
+.experience{
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:18px;
+
+  border:0;
+
+  background:transparent;
+
+  overflow:visible;
+}
+
+.experience::before{
+  content:"";
+
+  position:absolute;
+
+  left:26px;
+  top:22px;
+  bottom:22px;
+
+  width:1px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(79,140,255,.5) 5%,
+      rgba(79,140,255,.18) 95%,
+      transparent
+    );
+}
+
+.experience-item{
+  position:relative;
+
+  display:grid;
+
+  grid-template-columns:190px 1fr;
+
+  gap:34px;
+
+  padding:
+    27px
+    30px
+    28px
+    62px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(19,36,58,.96),
+      rgba(12,27,45,.96)
+    );
+
+  border:
+    1px solid
+    rgba(148,163,184,.15);
+
+  border-radius:15px;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.16);
+
+  overflow:hidden;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.experience-item::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:3px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--accent),
+      var(--cyan)
+    );
+
+  opacity:.75;
+}
+
+.experience-item::after{
+  content:"";
+
+  position:absolute;
+
+  left:20px;
+  top:31px;
+
+  width:12px;
+  height:12px;
+
+  border-radius:50%;
+
+  background:var(--bg);
+
+  border:
+    2px solid
+    var(--accent);
+
+  box-shadow:
+    0 0 0 5px rgba(79,140,255,.08),
+    0 0 18px rgba(79,140,255,.28);
+
+  z-index:2;
+}
+
+.experience-item:hover{
+  transform:translateX(5px);
+
+  border-color:
+    rgba(79,140,255,.35);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.25),
+    0 0 30px rgba(79,140,255,.06);
+}
+
+.experience-date{
+  padding-top:3px;
+
+  color:#71839c;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+
+  line-height:1.8;
+
+  text-transform:uppercase;
+}
+
+.experience-title{
+  color:#f2f7ff;
+
+  font-size:19px;
+
+  line-height:1.3;
+}
+
+.experience-company{
+  color:var(--accent-2);
+
+  font-weight:600;
+}
+
+.experience-location{
+  margin-top:5px;
+
+  color:#72839a;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+}
+
+.experience-list{
+  margin-top:18px;
+
+  padding-left:18px;
+
+  color:#aab8ca;
+
+  font-size:13.5px;
+
+  line-height:1.7;
+}
+
+.experience-list li{
+  margin-bottom:9px;
+
+  padding-left:3px;
+}
+
+.experience-list li::marker{
+  color:var(--cyan);
+}
+
+.experience-tech{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:7px;
+
+  margin-top:18px;
+}
+
+.experience-tech span{
+  padding:4px 8px;
+
+  border:
+    1px solid
+    rgba(79,140,255,.18);
+
+  border-radius:5px;
+
+  background:
+    rgba(79,140,255,.07);
+
+  color:#88b4ff;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:9px;
+}
+
+
+/* =========================================
+   HOMELAB / SYSTEM PANEL
+========================================= */
+
+.system-panel{
+  position:relative;
+
+  padding:30px;
+
+  overflow:hidden;
+
+  border:
+    1px solid
+    rgba(79,140,255,.18);
+
+  border-radius:15px;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(56,217,255,.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #050b14,
+      #0b1727
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.25);
+}
+
+.system-panel::after{
+  content:"";
+
+  position:absolute;
+
+  width:280px;
+  height:280px;
+
+  right:-120px;
+  top:-120px;
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+
+  box-shadow:
+    0 0 0 50px rgba(255,255,255,.02),
+    0 0 0 100px rgba(255,255,255,.015);
+
+  pointer-events:none;
+}
+
+.system-header{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding-bottom:20px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.1);
+}
+
+.system-title{
+  color:#dce8f8;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:12px;
+}
+
+.system-status{
+  color:var(--green);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11px;
+}
+
+a.system-status:hover{
+  text-decoration:underline;
+
+  color:var(--cyan);
+}
+
+.system-grid{
+  position:relative;
+  z-index:2;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:1px;
+
+  margin-top:20px;
+
+  background:
+    rgba(255,255,255,.08);
+}
+
+.system-stat{
+  padding:17px;
+
+  background:
+    rgba(5,11,20,.75);
+}
+
+.system-stat-label{
+  color:#71839c;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+
+  text-transform:uppercase;
+}
+
+.system-stat-value{
+  margin-top:5px;
+
+  color:#f2f7ff;
+
+  font-family:"Space Grotesk",sans-serif;
+  font-size:21px;
+  font-weight:600;
+}
+
+.system-terminal{
+  position:relative;
+  z-index:2;
+
+  margin-top:24px;
+
+  padding:18px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+
+  border-radius:8px;
+
+  background:#080d14;
+
+  color:#aab7c8;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11px;
+
+  line-height:1.9;
+}
+
+.system-terminal .ok{
+  color:#65d59a;
+}
+
+.system-terminal .cmd{
+  color:#72a4ff;
+}
+
+
+/* =========================================
+   PROJECTS
+========================================= */
+
+.projects{
+  display:grid;
+
+  grid-template-columns:1.2fr .8fr;
+
+  gap:18px;
+}
+
+.project{
+  padding:28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19,36,58,.95),
+      rgba(10,24,40,.95)
+    );
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:var(--radius);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.16);
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.project:hover{
+  transform:translateY(-3px);
+
+  border-color:
+    rgba(79,140,255,.35);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.25),
+    0 0 30px rgba(79,140,255,.05);
+}
+
+.project.featured{
+  grid-row:span 2;
+}
+
+.project-kicker{
+  color:var(--cyan);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.project h3{
+  margin-top:8px;
+
+  color:#f1f6fd;
+
+  font-size:22px;
+}
+
+.project p{
+  margin:13px 0 0;
+
+  color:#aab8ca;
+
+  font-size:14px;
+}
+
+.project-list{
+  padding-left:18px;
+
+  color:#aab8ca;
+
+  font-size:14px;
+}
+
+.project-list li{
+  margin-bottom:8px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:7px;
+
+  margin-top:22px;
+}
+
+.tag{
+  padding:4px 8px;
+
+  border:
+    1px solid
+    rgba(79,140,255,.18);
+
+  border-radius:5px;
+
+  background:
+    rgba(79,140,255,.09);
+
+  color:#83afff;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+}
+
+
+/* =========================================
+   ENGINEERING PRINCIPLES
+========================================= */
+
+.principles{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:16px;
+}
+
+.principle{
+  padding:22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19,36,58,.9),
+      rgba(10,24,40,.9)
+    );
+
+  border:
+    1px solid
+    var(--line);
+
+  border-top:
+    2px solid
+    rgba(79,140,255,.4);
+
+  border-radius:10px;
+}
+
+.principle-number{
+  color:var(--cyan);
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11px;
+}
+
+.principle h3{
+  margin-top:10px;
+
+  color:#f2f7ff;
+
+  font-size:17px;
+}
+
+.principle p{
+  margin:8px 0 0;
+
+  color:#9eafc4;
+
+  font-size:13px;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skills{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.skill{
+  padding:20px 0;
+
+  border-bottom:
+    1px solid
+    var(--line);
+}
+
+.skill:nth-child(odd){
+  padding-right:30px;
+
+  border-right:
+    1px solid
+    var(--line);
+}
+
+.skill:nth-child(even){
+  padding-left:30px;
+}
+
+.skill h3{
+  color:#73859e;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11px;
+
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.skill p{
+  margin:6px 0 0;
+
+  color:#aebbd0;
+
+  font-size:14px;
+}
+
+
+/* =========================================
+   EDUCATION
+========================================= */
+
+.records{
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.record{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  padding:17px 0;
+
+  border-bottom:
+    1px solid
+    var(--line);
+}
+
+.record-name{
+  color:#eaf1fa;
+
+  font-size:14px;
+  font-weight:500;
+}
+
+.record-date{
+  flex:none;
+
+  color:#71839c;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact{
+  padding:55px;
+
+  border:
+    1px solid
+    rgba(79,140,255,.18);
+
+  border-radius:15px;
+
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(56,217,255,.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #081322,
+      #050b14
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.25);
+}
+
+.contact h2{
+  color:#f4f8ff;
+
+  font-size:38px;
+}
+
+.contact p{
+  max-width:600px;
+
+  margin-top:10px;
+
+  color:#9eafc4;
+}
+
+.contact-links{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:25px;
+}
+
+.contact .btn{
+  background:transparent;
+
+  color:white;
+
+  border-color:#344255;
+}
+
+.contact .btn:hover{
+  border-color:#6d9cff;
+}
+
+.contact .btn-primary{
+  background:var(--accent);
+
+  border-color:var(--accent);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+  padding:45px 0 70px;
+}
+
+.footer-inner{
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  padding-top:20px;
+
+  border-top:
+    1px solid
+    var(--line);
+}
+
+.footer-note{
+  color:#61738b;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10px;
+}
+
+.footer-links{
+  display:flex;
+
+  gap:18px;
+}
+
+.footer-links a{
+  color:#8494a9;
+
+  font-family:"IBM Plex Mono",monospace;
+  font-size:11px;
+}
+
+.footer-links a:hover{
+  color:var(--cyan);
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal{
+  opacity:0;
+
+  transform:
+    translateY(18px);
+
+  transition:
+    opacity .65s ease,
+    transform .65s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+
+  transform:none;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:850px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+
+    gap:40px;
   }
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  .hero-meta{
+    border-left:0;
+
+    border-top:
+      1px solid
+      var(--line);
+
+    padding-left:0;
+    padding-top:8px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:0 20px;
   }
 
-  body{
-    margin:0;
-    background-color:var(--bg);
-    background-image: radial-gradient(var(--bg-dot) 1px, transparent 1px);
-    background-size: 22px 22px;
-    color:var(--ink);
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:16px;
-    line-height:1.6;
+  .projects{
+    grid-template-columns:1fr;
   }
 
-  h1,h2,h3{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:600;
-    letter-spacing:-0.01em;
-    margin:0;
-    color:var(--ink);
+  .project.featured{
+    grid-row:auto;
   }
 
-  .mono{
-    font-family:'IBM Plex Mono', monospace;
+  .principles{
+    grid-template-columns:1fr;
   }
 
-  a{color:var(--accent); text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--accent);
-    outline-offset:3px;
-    border-radius:4px;
+  .system-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+
+@media(max-width:700px){
+
+  .container{
+    width:min(100% - 32px,var(--max));
   }
 
-  .wrap{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:0 28px;
-  }
-
-  /* ---------- NAV ---------- */
-  nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(242,245,249,0.88);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  nav .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:60px;
-  }
-  .nav-id{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--ink-soft);
-  }
   .nav-links{
-    display:flex; gap:26px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-  }
-  .nav-links a{color:var(--ink-soft);}
-  .nav-links a:hover{color:var(--accent); text-decoration:none;}
-  @media (max-width:640px){ .nav-links{display:none;} }
-
-  /* ---------- SPINE (signature element) ---------- */
-  .spine-col{
-    position:relative;
-    padding-left:34px;
-    border-left:1.5px solid var(--line-strong);
-    margin-left:6px;
-  }
-  @media (max-width:640px){
-    .spine-col{padding-left:22px; margin-left:2px;}
-  }
-  .node{
-    position:absolute;
-    left:-6.5px;
-    width:11px; height:11px;
-    border-radius:50%;
-    background:var(--bg);
-    border:1.5px solid var(--line-strong);
-    transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
-  }
-  .node.active{
-    border-color:var(--status-green);
-    background:var(--status-green);
-    box-shadow:0 0 0 4px var(--status-green-soft);
-  }
-  .spine-block{position:relative; padding-bottom:56px;}
-  .spine-block:last-child{padding-bottom:0;}
-
-  /* ---------- HERO ---------- */
-  header.hero{padding:64px 0 40px;}
-  .boot-line{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    color:var(--status-green);
-    margin-bottom:18px;
-    min-height:18px;
-  }
-  .boot-line .cursor{
-    display:inline-block; width:7px; height:14px;
-    background:var(--status-green);
-    margin-left:2px;
-    vertical-align:-2px;
-    animation:blink 1s steps(1) infinite;
-  }
-  @keyframes blink{50%{opacity:0;}}
-
-  h1.name{
-    font-size:clamp(34px, 5.4vw, 54px);
-    line-height:1.05;
-  }
-  .role-line{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:14px;
-    color:var(--accent-ink);
-    background:var(--accent-soft);
-    display:inline-block;
-    padding:4px 10px;
-    border-radius:6px;
-    margin-top:14px;
-  }
-  .summary{
-    max-width:640px;
-    margin-top:22px;
-    font-size:17px;
-    color:var(--ink-soft);
+    display:none;
   }
 
-  .stat-bar{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    overflow:hidden;
-    margin-top:32px;
-  }
-  .stat{
-    background:var(--paper);
-    padding:16px 16px;
-  }
-  .stat .label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.04em;
-    color:var(--ink-faint);
-    text-transform:uppercase;
-  }
-  .stat .value{
-    font-family:'Space Grotesk', sans-serif;
-    font-size:20px;
-    font-weight:600;
-    margin-top:4px;
-  }
-  .stat .value a{font-size:15px; font-weight:500;}
-  @media (max-width:640px){
-    .stat-bar{grid-template-columns:repeat(2,1fr);}
-  }
-
-  .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:28px;}
-  .btn{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    padding:10px 16px;
-    border-radius:8px;
-    border:1px solid var(--line-strong);
-    background:var(--paper);
-    color:var(--ink);
-    display:inline-flex; align-items:center; gap:8px;
-  }
-  .btn:hover{text-decoration:none; border-color:var(--accent); color:var(--accent);}
-  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
-  .btn.primary:hover{background:var(--accent-ink); color:#fff;}
-  .dot{width:7px; height:7px; border-radius:50%; background:var(--status-green); display:inline-block;}
-
-  /* ---------- SECTIONS ---------- */
-  section{padding:52px 0;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ink-faint);
-    margin-bottom:8px;
-  }
-  h2.section-title{font-size:26px; margin-bottom:28px;}
-
-  /* ---------- EXPERIENCE ---------- */
-  .job{
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:22px 24px;
-  }
-  .job-head{
-    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;
-    margin-bottom:10px;
-  }
-  .job-title{font-size:17px; font-weight:600; font-family:'Space Grotesk',sans-serif;}
-  .job-org{color:var(--accent-ink);}
-  .job-meta{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    color:var(--ink-faint);
-    white-space:nowrap;
-  }
-  .job ul{margin:0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
-  .job li{margin-bottom:6px;}
-  .job li:last-child{margin-bottom:0;}
-
-  /* ---------- FEATURED PROJECT ---------- */
-  .project-card{
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:28px;
-  }
-  .project-head{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:14px; margin-bottom:6px;}
-  .project-title{font-size:22px;}
-  .status-pill{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    padding:4px 10px;
-    border-radius:20px;
-    background:var(--status-green-soft);
-    color:var(--status-green);
-    display:inline-flex; align-items:center; gap:6px;
-    white-space:nowrap;
-  }
-  .status-pill .dot{background:var(--status-green);}
-  .project-desc{color:var(--ink-soft); margin:14px 0 22px; max-width:70ch;}
-
-  .metric-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-    margin-bottom:24px;
-  }
-  @media (max-width:720px){ .metric-grid{grid-template-columns:1fr;} }
-  .metric{
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:14px 16px;
-    background:var(--bg);
-  }
-  .metric .k{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.04em;}
-  .metric .v{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:18px; margin-top:4px;}
-  .metric .sub{font-size:12.5px; color:var(--ink-faint); margin-top:2px;}
-
-  .slo-table{width:100%; border-collapse:collapse; margin-bottom:24px; font-size:14px;}
-  .slo-table th{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; text-transform:uppercase; letter-spacing:0.04em;
-    text-align:left; color:var(--ink-faint); font-weight:500;
-    padding:8px 10px; border-bottom:1px solid var(--line-strong);
-  }
-  .slo-table td{padding:10px 10px; border-bottom:1px solid var(--line); vertical-align:top;}
-  .slo-table td.placeholder{color:var(--ink-faint); font-style:italic;}
-
-  .decision-log{border-left:2px solid var(--accent-soft); padding-left:16px; margin-bottom:22px;}
-  .decision-log .entry{margin-bottom:14px;}
-  .decision-log .entry:last-child{margin-bottom:0;}
-  .decision-log .tag{
-    font-family:'IBM Plex Mono', monospace; font-size:11px;
-    color:var(--accent-ink); background:var(--accent-soft);
-    padding:2px 7px; border-radius:5px; margin-right:8px;
-  }
-  .decision-log p{margin:6px 0 0; color:var(--ink-soft); font-size:14px;}
-
-  .shot-slot{
-    border:1.5px dashed var(--line-strong);
-    border-radius:8px;
-    padding:26px;
-    text-align:center;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--ink-faint);
-    background:var(--bg);
-  }
-  .shot-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
-  @media (max-width:640px){ .shot-row{grid-template-columns:1fr;} }
-  .shot-row img{
-    width:100%;
-    border:1px solid var(--line);
-    border-radius:8px;
+  .mobile-menu{
     display:block;
-    background:#fff;
-  }
-  .shot-caption{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--ink-faint);
-    margin-top:6px;
   }
 
-  /* ---------- SECOND PROJECT ---------- */
-  .project-card.compact{padding:22px 24px;}
-  .project-card.compact ul{margin:12px 0 0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
-  .project-card.compact li{margin-bottom:6px;}
-
-  /* ---------- SKILLS ---------- */
-  .skill-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px 32px;}
-  @media (max-width:720px){ .skill-grid{grid-template-columns:1fr;} }
-  .skill-group{border-top:1px solid var(--line-strong); padding-top:10px;}
-  .skill-group h3{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px; text-transform:uppercase; letter-spacing:0.04em;
-    color:var(--ink-faint); font-weight:500; margin-bottom:8px;
+  .hero{
+    padding:65px 0 55px;
   }
-  .skill-group p{margin:0; font-size:14px; color:var(--ink-soft);}
 
-  /* ---------- EDU / CERT ---------- */
-  .edu-row{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid var(--line); font-size:14.5px;}
-  .edu-row:last-child{border-bottom:none;}
-  .edu-row .what{font-weight:500;}
-  .edu-row .when{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-faint); white-space:nowrap;}
+  .hero h1{
+    font-size:
+      clamp(
+        40px,
+        12vw,
+        60px
+      );
+  }
 
-  /* ---------- FOOTER ---------- */
-  footer{padding:52px 0 80px;}
-  .contact-card{
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:30px 28px;
-    text-align:left;
+  .hero-description{
+    font-size:16px;
   }
-  .contact-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px;}
-  .footer-note{
-    margin-top:36px; font-family:'IBM Plex Mono', monospace; font-size:12px;
-    color:var(--ink-faint); display:flex; align-items:center; gap:8px;
+
+  .stack-inner{
+    align-items:flex-start;
+
+    flex-direction:column;
+
+    padding:18px 0;
+
+    gap:10px;
   }
+
+  section{
+    padding:65px 0;
+  }
+
+  .section-title{
+    font-size:29px;
+  }
+
+  .experience::before{
+    left:18px;
+  }
+
+  .experience-item{
+    grid-template-columns:1fr;
+
+    gap:7px;
+
+    padding:
+      24px
+      22px
+      24px
+      48px;
+  }
+
+  .experience-item::after{
+    left:12px;
+    top:27px;
+  }
+
+  .experience-date{
+    font-size:9px;
+  }
+
+  .experience-title{
+    font-size:17px;
+  }
+
+  .skills{
+    grid-template-columns:1fr;
+  }
+
+  .skill:nth-child(odd){
+    padding-right:0;
+
+    border-right:0;
+  }
+
+  .skill:nth-child(even){
+    padding-left:0;
+  }
+
+  .system-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .contact{
+    padding:30px 24px;
+  }
+
+  .contact h2{
+    font-size:30px;
+  }
+
+  .footer-inner{
+    align-items:flex-start;
+
+    flex-direction:column;
+  }
+}
+
+
+@media(max-width:450px){
+
+  .hero-actions,
+  .hero-actions .btn,
+  .contact-links,
+  .contact-links .btn{
+    width:100%;
+  }
+
+  .hero-actions .btn,
+  .contact-links .btn{
+    justify-content:center;
+  }
+
+  .hero-meta{
+    grid-template-columns:1fr;
+  }
+
+  .system-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project,
+  .system-panel{
+    padding:22px;
+  }
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+  }
+
+  .reveal{
+    opacity:1;
+    transform:none;
+  }
+}
+
 </style>
 </head>
+
+
 <body>
 
+
+<!-- =========================================
+     SCROLL PROGRESS
+========================================= -->
+
+<div class="progress" id="progress"></div>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
 <nav>
-  <div class="wrap">
-    <span class="nav-id mono">okechukwu.dev</span>
+
+  <div class="container nav-inner">
+
+    <a href="#" class="logo">
+      okechukwu<span>.dev</span>
+    </a>
+
     <div class="nav-links">
-      <a href="#experience">experience</a>
-      <a href="#homelab">homelab</a>
-      <a href="#projects">projects</a>
-      <a href="#skills">skills</a>
-      <a href="#contact">contact</a>
+
+      <a href="#experience">
+        experience
+      </a>
+
+      <a href="#homelab">
+        homelab
+      </a>
+
+      <a href="#projects">
+        projects
+      </a>
+
+      <a href="#skills">
+        skills
+      </a>
+
+      <a href="#contact" class="nav-cta">
+        contact
+      </a>
+
     </div>
+
+    <button
+      class="mobile-menu"
+      aria-label="Open navigation">
+      ☰
+    </button>
+
   </div>
+
 </nav>
 
-<div class="wrap">
-<div class="spine-col">
 
-  <!-- HERO -->
-  <div class="spine-block" id="node-hero">
-    <span class="node" data-node></span>
-    <header class="hero">
-      <div class="boot-line mono" id="bootline">&nbsp;</div>
-      <h1 class="name">Okechukwu Joshua Onyedikachi</h1>
-      <span class="role-line mono">DevOps Engineer / SRE</span>
-      <p class="summary">
-        I build and operate infrastructure that stays up under real load, across FinTech
-        and startup environments and on hardware I own myself. CI/CD, Kubernetes, and
-        cloud-native systems on AWS and Azure by day; SLOs, error budgets, and incident
-        response practiced end-to-end on a homelab I run in production, by night.
+<!-- =========================================
+     HERO
+========================================= -->
+
+<header class="hero">
+
+  <div class="container hero-grid">
+
+    <div class="reveal">
+
+      <div class="terminal-line">
+
+        <span class="terminal-dot"></span>
+
+        <span id="terminalText">
+          $ whoami
+        </span>
+
+      </div>
+
+
+      <h1>
+        Okechukwu Joshua Onyedikachi
+      </h1>
+
+
+      <div class="hero-role">
+        DevOps Engineer / SRE
+      </div>
+
+
+      <p class="hero-description">
+        I build reliable cloud infrastructure, deployment systems and
+        observability platforms. My focus is Kubernetes, AWS, Terraform,
+        CI/CD and the engineering practices that make production systems
+        predictable.
       </p>
 
-      <div class="stat-bar">
-        <div class="stat">
-          <div class="label mono">Live status</div>
-          <div class="value"><a href="https://omo.colobus-fir.ts.net/status/portfolio" data-status-link>view uptime →</a></div>
-        </div>
-        <div class="stat">
-          <div class="label mono">Monthly infra cost</div>
-          <div class="value">$0</div>
-        </div>
-        <div class="stat">
-          <div class="label mono">Services in prod</div>
-          <div class="value">21</div>
-        </div>
-        <div class="stat">
-          <div class="label mono">Shipping since</div>
-          <div class="value">2022</div>
-        </div>
+
+      <div class="hero-actions">
+
+        <a
+          href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf"
+          class="btn btn-primary">
+
+          Download résumé
+
+        </a>
+
+
+        <a
+          href="https://github.com/kaacchhiii"
+          target="_blank"
+          rel="noopener"
+          class="btn">
+
+          GitHub ↗
+
+        </a>
+
+
+        <a
+          href="https://www.linkedin.com/in/onyedikachiokechukwu/"
+          target="_blank"
+          rel="noopener"
+          class="btn">
+
+          LinkedIn ↗
+
+        </a>
+
       </div>
 
-      <div class="cta-row">
-        <a class="btn primary" href="https://omo.colobus-fir.ts.net/status/portfolio" data-status-link><span class="dot"></span>Live infrastructure status</a>
-        <a class="btn" href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf">Download résumé (PDF)</a>
-        <a class="btn" href="https://github.com/kaacchhiii" data-github-link>GitHub</a>
+    </div>
+
+
+    <aside class="hero-meta reveal">
+
+      <div class="meta-item">
+
+        <div class="meta-label">
+          Location
+        </div>
+
+        <div class="meta-value">
+          Nigeria · Remote
+        </div>
+
       </div>
-    </header>
+
+
+      <div class="meta-item">
+
+        <div class="meta-label">
+          Focus
+        </div>
+
+        <div class="meta-value">
+          Cloud & Platform Engineering
+        </div>
+
+      </div>
+
+
+      <div class="meta-item">
+
+        <div class="meta-label">
+          Experience
+        </div>
+
+        <div class="meta-value">
+          3+ years
+        </div>
+
+      </div>
+
+
+      <div class="meta-item">
+
+        <div class="meta-label">
+          Primary stack
+        </div>
+
+        <div class="meta-value">
+          AWS · Kubernetes · Terraform
+        </div>
+
+      </div>
+
+    </aside>
+
   </div>
 
-  <!-- EXPERIENCE -->
-  <div class="spine-block" id="experience">
-    <span class="node" data-node></span>
-    <section>
-      <div class="eyebrow mono">Deployment log</div>
-      <h2 class="section-title">Experience</h2>
+</header>
 
-      <div style="display:flex; flex-direction:column; gap:16px;">
 
-        <div class="job">
-          <div class="job-head">
-            <div><span class="job-title">Platform Engineer</span> <span class="job-org">— Odera Training Academy</span></div>
-            <div class="job-meta mono">12/2025 – 06/2026 · Remote · Contract, concurrent</div>
-          </div>
-          <ul>
-            <li>Designed a multi-region web application to deliver lessons and exercises to an international audience.</li>
-            <li>Automated student server setup with Terraform and scripts; currently testing with a pilot group.</li>
-            <li>Built CLI tools and documentation to help learners configure SSH, firewalls, and runtimes on remote servers.</li>
-          </ul>
-        </div>
+<!-- =========================================
+     CORE STACK
+========================================= -->
 
-        <div class="job">
-          <div class="job-head">
-            <div><span class="job-title">DevOps Engineer</span> <span class="job-org">— First Bank of Nigeria</span></div>
-            <div class="job-meta mono">02/2025 – 01/2026 · Lagos, Nigeria · Contract, concurrent</div>
-          </div>
-          <ul>
-            <li>Led weekly DevSecOps training sessions with live Q&A on container security scanning and static analysis; built the roadmap that added security gates across dev, staging, and testing pipelines.</li>
-            <li>Authored release workflow documentation covering approval gates, environment promotion, and rollback procedures, which became the production release standard.</li>
-          </ul>
-        </div>
+<div class="stack">
 
-        <div class="job">
-          <div class="job-head">
-            <div><span class="job-title">DevOps Engineer</span> <span class="job-org">— Techwings Global LLC</span></div>
-            <div class="job-meta mono">08/2024 – 07/2025 · Remote · Contract, concurrent</div>
-          </div>
-          <ul>
-            <li>Ensured zero-downtime deployments by implementing auto-scaling and capacity planning for Python microservices on DigitalOcean.</li>
-            <li>Resolved throughput issues by fine-tuning Redis and worker configurations, meeting targets without additional infrastructure or cost.</li>
-            <li>Addressed Terraform state drift by auditing and aligning load balancers and compute nodes with infrastructure code.</li>
-          </ul>
-        </div>
+  <div class="container stack-inner">
 
-        <div class="job">
-          <div class="job-head">
-            <div><span class="job-title">Junior DevOps Engineer</span> <span class="job-org">— Shuttle9ja</span></div>
-            <div class="job-meta mono">12/2022 – 04/2024 · Ogun, Nigeria · Part-time</div>
-          </div>
-          <ul>
-            <li>Built the team's first CI/CD pipeline with GitLab CI, automating SSH deployments to reduce errors and accelerate delivery.</li>
-            <li>Deployed Prometheus and Grafana, shifting the team from reactive monitoring to real-time system health visibility.</li>
-            <li>Prevented crash cycles during peak load by enforcing CPU and memory limits on Docker containers.</li>
-          </ul>
-        </div>
+    <div class="stack-label">
+      Core stack
+    </div>
 
-      </div>
-    </section>
+    <div class="stack-items">
+
+      <span class="stack-item">AWS</span>
+      <span class="stack-item">Kubernetes</span>
+      <span class="stack-item">Terraform</span>
+      <span class="stack-item">Docker</span>
+      <span class="stack-item">GitHub Actions</span>
+      <span class="stack-item">GitLab CI</span>
+      <span class="stack-item">ArgoCD</span>
+      <span class="stack-item">Prometheus</span>
+      <span class="stack-item">Grafana</span>
+      <span class="stack-item">Python</span>
+      <span class="stack-item">Linux</span>
+
+    </div>
+
   </div>
 
-  <!-- FEATURED PROJECT: HOMELAB -->
-  <div class="spine-block" id="homelab">
-    <span class="node" data-node></span>
-    <section>
-      <div class="eyebrow mono">Featured project · running in production right now</div>
-      <h2 class="section-title">Self-Hosted Infrastructure Lab</h2>
+</div>
 
-      <div class="project-card">
-        <div class="project-head">
-          <div class="project-title">A production system on decade-old hardware</div>
-          <a class="status-pill mono" href="https://omo.colobus-fir.ts.net/status/portfolio"><span class="dot"></span>live · public uptime page</a>
-        </div>
-        <p class="project-desc">
-          21 containerized services running on a single Ubuntu box (Intel i3-3220, 3.7GB RAM),
-          operated with the same discipline I'd bring to a paid environment: defined SLOs and
-          error budgets, resource guardrails on every container, a GitOps pipeline with a
-          documented security decision, and a real incident log instead of a hypothetical one.
-          Full narrative in the <a href="https://github.com/kaacchhiii/homelab#readme">README case study</a>.
-        </p>
 
-        <div class="metric-grid">
-          <div class="metric">
-            <div class="k mono">Monthly cost</div>
-            <div class="v">$0</div>
-            <div class="sub">self-hosted, no cloud spend</div>
-          </div>
-          <div class="metric">
-            <div class="k mono">Hardware</div>
-            <div class="v">i3-3220 · 3.7GB RAM</div>
-            <div class="sub">2012-era, mem-limited by design</div>
-          </div>
-          <div class="metric">
-            <div class="k mono">Services</div>
-            <div class="v">21 containers</div>
-            <div class="sub">all with explicit mem/cpu limits</div>
-          </div>
-        </div>
+<main class="container">
 
-        <div class="eyebrow mono" style="margin-top:4px;">SLOs &amp; error budgets</div>
-        <table class="slo-table">
-          <thead>
-            <tr><th>Objective</th><th>Target</th><th>Current</th><th>Error budget</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Gateway availability <span class="mono" style="color:var(--ink-faint);">(SLO-1)</span></td>
-              <td>≥ 99.5% successful probes, 30d</td>
-              <td><a href="https://omo.colobus-fir.ts.net/status/portfolio">live on status page</a></td>
-              <td>216 min / month</td>
-            </tr>
-            <tr>
-              <td>Media responsiveness <span class="mono" style="color:var(--ink-faint);">(SLO-2)</span></td>
-              <td>≥ 99% probes &lt; 2000 ms, 30d</td>
-              <td><a href="https://omo.colobus-fir.ts.net/status/portfolio">live on status page</a></td>
-              <td>432 min / month</td>
-            </tr>
-            <tr>
-              <td>Pipeline health <span class="mono" style="color:var(--ink-faint);">(SLO-3)</span></td>
-              <td>≥ 99% Prometheus targets up, 30d</td>
-              <td><a href="https://github.com/kaacchhiii/homelab/blob/main/SLO.md">defined in SLO.md</a></td>
-              <td>432 min / month</td>
-            </tr>
-          </tbody>
-        </table>
 
-        <div class="eyebrow mono">Architecture</div>
-        <img src="assets/architecture.svg" alt="Homelab architecture: pull-based GitOps, isolated public status route, private workloads" style="width:100%; border:1px solid var(--line); border-radius:8px; display:block; margin-bottom:24px; background:#010409;">
+<!-- =========================================
+     EXPERIENCE
+========================================= -->
 
-        <div class="eyebrow mono">Decisions &amp; reasoning</div>
-        <div class="decision-log">
-          <div class="entry">
-            <span class="tag mono">GitOps</span>
-            <span style="font-weight:500;">Pull-based deploy poller instead of a self-hosted GitHub Actions runner</span>
-            <p>The repo is public; a self-hosted runner on a public repo is a known code-execution risk via fork PRs. A systemd timer polls the repo and applies changes locally instead, so nothing on GitHub's side ever reaches the box directly.</p>
-          </div>
-          <div class="entry">
-            <span class="tag mono">Reliability</span>
-            <span style="font-weight:500;">Resource guardrails on every service, not just the risky ones</span>
-            <p>Explicit mem/cpu limits across all 21 containers, transcode fencing on the media service, and log rotation, after an early audit showed the box was already touching swap under normal load.</p>
-          </div>
-          <div class="entry">
-            <span class="tag mono">Incident</span>
-            <span style="font-weight:500;">Swap usage quadrupled overnight — investigated, not ignored</span>
-            <p>Traced with vmstat rather than assumed: confirmed cold-page eviction, not active thrashing, then turned it into a graphed alert condition instead of a manual thing to remember to check.</p>
-          </div>
-        </div>
+<section id="experience">
 
-        <div class="eyebrow mono">Dashboard exports</div>
-        <div class="shot-row">
-          <div>
-            <img src="assets/error-budgets.png" alt="Error budget remaining per SLO, rendered from live Prometheus queries">
-            <div class="shot-caption mono">error budgets remaining · rendered daily from PromQL</div>
-          </div>
-          <div>
-            <img src="assets/swap-trend.png" alt="Swap usage trend over 7 days">
-            <div class="shot-caption mono">swap trend · alert = swap rising while available &lt; 1 GiB</div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      01 / Deployment history
+    </div>
+
+    <h2 class="section-title">
+      Experience
+    </h2>
+
+    <p class="section-description">
+      Engineering experience across FinTech, startups and platform
+      environments, with emphasis on automation, reliability and delivery.
+    </p>
+
   </div>
 
-  <!-- SECOND PROJECT -->
-  <div class="spine-block" id="projects">
-    <span class="node" data-node></span>
-    <section>
-      <div class="eyebrow mono">Also shipped</div>
-      <h2 class="section-title">Kubernetes, Cloud &amp; SRE Engineering Program</h2>
-      <div class="project-card compact">
-        <div class="job-head">
-          <div class="project-title" style="font-size:17px;">Production-grade cluster, built from scratch</div>
-          <div class="job-meta mono">05/2026 – Present</div>
+
+  <div class="experience reveal">
+
+
+    <!-- ODERA -->
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+
+        DEC 2025 — JUN 2026<br>
+
+        REMOTE · CONTRACT
+
+      </div>
+
+
+      <div>
+
+        <h3 class="experience-title">
+
+          Platform Engineer
+
+          <span class="experience-company">
+            — Odera Training Academy
+          </span>
+
+        </h3>
+
+
+        <div class="experience-location">
+          PLATFORM ENGINEERING · INFRASTRUCTURE AUTOMATION
         </div>
-        <ul>
-          <li>Built a Kubernetes cluster from scratch (kubeadm on Kind) with HPA/VPA, PodDisruptionBudgets, and rolling, blue-green, and canary deployment strategies.</li>
-          <li>Deployed a full observability stack (Prometheus, Grafana, Loki, kube-state-metrics) with Trivy image scanning in the deploy workflow.</li>
-          <li>Built a GitOps delivery platform on ArgoCD with PR-based multi-environment promotion, plus a Backstage developer portal with a software catalog and golden-path templates.</li>
-          <li>Modularized Terraform with Terragrunt (remote state, state locking), added Checkov policy scanning and Gitleaks secret scanning to every commit.</li>
-          <li>Deployed to AWS (EKS/ECS) with least-privilege IAM and VPC design; ran Prowler and remediated findings across IAM, S3, and networking.</li>
-          <li>Defined SLIs/SLOs and error budgets, ran chaos experiments with LitmusChaos, and wrote ADRs and runbooks for blameless post-mortems.</li>
+
+
+        <ul class="experience-list">
+
+          <li>
+            Designed infrastructure for a multi-region learning platform
+            serving an international audience.
+          </li>
+
+          <li>
+            Automated student server provisioning with Terraform and
+            configuration scripts.
+          </li>
+
+          <li>
+            Built CLI tooling and technical documentation for SSH,
+            firewall and runtime configuration.
+          </li>
+
         </ul>
-      </div>
-    </section>
-  </div>
 
-  <!-- SKILLS -->
-  <div class="spine-block" id="skills">
-    <span class="node" data-node></span>
-    <section>
-      <div class="eyebrow mono">Spec sheet</div>
-      <h2 class="section-title">Skills</h2>
-      <div class="skill-grid">
-        <div class="skill-group"><h3>Containerization</h3><p>Docker, Kubernetes (cluster architecture, CRDs, Operators, kubeadm), Helm</p></div>
-        <div class="skill-group"><h3>CI/CD &amp; automation</h3><p>Azure DevOps (YAML pipelines), GitHub Actions, Jenkins, GitLab CI, ArgoCD, Git</p></div>
-        <div class="skill-group"><h3>Cloud platforms</h3><p>AWS (EKS, ECS, Lambda, IAM, VPC, CloudWatch, X-Ray, GuardDuty, Cost Explorer), Azure (DevOps, Monitor), DigitalOcean</p></div>
-        <div class="skill-group"><h3>Scripting &amp; automation</h3><p>Python (automation/tooling, CLI design with Click), Go, Bash, PowerShell</p></div>
-        <div class="skill-group"><h3>Observability &amp; SRE</h3><p>Prometheus, Grafana, Loki, kube-state-metrics, Azure Monitor, CA UIM, ManageEngine, SLIs/SLOs, error budgets, chaos engineering (LitmusChaos)</p></div>
-        <div class="skill-group"><h3>Infrastructure as code</h3><p>Terraform (modules, remote state, state locking), Terragrunt, Ansible, Bash scripting</p></div>
-        <div class="skill-group"><h3>Security &amp; compliance</h3><p>Trivy, Gitleaks, Checkov, Prowler, container/image scanning, DevSecOps</p></div>
-        <div class="skill-group"><h3>Practices</h3><p>GitOps, DevSecOps, incident management, blameless post-mortems, cost optimization</p></div>
-        <div class="skill-group"><h3>Platform engineering</h3><p>Backstage (software catalog, golden-path templates), self-service infrastructure, internal developer platforms</p></div>
-      </div>
-    </section>
-  </div>
 
-  <!-- EDUCATION -->
-  <div class="spine-block">
-    <span class="node" data-node></span>
-    <section>
-      <div class="eyebrow mono">Record</div>
-      <h2 class="section-title">Education &amp; certificates</h2>
-      <div class="edu-row"><span class="what">B.Sc. Computer Science — Babcock University</span><span class="when mono">2024</span></div>
-      <div class="edu-row"><span class="what">Oracle Cloud Infrastructure (OCI) DevOps Professional</span><span class="when mono">2023</span></div>
-      <div class="edu-row"><span class="what">Oracle Cloud Infrastructure AI Foundations Associate</span><span class="when mono">2025</span></div>
-      <div class="edu-row"><span class="what">NYSC Discharge Certificate</span><span class="when mono">2026</span></div>
-    </section>
-  </div>
+        <div class="experience-tech">
 
-  <!-- CONTACT -->
-  <div class="spine-block" id="contact">
-    <span class="node" data-node></span>
-    <footer>
-      <div class="eyebrow mono">Reach me</div>
-      <div class="contact-card">
-        <h2 class="section-title" style="margin-bottom:6px;">Let's talk</h2>
-        <p style="color:var(--ink-soft); margin:6px 0 0;">Open to DevOps and SRE roles. Fastest way to reach me is email.</p>
-        <div class="contact-links">
-          <a class="btn" href="mailto:onyedikachi0813@gmail.com">onyedikachi0813@gmail.com</a>
-          <a class="btn" href="tel:+2349056105963">+234 905 610 5963</a>
-          <a class="btn" href="https://github.com/kaacchhiii" data-github-link>GitHub</a>
-          <a class="btn primary" href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf">Download résumé</a>
+          <span>Terraform</span>
+          <span>AWS</span>
+          <span>Linux</span>
+          <span>Python</span>
+          <span>Automation</span>
+
         </div>
+
       </div>
-      <div class="footer-note"><span class="dot"></span> static hub — no trackers, no build step; every number above comes from live Prometheus queries</div>
-    </footer>
+
+    </article>
+
+
+    <!-- FIRST BANK -->
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+
+        FEB 2025 — JAN 2026<br>
+
+        LAGOS · CONTRACT
+
+      </div>
+
+
+      <div>
+
+        <h3 class="experience-title">
+
+          DevOps Engineer
+
+          <span class="experience-company">
+            — First Bank of Nigeria
+          </span>
+
+        </h3>
+
+
+        <div class="experience-location">
+          DEVSECOPS · CI/CD · RELEASE ENGINEERING
+        </div>
+
+
+        <ul class="experience-list">
+
+          <li>
+            Led DevSecOps training covering container security scanning,
+            static analysis and secure delivery practices.
+          </li>
+
+          <li>
+            Helped establish security gates across development,
+            staging and testing pipelines.
+          </li>
+
+          <li>
+            Authored release workflow documentation covering approval
+            gates, environment promotion and rollback procedures.
+          </li>
+
+        </ul>
+
+
+        <div class="experience-tech">
+
+          <span>DevSecOps</span>
+          <span>CI/CD</span>
+          <span>Docker</span>
+          <span>Security</span>
+          <span>Release Engineering</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- TECHWINGS -->
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+
+        AUG 2024 — JUL 2025<br>
+
+        REMOTE · CONTRACT
+
+      </div>
+
+
+      <div>
+
+        <h3 class="experience-title">
+
+          DevOps Engineer
+
+          <span class="experience-company">
+            — Techwings Global LLC
+          </span>
+
+        </h3>
+
+
+        <div class="experience-location">
+          CLOUD INFRASTRUCTURE · PYTHON · TERRAFORM
+        </div>
+
+
+        <ul class="experience-list">
+
+          <li>
+            Implemented autoscaling and capacity planning for Python
+            microservices running on DigitalOcean.
+          </li>
+
+          <li>
+            Tuned Redis and worker configurations to improve throughput
+            without additional infrastructure spend.
+          </li>
+
+          <li>
+            Investigated Terraform state drift and reconciled load
+            balancers and compute resources with infrastructure code.
+          </li>
+
+        </ul>
+
+
+        <div class="experience-tech">
+
+          <span>DigitalOcean</span>
+          <span>Terraform</span>
+          <span>Python</span>
+          <span>Redis</span>
+          <span>Docker</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- SHUTTLE9JA -->
+
+    <article class="experience-item">
+
+      <div class="experience-date">
+
+        DEC 2022 — APR 2024<br>
+
+        PART-TIME
+
+      </div>
+
+
+      <div>
+
+        <h3 class="experience-title">
+
+          Junior DevOps Engineer
+
+          <span class="experience-company">
+            — Shuttle9ja
+          </span>
+
+        </h3>
+
+
+        <div class="experience-location">
+          CI/CD · MONITORING · CONTAINERIZATION
+        </div>
+
+
+        <ul class="experience-list">
+
+          <li>
+            Built the team's first GitLab CI/CD pipeline and automated
+            SSH-based deployments.
+          </li>
+
+          <li>
+            Deployed Prometheus and Grafana to provide real-time
+            infrastructure and application visibility.
+          </li>
+
+          <li>
+            Added CPU and memory limits to Docker workloads to improve
+            stability during peak traffic.
+          </li>
+
+        </ul>
+
+
+        <div class="experience-tech">
+
+          <span>GitLab CI</span>
+          <span>Docker</span>
+          <span>Prometheus</span>
+          <span>Grafana</span>
+          <span>Linux</span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
   </div>
 
-</div>
-</div>
+</section>
+
+
+<!-- =========================================
+     HOMELAB
+========================================= -->
+
+<section id="homelab">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      02 / Infrastructure lab
+    </div>
+
+    <h2 class="section-title">
+      Engineering under constraints
+    </h2>
+
+    <p class="section-description">
+      A self-hosted environment used to practice production engineering
+      principles where hardware limitations make bad decisions visible.
+      Full narrative in the
+      <a href="https://github.com/kaacchhiii/homelab#readme" style="color:var(--cyan);">
+        README case study ↗
+      </a>
+    </p>
+
+  </div>
+
+
+  <div class="system-panel reveal">
+
+    <div class="system-header">
+
+      <div class="system-title">
+        homelab / production-environment
+      </div>
+
+      <a
+        class="system-status"
+        href="https://omo.colobus-fir.ts.net/status/portfolio"
+        target="_blank"
+        rel="noopener"
+        title="Live public status page">
+        ● OPERATIONAL — view live status ↗
+      </a>
+
+    </div>
+
+
+    <div class="system-grid">
+
+      <div class="system-stat">
+
+        <div class="system-stat-label">
+          Services
+        </div>
+
+        <div class="system-stat-value">
+          21
+        </div>
+
+      </div>
+
+
+      <div class="system-stat">
+
+        <div class="system-stat-label">
+          Monthly cost
+        </div>
+
+        <div class="system-stat-value">
+          $0
+        </div>
+
+      </div>
+
+
+      <div class="system-stat">
+
+        <div class="system-stat-label">
+          Memory
+        </div>
+
+        <div class="system-stat-value">
+          3.7 GB
+        </div>
+
+      </div>
+
+
+      <div class="system-stat">
+
+        <div class="system-stat-label">
+          CPU
+        </div>
+
+        <div class="system-stat-value">
+          i3-3220
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="system-terminal">
+
+      <div>
+        <span class="cmd">$</span>
+        docker ps --format "{{.Names}}"
+      </div>
+
+      <div class="ok">
+        ✓ reverse-proxy
+      </div>
+
+      <div class="ok">
+        ✓ monitoring
+      </div>
+
+      <div class="ok">
+        ✓ logging
+      </div>
+
+      <div class="ok">
+        ✓ media
+      </div>
+
+      <div class="ok">
+        ✓ applications
+      </div>
+
+      <div>
+        <span class="cmd">$</span>
+        free -h
+      </div>
+
+      <div>
+        Mem: 3.7Gi · resource limits enforced · log rotation enabled
+      </div>
+
+      <div>
+        <span class="cmd">$</span>
+        gitops status
+      </div>
+
+      <div class="ok">
+        ✓ repository synchronized
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     PROJECTS
+========================================= -->
+
+<section id="projects">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      03 / Selected engineering work
+    </div>
+
+    <h2 class="section-title">
+      Projects
+    </h2>
+
+  </div>
+
+
+  <div class="projects">
+
+
+    <!-- KUBERNETES -->
+
+    <article class="project featured reveal">
+
+      <div class="project-kicker">
+        Featured · Kubernetes / SRE
+      </div>
+
+      <h3>
+        Production-grade Kubernetes platform
+      </h3>
+
+      <p>
+        A Kubernetes engineering program built around deployment safety,
+        observability, security and platform engineering rather than
+        simply running containers.
+      </p>
+
+
+      <ul class="project-list">
+
+        <li>
+          Built Kubernetes environments with kubeadm and Kind,
+          including workload scheduling and cluster configuration.
+        </li>
+
+        <li>
+          Implemented HPA/VPA, PodDisruptionBudgets and rolling,
+          blue-green and canary deployment strategies.
+        </li>
+
+        <li>
+          Deployed Prometheus, Grafana, Loki and kube-state-metrics
+          for cluster and application observability.
+        </li>
+
+        <li>
+          Integrated Trivy, Checkov and Gitleaks into delivery workflows.
+        </li>
+
+        <li>
+          Built GitOps workflows with ArgoCD and multi-environment
+          promotion.
+        </li>
+
+        <li>
+          Implemented Terraform modules with Terragrunt,
+          remote state and state locking.
+        </li>
+
+        <li>
+          Deployed AWS infrastructure across EKS/ECS with IAM and
+          VPC security considerations.
+        </li>
+
+        <li>
+          Practiced SLOs, error budgets, chaos engineering and
+          incident documentation.
+        </li>
+
+      </ul>
+
+
+      <div class="tags">
+
+        <span class="tag">Kubernetes</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">Terragrunt</span>
+        <span class="tag">ArgoCD</span>
+        <span class="tag">Prometheus</span>
+        <span class="tag">Grafana</span>
+        <span class="tag">Loki</span>
+        <span class="tag">Trivy</span>
+        <span class="tag">Backstage</span>
+
+      </div>
+
+    </article>
+
+
+    <!-- GITOPS -->
+
+    <article class="project reveal">
+
+      <div class="project-kicker">
+        Infrastructure / GitOps
+      </div>
+
+      <h3>
+        Self-hosted GitOps infrastructure
+      </h3>
+
+      <p>
+        Operated containerized services on constrained hardware while
+        applying resource governance, observability and controlled
+        deployments.
+      </p>
+
+
+      <div class="tags">
+
+        <span class="tag">Docker</span>
+        <span class="tag">Linux</span>
+        <span class="tag">GitOps</span>
+        <span class="tag">Prometheus</span>
+        <span class="tag">Grafana</span>
+
+      </div>
+
+    </article>
+
+
+    <!-- PLATFORM -->
+
+    <article class="project reveal">
+
+      <div class="project-kicker">
+        Platform Engineering
+      </div>
+
+      <h3>
+        Developer platform
+      </h3>
+
+      <p>
+        Backstage-based developer portal with software catalog,
+        golden-path templates and self-service infrastructure concepts.
+      </p>
+
+
+      <div class="tags">
+
+        <span class="tag">Backstage</span>
+        <span class="tag">GitOps</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">Kubernetes</span>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     ENGINEERING PRINCIPLES
+========================================= -->
+
+<section>
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      04 / Operating philosophy
+    </div>
+
+    <h2 class="section-title">
+      How I approach infrastructure
+    </h2>
+
+  </div>
+
+
+  <div class="principles">
+
+
+    <article class="principle reveal">
+
+      <div class="principle-number">
+        01
+      </div>
+
+      <h3>
+        Automate the repeatable
+      </h3>
+
+      <p>
+        If an operation is performed repeatedly, it should become code,
+        a pipeline or a self-service workflow.
+      </p>
+
+    </article>
+
+
+    <article class="principle reveal">
+
+      <div class="principle-number">
+        02
+      </div>
+
+      <h3>
+        Observe before optimizing
+      </h3>
+
+      <p>
+        Metrics, logs and traces should establish what is actually
+        happening before infrastructure is changed.
+      </p>
+
+    </article>
+
+
+    <article class="principle reveal">
+
+      <div class="principle-number">
+        03
+      </div>
+
+      <h3>
+        Design for failure
+      </h3>
+
+      <p>
+        Reliability comes from explicit failure handling, safe
+        deployments, resource limits and documented recovery paths.
+      </p>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     SKILLS
+========================================= -->
+
+<section id="skills">
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      05 / Technical specification
+    </div>
+
+    <h2 class="section-title">
+      Skills
+    </h2>
+
+  </div>
+
+
+  <div class="skills reveal">
+
+
+    <div class="skill">
+
+      <h3>
+        Cloud
+      </h3>
+
+      <p>
+        AWS, EKS, ECS, Lambda, IAM, VPC, CloudWatch, X-Ray,
+        GuardDuty, Cost Explorer, Azure, DigitalOcean
+      </p>
+
+    </div>
+
+
+    <div class="skill">
+
+      <h3>
+        Containers & orchestration
+      </h3>
+
+      <p>
+        Docker, Kubernetes, kubeadm, CRDs, Operators, Helm
+      </p>
+
+    </div>
+
+
+    <div class="skill">
+
+      <h3>
+        Infrastructure as code
+      </h3>
+
+      <p>
+        Terraform, Terragrunt, Ansible, Bash
+      </p>
+
+    </div>
+
+
+    <div class="skill">
+
+      <h3>
+        CI/CD & GitOps
+      </h3>
+
+      <p>
+        GitHub Actions, GitLab CI, Jenkins, Azure DevOps,
+        ArgoCD, Git
+      </p>
+
+    </div>
+
+
+    <div class="skill">
+
+      <h3>
+        Observability & SRE
+      </h3>
+
+      <p>
+        Prometheus, Grafana, Loki, kube-state-metrics,
+        SLIs, SLOs, error budgets, incident response,
+        LitmusChaos
+      </p>
+
+    </div>
+
+
+    <div class="skill">
+
+      <h3>
+        Security
+      </h3>
+
+      <p>
+        Trivy, Gitleaks, Checkov, Prowler, container scanning,
+        DevSecOps
+      </p>
+
+    </div>
+
+
+    <div class="skill">
+
+      <h3>
+        Programming & automation
+      </h3>
+
+      <p>
+        Python, Go, Bash, PowerShell, CLI development
+      </p>
+
+    </div>
+
+
+    <div class="skill">
+
+      <h3>
+        Platform engineering
+      </h3>
+
+      <p>
+        Backstage, software catalogs, golden paths,
+        internal developer platforms and self-service infrastructure
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     EDUCATION
+========================================= -->
+
+<section>
+
+  <div class="section-head reveal">
+
+    <div class="eyebrow">
+      06 / Credentials
+    </div>
+
+    <h2 class="section-title">
+      Education & certifications
+    </h2>
+
+  </div>
+
+
+  <div class="records reveal">
+
+
+    <div class="record">
+
+      <div class="record-name">
+        B.Sc. Computer Science — Babcock University
+      </div>
+
+      <div class="record-date">
+        2024
+      </div>
+
+    </div>
+
+
+    <div class="record">
+
+      <div class="record-name">
+        Oracle Cloud Infrastructure DevOps Professional
+      </div>
+
+      <div class="record-date">
+        2023
+      </div>
+
+    </div>
+
+
+    <div class="record">
+
+      <div class="record-name">
+        Oracle Cloud Infrastructure AI Foundations Associate
+      </div>
+
+      <div class="record-date">
+        2025
+      </div>
+
+    </div>
+
+
+    <div class="record">
+
+      <div class="record-name">
+        NYSC Discharge Certificate
+      </div>
+
+      <div class="record-date">
+        2026
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section id="contact">
+
+  <div class="contact reveal">
+
+    <div
+      class="eyebrow"
+      style="color:#72a4ff;">
+
+      07 / Contact
+
+    </div>
+
+
+    <h2>
+      Building infrastructure?
+    </h2>
+
+
+    <p>
+      Open to DevOps, SRE and Platform Engineering opportunities.
+      Email is the fastest way to reach me.
+    </p>
+
+
+    <div class="contact-links">
+
+
+      <a
+        class="btn btn-primary"
+        href="mailto:onyedikachi0813@gmail.com">
+
+        Email me
+
+      </a>
+
+
+      <a
+        class="btn"
+        href="https://www.linkedin.com/in/onyedikachiokechukwu/"
+        target="_blank"
+        rel="noopener">
+
+        LinkedIn ↗
+
+      </a>
+
+
+      <a
+        class="btn"
+        href="https://github.com/kaacchhiii"
+        target="_blank"
+        rel="noopener">
+
+        GitHub ↗
+
+      </a>
+
+
+      <a
+        class="btn"
+        href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf">
+
+        Résumé PDF
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+
+    <div class="footer-note">
+
+      © 2026 Okechukwu Joshua Onyedikachi
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a
+        href="mailto:onyedikachi0813@gmail.com">
+
+        email
+
+      </a>
+
+
+      <a
+        href="https://omo.colobus-fir.ts.net/status/portfolio"
+        target="_blank"
+        rel="noopener">
+
+        status
+
+      </a>
+
+
+      <a
+        href="https://github.com/kaacchhiii"
+        target="_blank"
+        rel="noopener">
+
+        github
+
+      </a>
+
+
+      <a
+        href="https://www.linkedin.com/in/onyedikachiokechukwu/"
+        target="_blank"
+        rel="noopener">
+
+        linkedin
+
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
 
 <script>
-  // Boot line — respects reduced motion
-  (function(){
-    var el = document.getElementById('bootline');
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var line = '$ whoami → devops/sre, shipping since 2022';
-    if(reduce){ el.textContent = line; return; }
-    var i = 0;
-    function type(){
-      if(i <= line.length){
-        el.innerHTML = line.slice(0,i) + '<span class="cursor"></span>';
-        i++;
-        setTimeout(type, 22);
-      } else {
-        el.innerHTML = line + '<span class="cursor"></span>';
-      }
-    }
-    type();
-  })();
 
-  // Spine node activation on scroll
-  (function(){
-    var nodes = document.querySelectorAll('[data-node]');
-    if(!('IntersectionObserver' in window)){
-      nodes.forEach(function(n){ n.classList.add('active'); });
-      return;
+/* =========================================
+   TERMINAL TYPEWRITER
+========================================= */
+
+(function(){
+
+  const element =
+    document.getElementById("terminalText");
+
+  const text =
+    "$ whoami → devops / sre / platform engineering";
+
+  const reduceMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+  if(reduceMotion){
+
+    element.textContent = text;
+
+    return;
+
+  }
+
+  let index = 0;
+
+  function type(){
+
+    if(index <= text.length){
+
+      element.textContent =
+        text.slice(0,index) + "▌";
+
+      index++;
+
+      setTimeout(type,22);
+
+    }else{
+
+      element.textContent = text;
+
     }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){ entry.target.classList.add('active'); }
-      });
-    }, { rootMargin: '0px 0px -30% 0px', threshold: 0.1 });
-    nodes.forEach(function(n){ io.observe(n); });
-  })();
+
+  }
+
+  type();
+
+})();
+
+
+/* =========================================
+   SCROLL PROGRESS
+========================================= */
+
+(function(){
+
+  const progress =
+    document.getElementById("progress");
+
+  function update(){
+
+    const scrollTop =
+      window.scrollY;
+
+    const height =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    const percentage =
+      height > 0
+        ? (scrollTop / height) * 100
+        : 0;
+
+    progress.style.width =
+      percentage + "%";
+
+  }
+
+  window.addEventListener(
+    "scroll",
+    update,
+    {passive:true}
+  );
+
+  update();
+
+})();
+
+
+/* =========================================
+   REVEAL ON SCROLL
+========================================= */
+
+(function(){
+
+  const items =
+    document.querySelectorAll(".reveal");
+
+  if(
+    !("IntersectionObserver" in window) ||
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+  ){
+
+    items.forEach(item =>
+      item.classList.add("visible")
+    );
+
+    return;
+
+  }
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold:.08,
+        rootMargin:"0px 0px -50px 0px"
+      }
+    );
+
+  items.forEach(item =>
+    observer.observe(item)
+  );
+
+})();
+
+
+/* =========================================
+   MOBILE NAV
+========================================= */
+
+(function(){
+
+  const button =
+    document.querySelector(".mobile-menu");
+
+  const nav =
+    document.querySelector(".nav-links");
+
+  if(!button || !nav) return;
+
+
+  button.addEventListener(
+    "click",
+    () => {
+
+      const open =
+        nav.style.display === "flex";
+
+
+      nav.style.display =
+        open ? "" : "flex";
+
+
+      if(!open){
+
+        nav.style.position =
+          "absolute";
+
+        nav.style.top =
+          "64px";
+
+        nav.style.left =
+          "16px";
+
+        nav.style.right =
+          "16px";
+
+        nav.style.padding =
+          "16px";
+
+        nav.style.flexDirection =
+          "column";
+
+        nav.style.alignItems =
+          "flex-start";
+
+        nav.style.background =
+          "#0f1d31";
+
+        nav.style.border =
+          "1px solid rgba(148,163,184,.15)";
+
+        nav.style.borderRadius =
+          "10px";
+
+        nav.style.boxShadow =
+          "0 15px 40px rgba(0,0,0,.35)";
+
+      }
+
+    }
+  );
+
+})();
+
+
+/* =========================================
+   CLOSE MOBILE NAV AFTER CLICK
+========================================= */
+
+(function(){
+
+  const links =
+    document.querySelectorAll(
+      ".nav-links a"
+    );
+
+  const nav =
+    document.querySelector(".nav-links");
+
+  links.forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        if(
+          window.innerWidth <= 700
+        ){
+
+          nav.style.display = "";
+
+        }
+
+      }
+    );
+
+  });
+
+})();
+
 </script>
 
 </body>
