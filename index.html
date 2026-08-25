@@ -1,86 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Okechukwu Onyedikachi · DevOps / SRE</title>
-<meta name="description" content="DevOps/SRE portfolio: a production-discipline homelab — SLOs with error budgets, pull-based GitOps, 21 containers on 3.7 GB RAM, $0/month.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Okechukwu Joshua Onyedikachi — DevOps Engineer / SRE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#010409;--panel:#0d1117;--line:#21262d;--txt:#e6edf3;--dim:#8b949e;--acc:#3fb950;--warn:#d29922}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--txt);font:16px/1.6 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
-  .wrap{max-width:880px;margin:0 auto;padding:48px 24px 80px}
-  h1{font-size:1.9rem;letter-spacing:-.02em}
-  h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--dim);margin:44px 0 14px;border-bottom:1px solid var(--line);padding-bottom:8px}
-  p.sub{color:var(--dim);margin-top:10px;max-width:62ch}
-  .pill{display:inline-block;background:#12261e;color:#7ee2b8;border:1px solid #1f4d33;border-radius:999px;padding:2px 12px;font-size:.78rem;margin:14px 6px 0 0}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-  a.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;color:var(--txt);text-decoration:none;transition:border-color .15s}
-  a.card:hover{border-color:var(--acc)}
-  a.card .t{font-weight:600;margin-bottom:4px}
-  a.card .d{color:var(--dim);font-size:.86rem;line-height:1.45}
-  img{max-width:100%;border:1px solid var(--line);border-radius:10px;display:block;margin-bottom:14px}
-  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-  footer{margin-top:56px;color:var(--dim);font-size:.82rem;border-top:1px solid var(--line);padding-top:18px}
-  code{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:.85em}
+  :root{
+    --bg:#F2F5F9;
+    --bg-dot: rgba(43,95,224,0.10);
+    --paper:#FFFFFF;
+    --ink:#10151C;
+    --ink-soft:#4E5A6B;
+    --ink-faint:#8792A2;
+    --line:#D7DEE8;
+    --line-strong:#B9C4D6;
+    --accent:#2B5FE0;
+    --accent-soft:#E7EDFC;
+    --accent-ink:#1B3E96;
+    --status-green:#1C9A5B;
+    --status-green-soft:#E4F6ED;
+    --status-amber:#C98A2C;
+    --status-amber-soft:#FBF0DE;
+    --radius:10px;
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background-color:var(--bg);
+    background-image: radial-gradient(var(--bg-dot) 1px, transparent 1px);
+    background-size: 22px 22px;
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--ink);
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(242,245,249,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:60px;
+  }
+  .nav-id{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .nav-links{
+    display:flex; gap:26px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+  }
+  .nav-links a{color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--accent); text-decoration:none;}
+  @media (max-width:640px){ .nav-links{display:none;} }
+
+  /* ---------- SPINE (signature element) ---------- */
+  .spine-col{
+    position:relative;
+    padding-left:34px;
+    border-left:1.5px solid var(--line-strong);
+    margin-left:6px;
+  }
+  @media (max-width:640px){
+    .spine-col{padding-left:22px; margin-left:2px;}
+  }
+  .node{
+    position:absolute;
+    left:-6.5px;
+    width:11px; height:11px;
+    border-radius:50%;
+    background:var(--bg);
+    border:1.5px solid var(--line-strong);
+    transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+  }
+  .node.active{
+    border-color:var(--status-green);
+    background:var(--status-green);
+    box-shadow:0 0 0 4px var(--status-green-soft);
+  }
+  .spine-block{position:relative; padding-bottom:56px;}
+  .spine-block:last-child{padding-bottom:0;}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:64px 0 40px;}
+  .boot-line{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--status-green);
+    margin-bottom:18px;
+    min-height:18px;
+  }
+  .boot-line .cursor{
+    display:inline-block; width:7px; height:14px;
+    background:var(--status-green);
+    margin-left:2px;
+    vertical-align:-2px;
+    animation:blink 1s steps(1) infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+
+  h1.name{
+    font-size:clamp(34px, 5.4vw, 54px);
+    line-height:1.05;
+  }
+  .role-line{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    color:var(--accent-ink);
+    background:var(--accent-soft);
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:6px;
+    margin-top:14px;
+  }
+  .summary{
+    max-width:640px;
+    margin-top:22px;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+
+  .stat-bar{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    margin-top:32px;
+  }
+  .stat{
+    background:var(--paper);
+    padding:16px 16px;
+  }
+  .stat .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.04em;
+    color:var(--ink-faint);
+    text-transform:uppercase;
+  }
+  .stat .value{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:20px;
+    font-weight:600;
+    margin-top:4px;
+  }
+  .stat .value a{font-size:15px; font-weight:500;}
+  @media (max-width:640px){
+    .stat-bar{grid-template-columns:repeat(2,1fr);}
+  }
+
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:28px;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    padding:10px 16px;
+    border-radius:8px;
+    border:1px solid var(--line-strong);
+    background:var(--paper);
+    color:var(--ink);
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:hover{text-decoration:none; border-color:var(--accent); color:var(--accent);}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .btn.primary:hover{background:var(--accent-ink); color:#fff;}
+  .dot{width:7px; height:7px; border-radius:50%; background:var(--status-green); display:inline-block;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:52px 0;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:8px;
+  }
+  h2.section-title{font-size:26px; margin-bottom:28px;}
+
+  /* ---------- EXPERIENCE ---------- */
+  .job{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .job-head{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;
+    margin-bottom:10px;
+  }
+  .job-title{font-size:17px; font-weight:600; font-family:'Space Grotesk',sans-serif;}
+  .job-org{color:var(--accent-ink);}
+  .job-meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+    white-space:nowrap;
+  }
+  .job ul{margin:0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
+  .job li{margin-bottom:6px;}
+  .job li:last-child{margin-bottom:0;}
+
+  /* ---------- FEATURED PROJECT ---------- */
+  .project-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px;
+  }
+  .project-head{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:14px; margin-bottom:6px;}
+  .project-title{font-size:22px;}
+  .status-pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    padding:4px 10px;
+    border-radius:20px;
+    background:var(--status-green-soft);
+    color:var(--status-green);
+    display:inline-flex; align-items:center; gap:6px;
+    white-space:nowrap;
+  }
+  .status-pill .dot{background:var(--status-green);}
+  .project-desc{color:var(--ink-soft); margin:14px 0 22px; max-width:70ch;}
+
+  .metric-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-bottom:24px;
+  }
+  @media (max-width:720px){ .metric-grid{grid-template-columns:1fr;} }
+  .metric{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:14px 16px;
+    background:var(--bg);
+  }
+  .metric .k{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.04em;}
+  .metric .v{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:18px; margin-top:4px;}
+  .metric .sub{font-size:12.5px; color:var(--ink-faint); margin-top:2px;}
+
+  .slo-table{width:100%; border-collapse:collapse; margin-bottom:24px; font-size:14px;}
+  .slo-table th{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; text-transform:uppercase; letter-spacing:0.04em;
+    text-align:left; color:var(--ink-faint); font-weight:500;
+    padding:8px 10px; border-bottom:1px solid var(--line-strong);
+  }
+  .slo-table td{padding:10px 10px; border-bottom:1px solid var(--line); vertical-align:top;}
+  .slo-table td.placeholder{color:var(--ink-faint); font-style:italic;}
+
+  .decision-log{border-left:2px solid var(--accent-soft); padding-left:16px; margin-bottom:22px;}
+  .decision-log .entry{margin-bottom:14px;}
+  .decision-log .entry:last-child{margin-bottom:0;}
+  .decision-log .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:11px;
+    color:var(--accent-ink); background:var(--accent-soft);
+    padding:2px 7px; border-radius:5px; margin-right:8px;
+  }
+  .decision-log p{margin:6px 0 0; color:var(--ink-soft); font-size:14px;}
+
+  .shot-slot{
+    border:1.5px dashed var(--line-strong);
+    border-radius:8px;
+    padding:26px;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-faint);
+    background:var(--bg);
+  }
+  .shot-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:640px){ .shot-row{grid-template-columns:1fr;} }
+  .shot-row img{
+    width:100%;
+    border:1px solid var(--line);
+    border-radius:8px;
+    display:block;
+    background:#fff;
+  }
+  .shot-caption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-faint);
+    margin-top:6px;
+  }
+
+  /* ---------- SECOND PROJECT ---------- */
+  .project-card.compact{padding:22px 24px;}
+  .project-card.compact ul{margin:12px 0 0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
+  .project-card.compact li{margin-bottom:6px;}
+
+  /* ---------- SKILLS ---------- */
+  .skill-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px 32px;}
+  @media (max-width:720px){ .skill-grid{grid-template-columns:1fr;} }
+  .skill-group{border-top:1px solid var(--line-strong); padding-top:10px;}
+  .skill-group h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; text-transform:uppercase; letter-spacing:0.04em;
+    color:var(--ink-faint); font-weight:500; margin-bottom:8px;
+  }
+  .skill-group p{margin:0; font-size:14px; color:var(--ink-soft);}
+
+  /* ---------- EDU / CERT ---------- */
+  .edu-row{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid var(--line); font-size:14.5px;}
+  .edu-row:last-child{border-bottom:none;}
+  .edu-row .what{font-weight:500;}
+  .edu-row .when{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-faint); white-space:nowrap;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:52px 0 80px;}
+  .contact-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:30px 28px;
+    text-align:left;
+  }
+  .contact-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px;}
+  .footer-note{
+    margin-top:36px; font-family:'IBM Plex Mono', monospace; font-size:12px;
+    color:var(--ink-faint); display:flex; align-items:center; gap:8px;
+  }
 </style>
 </head>
 <body>
+
+<nav>
+  <div class="wrap">
+    <span class="nav-id mono">okechukwu.dev</span>
+    <div class="nav-links">
+      <a href="#experience">experience</a>
+      <a href="#homelab">homelab</a>
+      <a href="#projects">projects</a>
+      <a href="#skills">skills</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
 <div class="wrap">
-  <h1>Okechukwu Joshua Onyedikachi</h1>
-  <p class="sub">DevOps / SRE. I run a production-discipline homelab: SLOs with error budgets, a pull-based GitOps pipeline, honest postmortems — on hardware nobody else would dare.</p>
-  <span class="pill">$0/month</span><span class="pill">21 containers</span><span class="pill">i3-3220 · 3.7 GiB RAM</span><span class="pill">SLOs + error budgets</span>
+<div class="spine-col">
 
-  <h2>Live</h2>
-  <div class="cards">
-    <a class="card" href="https://omo.colobus-fir.ts.net/status/portfolio">
-      <div class="t">● Public status page</div>
-      <div class="d">Curated Uptime Kuma page — six generic probes across Media Delivery, Automation Pipeline, Infrastructure. Scoped to exactly one public route.</div>
-    </a>
-    <a class="card" href="https://github.com/kaacchhiii/homelab">
-      <div class="t">homelab — the repo</div>
-      <div class="d">Compose + k8s manifests, SLO definitions, runbook, postmortems. Config in git, secrets in Vaultwarden.</div>
-    </a>
+  <!-- HERO -->
+  <div class="spine-block" id="node-hero">
+    <span class="node" data-node></span>
+    <header class="hero">
+      <div class="boot-line mono" id="bootline">&nbsp;</div>
+      <h1 class="name">Okechukwu Joshua Onyedikachi</h1>
+      <span class="role-line mono">DevOps Engineer / SRE</span>
+      <p class="summary">
+        I build and operate infrastructure that stays up under real load, across FinTech
+        and startup environments and on hardware I own myself. CI/CD, Kubernetes, and
+        cloud-native systems on AWS and Azure by day; SLOs, error budgets, and incident
+        response practiced end-to-end on a homelab I run in production, by night.
+      </p>
+
+      <div class="stat-bar">
+        <div class="stat">
+          <div class="label mono">Live status</div>
+          <div class="value"><a href="https://omo.colobus-fir.ts.net/status/portfolio" data-status-link>view uptime →</a></div>
+        </div>
+        <div class="stat">
+          <div class="label mono">Monthly infra cost</div>
+          <div class="value">$0</div>
+        </div>
+        <div class="stat">
+          <div class="label mono">Services in prod</div>
+          <div class="value">21</div>
+        </div>
+        <div class="stat">
+          <div class="label mono">Shipping since</div>
+          <div class="value">2022</div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn primary" href="https://omo.colobus-fir.ts.net/status/portfolio" data-status-link><span class="dot"></span>Live infrastructure status</a>
+        <a class="btn" href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf">Download résumé (PDF)</a>
+        <a class="btn" href="https://github.com/kaacchhiii" data-github-link>GitHub</a>
+      </div>
+    </header>
   </div>
 
-  <h2>Case study</h2>
-  <p class="sub">The full narrative lives in the repo's <a href="https://github.com/kaacchhiii/homelab#readme" style="color:var(--acc)">README</a> — problem, architecture, decisions, what broke, what's next. Highlights:</p>
-  <div class="cards" style="margin-top:14px">
-    <a class="card" href="https://github.com/kaacchhiii/homelab#slos-and-uptime">
-      <div class="t">SLOs &amp; error budgets</div>
-      <div class="d">Three SLOs sized from a 43,200-minute month, burn-rate alerts, budget policy enforced socially and in Prometheus rules.</div>
-    </a>
-    <a class="card" href="https://github.com/kaacchhiii/homelab#resource-efficiency">
-      <div class="t">Resource engineering</div>
-      <div class="d">Per-container memory caps, Jellyfin transcode fencing, swappiness tuned to 10, swap-pressure alerting on measured baselines.</div>
-    </a>
-    <a class="card" href="https://github.com/kaacchhiii/homelab#incidents">
-      <div class="t">Incidents</div>
-      <div class="d">Real postmortems only: monitoring blind-spot audit, sudo lockout recovered through the GitOps pipeline itself.</div>
-    </a>
-    <a class="card" href="https://github.com/kaacchhiii/homelab#gitops-and-security-decisions">
-      <div class="t">GitOps &amp; security</div>
-      <div class="d">Pull-poller over self-hosted runners, one-route public surface, key-only SSH, procedural secret hygiene.</div>
-    </a>
+  <!-- EXPERIENCE -->
+  <div class="spine-block" id="experience">
+    <span class="node" data-node></span>
+    <section>
+      <div class="eyebrow mono">Deployment log</div>
+      <h2 class="section-title">Experience</h2>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+
+        <div class="job">
+          <div class="job-head">
+            <div><span class="job-title">Platform Engineer</span> <span class="job-org">— Odera Training Academy</span></div>
+            <div class="job-meta mono">12/2025 – 06/2026 · Remote · Contract, concurrent</div>
+          </div>
+          <ul>
+            <li>Designed a multi-region web application to deliver lessons and exercises to an international audience.</li>
+            <li>Automated student server setup with Terraform and scripts; currently testing with a pilot group.</li>
+            <li>Built CLI tools and documentation to help learners configure SSH, firewalls, and runtimes on remote servers.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div><span class="job-title">DevOps Engineer</span> <span class="job-org">— First Bank of Nigeria</span></div>
+            <div class="job-meta mono">02/2025 – 01/2026 · Lagos, Nigeria · Contract, concurrent</div>
+          </div>
+          <ul>
+            <li>Led weekly DevSecOps training sessions with live Q&A on container security scanning and static analysis; built the roadmap that added security gates across dev, staging, and testing pipelines.</li>
+            <li>Authored release workflow documentation covering approval gates, environment promotion, and rollback procedures, which became the production release standard.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div><span class="job-title">DevOps Engineer</span> <span class="job-org">— Techwings Global LLC</span></div>
+            <div class="job-meta mono">08/2024 – 07/2025 · Remote · Contract, concurrent</div>
+          </div>
+          <ul>
+            <li>Ensured zero-downtime deployments by implementing auto-scaling and capacity planning for Python microservices on DigitalOcean.</li>
+            <li>Resolved throughput issues by fine-tuning Redis and worker configurations, meeting targets without additional infrastructure or cost.</li>
+            <li>Addressed Terraform state drift by auditing and aligning load balancers and compute nodes with infrastructure code.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div><span class="job-title">Junior DevOps Engineer</span> <span class="job-org">— Shuttle9ja</span></div>
+            <div class="job-meta mono">12/2022 – 04/2024 · Ogun, Nigeria · Part-time</div>
+          </div>
+          <ul>
+            <li>Built the team's first CI/CD pipeline with GitLab CI, automating SSH deployments to reduce errors and accelerate delivery.</li>
+            <li>Deployed Prometheus and Grafana, shifting the team from reactive monitoring to real-time system health visibility.</li>
+            <li>Prevented crash cycles during peak load by enforcing CPU and memory limits on Docker containers.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
   </div>
 
-  <h2>Architecture &amp; evidence</h2>
-  <img src="assets/architecture.svg" alt="Homelab architecture diagram">
-  <div class="grid2">
-    <img src="assets/error-budgets.png" alt="Error budget remaining per SLO">
-    <img src="assets/swap-trend.png" alt="Swap usage trend, 7 days">
-  </div>
-  <p class="sub">Snapshots rendered daily from live Prometheus queries by a systemd timer — Grafana itself is never exposed publicly.</p>
+  <!-- FEATURED PROJECT: HOMELAB -->
+  <div class="spine-block" id="homelab">
+    <span class="node" data-node></span>
+    <section>
+      <div class="eyebrow mono">Featured project · running in production right now</div>
+      <h2 class="section-title">Self-Hosted Infrastructure Lab</h2>
 
-  <h2>Résumé</h2>
-  <div class="cards">
-    <a class="card" href="assets/Okechukwu_Joshua_Onyedikachi_Resume.pdf">
-      <div class="t">Résumé (PDF)</div>
-      <div class="d">Okechukwu_Joshua_Onyedikachi_Resume.pdf</div>
-    </a>
+      <div class="project-card">
+        <div class="project-head">
+          <div class="project-title">A production system on decade-old hardware</div>
+          <a class="status-pill mono" href="https://omo.colobus-fir.ts.net/status/portfolio"><span class="dot"></span>live · public uptime page</a>
+        </div>
+        <p class="project-desc">
+          21 containerized services running on a single Ubuntu box (Intel i3-3220, 3.7GB RAM),
+          operated with the same discipline I'd bring to a paid environment: defined SLOs and
+          error budgets, resource guardrails on every container, a GitOps pipeline with a
+          documented security decision, and a real incident log instead of a hypothetical one.
+          Full narrative in the <a href="https://github.com/kaacchhiii/homelab#readme">README case study</a>.
+        </p>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <div class="k mono">Monthly cost</div>
+            <div class="v">$0</div>
+            <div class="sub">self-hosted, no cloud spend</div>
+          </div>
+          <div class="metric">
+            <div class="k mono">Hardware</div>
+            <div class="v">i3-3220 · 3.7GB RAM</div>
+            <div class="sub">2012-era, mem-limited by design</div>
+          </div>
+          <div class="metric">
+            <div class="k mono">Services</div>
+            <div class="v">21 containers</div>
+            <div class="sub">all with explicit mem/cpu limits</div>
+          </div>
+        </div>
+
+        <div class="eyebrow mono" style="margin-top:4px;">SLOs &amp; error budgets</div>
+        <table class="slo-table">
+          <thead>
+            <tr><th>Objective</th><th>Target</th><th>Current</th><th>Error budget</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gateway availability <span class="mono" style="color:var(--ink-faint);">(SLO-1)</span></td>
+              <td>≥ 99.5% successful probes, 30d</td>
+              <td><a href="https://omo.colobus-fir.ts.net/status/portfolio">live on status page</a></td>
+              <td>216 min / month</td>
+            </tr>
+            <tr>
+              <td>Media responsiveness <span class="mono" style="color:var(--ink-faint);">(SLO-2)</span></td>
+              <td>≥ 99% probes &lt; 2000 ms, 30d</td>
+              <td><a href="https://omo.colobus-fir.ts.net/status/portfolio">live on status page</a></td>
+              <td>432 min / month</td>
+            </tr>
+            <tr>
+              <td>Pipeline health <span class="mono" style="color:var(--ink-faint);">(SLO-3)</span></td>
+              <td>≥ 99% Prometheus targets up, 30d</td>
+              <td><a href="https://github.com/kaacchhiii/homelab/blob/main/SLO.md">defined in SLO.md</a></td>
+              <td>432 min / month</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="eyebrow mono">Architecture</div>
+        <img src="assets/architecture.svg" alt="Homelab architecture: pull-based GitOps, isolated public status route, private workloads" style="width:100%; border:1px solid var(--line); border-radius:8px; display:block; margin-bottom:24px; background:#010409;">
+
+        <div class="eyebrow mono">Decisions &amp; reasoning</div>
+        <div class="decision-log">
+          <div class="entry">
+            <span class="tag mono">GitOps</span>
+            <span style="font-weight:500;">Pull-based deploy poller instead of a self-hosted GitHub Actions runner</span>
+            <p>The repo is public; a self-hosted runner on a public repo is a known code-execution risk via fork PRs. A systemd timer polls the repo and applies changes locally instead, so nothing on GitHub's side ever reaches the box directly.</p>
+          </div>
+          <div class="entry">
+            <span class="tag mono">Reliability</span>
+            <span style="font-weight:500;">Resource guardrails on every service, not just the risky ones</span>
+            <p>Explicit mem/cpu limits across all 21 containers, transcode fencing on the media service, and log rotation, after an early audit showed the box was already touching swap under normal load.</p>
+          </div>
+          <div class="entry">
+            <span class="tag mono">Incident</span>
+            <span style="font-weight:500;">Swap usage quadrupled overnight — investigated, not ignored</span>
+            <p>Traced with vmstat rather than assumed: confirmed cold-page eviction, not active thrashing, then turned it into a graphed alert condition instead of a manual thing to remember to check.</p>
+          </div>
+        </div>
+
+        <div class="eyebrow mono">Dashboard exports</div>
+        <div class="shot-row">
+          <div>
+            <img src="assets/error-budgets.png" alt="Error budget remaining per SLO, rendered from live Prometheus queries">
+            <div class="shot-caption mono">error budgets remaining · rendered daily from PromQL</div>
+          </div>
+          <div>
+            <img src="assets/swap-trend.png" alt="Swap usage trend over 7 days">
+            <div class="shot-caption mono">swap trend · alert = swap rising while available &lt; 1 GiB</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <footer>Built as a static hub — no trackers, no build step, GitHub Pages. The stack behind the status page runs on a 2012 HP Compaq 8300 SFF.</footer>
+  <!-- SECOND PROJECT -->
+  <div class="spine-block" id="projects">
+    <span class="node" data-node></span>
+    <section>
+      <div class="eyebrow mono">Also shipped</div>
+      <h2 class="section-title">Kubernetes, Cloud &amp; SRE Engineering Program</h2>
+      <div class="project-card compact">
+        <div class="job-head">
+          <div class="project-title" style="font-size:17px;">Production-grade cluster, built from scratch</div>
+          <div class="job-meta mono">05/2026 – Present</div>
+        </div>
+        <ul>
+          <li>Built a Kubernetes cluster from scratch (kubeadm on Kind) with HPA/VPA, PodDisruptionBudgets, and rolling, blue-green, and canary deployment strategies.</li>
+          <li>Deployed a full observability stack (Prometheus, Grafana, Loki, kube-state-metrics) with Trivy image scanning in the deploy workflow.</li>
+          <li>Built a GitOps delivery platform on ArgoCD with PR-based multi-environment promotion, plus a Backstage developer portal with a software catalog and golden-path templates.</li>
+          <li>Modularized Terraform with Terragrunt (remote state, state locking), added Checkov policy scanning and Gitleaks secret scanning to every commit.</li>
+          <li>Deployed to AWS (EKS/ECS) with least-privilege IAM and VPC design; ran Prowler and remediated findings across IAM, S3, and networking.</li>
+          <li>Defined SLIs/SLOs and error budgets, ran chaos experiments with LitmusChaos, and wrote ADRs and runbooks for blameless post-mortems.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="spine-block" id="skills">
+    <span class="node" data-node></span>
+    <section>
+      <div class="eyebrow mono">Spec sheet</div>
+      <h2 class="section-title">Skills</h2>
+      <div class="skill-grid">
+        <div class="skill-group"><h3>Containerization</h3><p>Docker, Kubernetes (cluster architecture, CRDs, Operators, kubeadm), Helm</p></div>
+        <div class="skill-group"><h3>CI/CD &amp; automation</h3><p>Azure DevOps (YAML pipelines), GitHub Actions, Jenkins, GitLab CI, ArgoCD, Git</p></div>
+        <div class="skill-group"><h3>Cloud platforms</h3><p>AWS (EKS, ECS, Lambda, IAM, VPC, CloudWatch, X-Ray, GuardDuty, Cost Explorer), Azure (DevOps, Monitor), DigitalOcean</p></div>
+        <div class="skill-group"><h3>Scripting &amp; automation</h3><p>Python (automation/tooling, CLI design with Click), Go, Bash, PowerShell</p></div>
+        <div class="skill-group"><h3>Observability &amp; SRE</h3><p>Prometheus, Grafana, Loki, kube-state-metrics, Azure Monitor, CA UIM, ManageEngine, SLIs/SLOs, error budgets, chaos engineering (LitmusChaos)</p></div>
+        <div class="skill-group"><h3>Infrastructure as code</h3><p>Terraform (modules, remote state, state locking), Terragrunt, Ansible, Bash scripting</p></div>
+        <div class="skill-group"><h3>Security &amp; compliance</h3><p>Trivy, Gitleaks, Checkov, Prowler, container/image scanning, DevSecOps</p></div>
+        <div class="skill-group"><h3>Practices</h3><p>GitOps, DevSecOps, incident management, blameless post-mortems, cost optimization</p></div>
+        <div class="skill-group"><h3>Platform engineering</h3><p>Backstage (software catalog, golden-path templates), self-service infrastructure, internal developer platforms</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="spine-block">
+    <span class="node" data-node></span>
+    <section>
+      <div class="eyebrow mono">Record</div>
+      <h2 class="section-title">Education &amp; certificates</h2>
+      <div class="edu-row"><span class="what">B.Sc. Computer Science — Babcock University</span><span class="when mono">2024</span></div>
+      <div class="edu-row"><span class="what">Oracle Cloud Infrastructure (OCI) DevOps Professional</span><span class="when mono">2023</span></div>
+      <div class="edu-row"><span class="what">Oracle Cloud Infrastructure AI Foundations Associate</span><span class="when mono">2025</span></div>
+      <div class="edu-row"><span class="what">NYSC Discharge Certificate</span><span class="when mono">2026</span></div>
+    </section>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="spine-block" id="contact">
+    <span class="node" data-node></span>
+    <footer>
+      <div class="eyebrow mono">Reach me</div>
+      <div class="contact-card">
+        <h2 class="section-title" style="margin-bottom:6px;">Let's talk</h2>
+        <p style="color:var(--ink-soft); margin:6px 0 0;">Open to DevOps and SRE roles. Fastest way to reach me is email.</p>
+        <div class="contact-links">
+          <a class="btn" href="mailto:onyedikachi0813@gmail.com">onyedikachi0813@gmail.com</a>
+          <a class="btn" href="tel:+2349056105963">+234 905 610 5963</a>
+          <a class="btn" href="https://github.com/kaacchhiii" data-github-link>GitHub</a>
+          <a class="btn primary" href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf">Download résumé</a>
+        </div>
+      </div>
+      <div class="footer-note"><span class="dot"></span> static hub — no trackers, no build step; every number above comes from live Prometheus queries</div>
+    </footer>
+  </div>
+
 </div>
+</div>
+
+<script>
+  // Boot line — respects reduced motion
+  (function(){
+    var el = document.getElementById('bootline');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var line = '$ whoami → devops/sre, shipping since 2022';
+    if(reduce){ el.textContent = line; return; }
+    var i = 0;
+    function type(){
+      if(i <= line.length){
+        el.innerHTML = line.slice(0,i) + '<span class="cursor"></span>';
+        i++;
+        setTimeout(type, 22);
+      } else {
+        el.innerHTML = line + '<span class="cursor"></span>';
+      }
+    }
+    type();
+  })();
+
+  // Spine node activation on scroll
+  (function(){
+    var nodes = document.querySelectorAll('[data-node]');
+    if(!('IntersectionObserver' in window)){
+      nodes.forEach(function(n){ n.classList.add('active'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('active'); }
+      });
+    }, { rootMargin: '0px 0px -30% 0px', threshold: 0.1 });
+    nodes.forEach(function(n){ io.observe(n); });
+  })();
+</script>
+
 </body>
 </html>
