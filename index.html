@@ -3,5634 +3,810 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%2307111f'/%3E%3Cpath%20d='M18%2024l10%208-10%208'%20fill='none'%20stroke='%2338d9ff'%20stroke-width='4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cpath%20d='M34%2040h12'%20stroke='%234f8cff'%20stroke-width='4'%20stroke-linecap='round'/%3E%3C/svg%3E">
-
-<script>document.documentElement.classList.add("js");</script>
-
-<meta name="description"
-      content="Okechukwu Joshua Onyedikachi — DevOps Engineer and SRE specializing in Kubernetes, AWS, Terraform, CI/CD, observability and cloud infrastructure.">
-
+<meta name="description" content="Okechukwu Joshua Onyedikachi — DevOps Engineer and SRE specializing in Kubernetes, AWS, Terraform, CI/CD, observability and cloud infrastructure.">
 <meta name="author" content="Okechukwu Joshua Onyedikachi">
-
-<title>Okechukwu Joshua Onyedikachi | DevOps Engineer & SRE</title>
-
-
-
-
+<title>Okechukwu Joshua Onyedikachi | DevOps Engineer &amp; SRE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-
-@font-face{
-  font-family:"IBM Plex Mono";
-  font-style:normal;
-  font-weight:400;
-  font-display:optional;
-  src:url("fonts/ibm-plex-mono-400.woff2") format("woff2");
-}
-
-@font-face{
-  font-family:"IBM Plex Mono";
-  font-style:normal;
-  font-weight:500;
-  font-display:optional;
-  src:url("fonts/ibm-plex-mono-500.woff2") format("woff2");
-}
-
-@font-face{
-  font-family:"IBM Plex Mono";
-  font-style:normal;
-  font-weight:600;
-  font-display:optional;
-  src:url("fonts/ibm-plex-mono-600.woff2") format("woff2");
-}
-
-@font-face{
-  font-family:"Space Grotesk";
-  font-style:normal;
-  font-weight:600;
-  font-display:optional;
-  src:url("fonts/space-grotesk-600.woff2") format("woff2");
-}
-
 :root{
-  --bg:#07111f;
-  --bg-2:#0b1627;
-
-  --paper:#0f1d31;
-  --paper-2:#13243a;
-
-  --ink:#f4f8ff;
-  --ink-soft:#aebbd0;
-  --ink-faint:#708199;
-
-  --line:rgba(148,163,184,.15);
-  --line-strong:rgba(148,163,184,.28);
-
-  --accent:#4f8cff;
-  --accent-2:#6ea8ff;
-  --accent-soft:rgba(79,140,255,.12);
-
-  --cyan:#38d9ff;
-  --cyan-soft:rgba(56,217,255,.10);
-
-  --green:#36d98b;
-  --green-soft:rgba(54,217,139,.11);
-
-  --amber:#f3b85b;
-  --amber-soft:rgba(243,184,91,.10);
-
-  --dark:#050b14;
-  --dark-2:#0a1422;
-
-  --radius:14px;
+  --desk:#e4d9bf;
+  --desk-deep:#d5c5a2;
+  --glow-a:rgba(196,35,26,.11);
+  --glow-b:rgba(255,159,28,.17);
+  --paper:#f6f0e1;
+  --paper-2:#efe6d2;
+  --ink:#17130e;
+  --muted:#4b4337;
+  --red:#c4231a;
+  --red-deep:#9e1a12;
+  --thread:#c4231a;
+  --line:rgba(23,19,14,.16);
+  --font-display:"Anton",Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;
+  --font-body:"Old Standard TT",Georgia,"Times New Roman",serif;
   --max:1120px;
+  --torn:polygon(0% 1%,4% .3%,8% 1.2%,13% .2%,18% .9%,24% .1%,30% 1.1%,37% .4%,44% .8%,51% .2%,58% 1.2%,65% .5%,72% .9%,79% .2%,86% 1.1%,92% .4%,97% .9%,100% .2%,99.4% 8%,100% 18%,99.6% 30%,100% 41%,99.5% 52%,100% 63%,99.7% 75%,100% 86%,99.4% 94%,100% 99.8%,95% 99.1%,90% 99.9%,85% 99.2%,79% 99.8%,73% 99.1%,66% 99.9%,60% 99.3%,53% 99.8%,46% 99.2%,39% 99.9%,32% 99.3%,25% 99.8%,18% 99.2%,12% 99.9%,6% 99.2%,0% 99.8%);
+  --tape-cut:polygon(1% 12%,5% 0,96% 5%,100% 0,99% 88%,95% 100%,4% 95%,0 100%);
+  --shadow:0 12px 18px rgba(23,19,14,.17);
 }
-
-*{
-  box-sizing:border-box;
+@media (prefers-color-scheme:dark){
+  :root{
+    --desk:#150b3d;
+    --desk-deep:#0d0629;
+    --glow-a:rgba(180,37,107,.24);
+    --glow-b:rgba(0,168,143,.18);
+    --thread:#ffe14d;
+    --line:rgba(246,240,225,.12);
+    --shadow:0 12px 20px rgba(0,0,0,.35);
+  }
 }
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
+  min-width:320px;
+  overflow-x:hidden;
   color:var(--ink);
-
-  background:
-    radial-gradient(
-      circle at 10% 0%,
-      rgba(79,140,255,.16),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 18%,
-      rgba(56,217,255,.08),
-      transparent 25%
-    ),
-    linear-gradient(
-      135deg,
-      #07111f 0%,
-      #081426 45%,
-      #06101d 100%
-    );
-
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size:16px;
-  line-height:1.65;
-
-  min-height:100vh;
-}
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.28;
-
+  background-color:var(--desk);
   background-image:
-    linear-gradient(
-      rgba(79,140,255,.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(79,140,255,.035) 1px,
-      transparent 1px
-    );
-
-  background-size:40px 40px;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black,
-      transparent 90%
-    );
-}
-
-::selection{
-  background:var(--accent);
-  color:white;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button{
-  font-family:inherit;
-}
-
-h1,
-h2,
-h3{
-  margin:0;
-  color:var(--ink);
-  font-family:"Space Grotesk",sans-serif;
-}
-
-p{
-  margin-top:0;
-}
-
-.mono{
-  font-family:"IBM Plex Mono",monospace;
-}
-
-.container{
-  width:min(var(--max),calc(100% - 48px));
-  margin:auto;
-}
-
-
-/* =========================================
-   PROGRESS BAR
-========================================= */
-
-.progress{
-  position:fixed;
-  top:0;
-  left:0;
-
-  height:2px;
-  width:0;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--accent),
-      var(--cyan)
-    );
-
-  z-index:9999;
-}
-
-
-/* =========================================
-   NAVIGATION
-========================================= */
-
-nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-
-  border-bottom:1px solid var(--line);
-
-  background:
-    rgba(7,17,31,.78);
-
-  backdrop-filter:blur(14px);
-}
-
-.nav-inner{
-  height:64px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  font-family:"IBM Plex Mono",monospace;
-  font-size:13px;
-  font-weight:500;
-
-  color:var(--ink);
-}
-
-.logo span{
-  color:var(--cyan);
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:28px;
-}
-
-.nav-links a{
-  color:var(--ink-soft);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:12px;
-
-  transition:.2s ease;
-}
-
-.nav-links a:hover{
-  color:var(--cyan);
-}
-
-.nav-cta{
-  padding:8px 13px;
-
-  border:1px solid rgba(79,140,255,.35);
-  border-radius:7px;
-
-  background:rgba(79,140,255,.08);
-
-  color:var(--accent-2)!important;
-}
-
-.mobile-menu{
-  display:none;
-
-  border:0;
-  background:none;
-
-  color:white;
-
-  font-size:22px;
-
-  cursor:pointer;
-}
-
-
-/* =========================================
-   HERO
-========================================= */
-
-.hero{
-  padding:92px 0 72px;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.35fr .65fr;
-
-  gap:70px;
-
-  align-items:end;
-}
-
-.terminal-line{
-  display:flex;
-  align-items:center;
-
-  gap:9px;
-
-  margin-bottom:22px;
-
-  color:var(--green);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:13px;
-}
-
-.terminal-dot{
-  width:8px;
-  height:8px;
-
-  border-radius:50%;
-
-  background:var(--green);
-
-  box-shadow:
-    0 0 0 5px var(--green-soft),
-    0 0 18px rgba(54,217,139,.35);
-}
-
-.hero h1{
-  max-width:800px;
-
-  color:#f7fbff;
-
-  font-size:clamp(42px,6vw,72px);
-
-  line-height:.98;
-
-  letter-spacing:-.045em;
-}
-
-.hero-role{
-  display:inline-flex;
-
-  margin-top:22px;
-
-  padding:7px 11px;
-
-  border:
-    1px solid
-    rgba(79,140,255,.2);
-
-  border-radius:7px;
-
-  background:var(--accent-soft);
-
-  color:var(--accent-2);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:13px;
-  font-weight:500;
-}
-
-.hero-description{
-  max-width:720px;
-
-  margin:24px 0 0;
-
-  color:var(--ink-soft);
-
+    radial-gradient(circle at 8% 4%,var(--glow-a),transparent 32%),
+    radial-gradient(circle at 92% 18%,var(--glow-b),transparent 30%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  background-repeat:no-repeat,no-repeat,repeat;
+  background-size:auto,auto,180px 180px;
+  font-family:var(--font-body);
   font-size:18px;
+  line-height:1.55;
+  text-rendering:optimizeLegibility;
 }
-
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-
-  gap:12px;
-
-  margin-top:30px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  gap:9px;
-
-  min-height:42px;
-
-  padding:10px 16px;
-
-  border:
-    1px solid
-    var(--line-strong);
-
-  border-radius:8px;
-
-  background:rgba(255,255,255,.035);
-
-  color:var(--ink);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:12px;
-  font-weight:500;
-
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    background .2s ease;
-}
-
-.btn:hover{
-  transform:translateY(-1px);
-
-  border-color:var(--accent);
-
-  background:
-    rgba(79,140,255,.08);
-}
-
-.btn-primary{
-  background:
-    linear-gradient(
-      135deg,
-      #4f8cff,
-      #3472e8
-    );
-
-  border-color:#4f8cff;
-
-  color:white;
-
-  box-shadow:
-    0 8px 25px rgba(37,99,235,.25);
-}
-
-.btn-primary:hover{
-  background:
-    linear-gradient(
-      135deg,
-      #5b95ff,
-      #2869df
-    );
-
-  color:white;
-}
-
-.hero-meta{
-  border-left:1px solid var(--line-strong);
-
-  padding-left:26px;
-}
-
-.meta-item{
-  padding:15px 0;
-
-  border-bottom:1px solid var(--line);
-}
-
-.meta-item:last-child{
-  border-bottom:0;
-}
-
-.meta-label{
-  color:var(--ink-faint);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.meta-value{
-  margin-top:4px;
-
-  color:#e8f0fc;
-
-  font-family:"Space Grotesk",sans-serif;
-  font-size:17px;
-  font-weight:600;
-}
-
-
-/* =========================================
-   TECH STACK
-========================================= */
-
-.stack{
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-
-  background:
-    rgba(5,11,20,.22);
-}
-
-.stack-inner{
-  display:flex;
-  align-items:center;
-
-  min-height:72px;
-
-  gap:28px;
-
-  overflow:hidden;
-}
-
-.stack-label{
-  flex:none;
-
-  color:var(--ink-faint);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.stack-items{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-}
-
-.stack-item{
-  padding:5px 9px;
-
-  border:1px solid var(--line);
-  border-radius:6px;
-
-  background:rgba(255,255,255,.035);
-
-  color:#aebbd0;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-}
-
-
-/* =========================================
-   SECTIONS
-========================================= */
-
-section{
-  padding:92px 0;
-}
-
-.section-head{
-  margin-bottom:35px;
-}
-
-.eyebrow{
-  margin-bottom:8px;
-
-  color:var(--cyan);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-
-  text-transform:uppercase;
-  letter-spacing:.1em;
-}
-
-.section-title{
-  color:#f3f7fd;
-
-  font-size:34px;
-
-  letter-spacing:-.03em;
-}
-
-.section-description{
-  max-width:680px;
-
-  margin-top:10px;
-
-  color:var(--ink-soft);
-}
-
-
-/* =========================================
-   EXPERIENCE
-========================================= */
-
-.experience{
-  position:relative;
-
-  display:flex;
-  flex-direction:column;
-
-  gap:18px;
-
-  border:0;
-
-  background:transparent;
-
-  overflow:visible;
-}
-
-.experience::before{
-  content:"";
-
-  position:absolute;
-
-  left:26px;
-  top:22px;
-  bottom:22px;
-
-  width:1px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      transparent,
-      rgba(79,140,255,.5) 5%,
-      rgba(79,140,255,.18) 95%,
-      transparent
-    );
-}
-
-.experience-item{
-  position:relative;
-
-  display:grid;
-
-  grid-template-columns:190px 1fr;
-
-  gap:34px;
-
-  padding:
-    27px
-    30px
-    28px
-    62px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(19,36,58,.96),
-      rgba(12,27,45,.96)
-    );
-
-  border:
-    1px solid
-    rgba(148,163,184,.15);
-
-  border-radius:15px;
-
-  box-shadow:
-    0 12px 35px rgba(0,0,0,.16);
-
-  overflow:hidden;
-
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease;
-}
-
-.experience-item::before{
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  top:0;
-  bottom:0;
-
-  width:3px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      var(--accent),
-      var(--cyan)
-    );
-
-  opacity:.75;
-}
-
-.experience-item::after{
-  content:"";
-
-  position:absolute;
-
-  left:20px;
-  top:31px;
-
-  width:12px;
-  height:12px;
-
-  border-radius:50%;
-
-  background:var(--bg);
-
-  border:
-    2px solid
-    var(--accent);
-
-  box-shadow:
-    0 0 0 5px rgba(79,140,255,.08),
-    0 0 18px rgba(79,140,255,.28);
-
-  z-index:2;
-}
-
-.experience-item:hover{
-  transform:translateX(5px);
-
-  border-color:
-    rgba(79,140,255,.35);
-
-  box-shadow:
-    0 18px 45px rgba(0,0,0,.25),
-    0 0 30px rgba(79,140,255,.06);
-}
-
-.experience-date{
-  padding-top:3px;
-
-  color:#71839c;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  line-height:1.8;
-
-  text-transform:uppercase;
-}
-
-.experience-title{
-  color:#f2f7ff;
-
-  font-size:19px;
-
-  line-height:1.3;
-}
-
-.experience-company{
-  color:var(--accent-2);
-
-  font-weight:600;
-}
-
-.experience-location{
-  margin-top:5px;
-
-  color:#72839a;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-}
-
-.experience-list{
-  margin-top:18px;
-
-  padding-left:18px;
-
-  color:#aab8ca;
-
-  font-size:13.5px;
-
-  line-height:1.7;
-}
-
-.experience-list li{
-  margin-bottom:9px;
-
-  padding-left:3px;
-}
-
-.experience-list li::marker{
-  color:var(--cyan);
-}
-
-.experience-tech{
-  display:flex;
-  flex-wrap:wrap;
-
-  gap:7px;
-
-  margin-top:18px;
-}
-
-.experience-tech span{
-  padding:4px 8px;
-
-  border:
-    1px solid
-    rgba(79,140,255,.18);
-
-  border-radius:5px;
-
-  background:
-    rgba(79,140,255,.07);
-
-  color:#88b4ff;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:9px;
-}
-
-
-/* =========================================
-   HOMELAB / SYSTEM PANEL
-========================================= */
-
-.system-panel{
-  position:relative;
-
-  padding:30px;
-
-  overflow:hidden;
-
-  border:
-    1px solid
-    rgba(79,140,255,.18);
-
-  border-radius:15px;
-
-  background:
-    radial-gradient(
-      circle at 85% 10%,
-      rgba(56,217,255,.08),
-      transparent 28%
-    ),
-    linear-gradient(
-      135deg,
-      #050b14,
-      #0b1727
-    );
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.25);
-}
-
-.system-panel::after{
-  content:"";
-
-  position:absolute;
-
-  width:280px;
-  height:280px;
-
-  right:-120px;
-  top:-120px;
-
-  border-radius:50%;
-
-  border:
-    1px solid
-    rgba(255,255,255,.08);
-
-  box-shadow:
-    0 0 0 50px rgba(255,255,255,.02),
-    0 0 0 100px rgba(255,255,255,.015);
-
-  pointer-events:none;
-}
-
-.system-header{
-  position:relative;
-  z-index:2;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  padding-bottom:20px;
-
-  border-bottom:
-    1px solid
-    rgba(255,255,255,.1);
-}
-
-.system-title{
-  color:#dce8f8;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:12px;
-}
-
-.system-status{
-  color:var(--green);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-}
-
-a.system-status:hover{
-  text-decoration:underline;
-
-  color:var(--cyan);
-}
-
-.system-grid{
-  position:relative;
-  z-index:2;
-
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-
-  gap:1px;
-
-  margin-top:20px;
-
-  background:
-    rgba(255,255,255,.08);
-}
-
-.system-stat{
-  padding:17px;
-
-  background:
-    rgba(5,11,20,.75);
-}
-
-.system-stat-label{
-  color:#71839c;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  text-transform:uppercase;
-}
-
-.system-stat-value{
-  margin-top:5px;
-
-  color:#f2f7ff;
-
-  font-family:"Space Grotesk",sans-serif;
-  font-size:21px;
-  font-weight:600;
-}
-
-.system-terminal{
-  position:relative;
-  z-index:2;
-
-  margin-top:24px;
-
-  padding:18px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.08);
-
-  border-radius:8px;
-
-  background:#080d14;
-
-  color:#aab7c8;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-
-  line-height:1.9;
-}
-
-.system-terminal .ok{
-  color:#65d59a;
-}
-
-.system-terminal .cmd{
-  color:#72a4ff;
-}
-
-
-/* =========================================
-   PROJECTS
-========================================= */
-
-.projects{
-  display:grid;
-
-  grid-template-columns:1.2fr .8fr;
-
-  gap:18px;
-}
-
-.project{
-  padding:28px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(19,36,58,.95),
-      rgba(10,24,40,.95)
-    );
-
-  border:
-    1px solid
-    var(--line);
-
-  border-radius:var(--radius);
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.16);
-
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    box-shadow .2s ease;
-}
-
-.project:hover{
-  transform:translateY(-3px);
-
-  border-color:
-    rgba(79,140,255,.35);
-
-  box-shadow:
-    0 20px 45px rgba(0,0,0,.25),
-    0 0 30px rgba(79,140,255,.05);
-}
-
-.project.featured{
-  grid-row:span 2;
-}
-
-.project-kicker{
-  color:var(--cyan);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.project h3{
-  margin-top:8px;
-
-  color:#f1f6fd;
-
-  font-size:22px;
-}
-
-.project p{
-  margin:13px 0 0;
-
-  color:#aab8ca;
-
-  font-size:14px;
-}
-
-.project-list{
-  padding-left:18px;
-
-  color:#aab8ca;
-
-  font-size:14px;
-}
-
-.project-list li{
-  margin-bottom:8px;
-}
-
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-
-  gap:7px;
-
-  margin-top:22px;
-}
-
-.tag{
-  padding:4px 8px;
-
-  border:
-    1px solid
-    rgba(79,140,255,.18);
-
-  border-radius:5px;
-
-  background:
-    rgba(79,140,255,.09);
-
-  color:#83afff;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-}
-
-
-/* =========================================
-   ENGINEERING PRINCIPLES
-========================================= */
-
-.principles{
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:16px;
-}
-
-.principle{
-  padding:22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(19,36,58,.9),
-      rgba(10,24,40,.9)
-    );
-
-  border:
-    1px solid
-    var(--line);
-
-  border-top:
-    2px solid
-    rgba(79,140,255,.4);
-
-  border-radius:10px;
-}
-
-.principle-number{
-  color:var(--cyan);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-}
-
-.principle h3{
-  margin-top:10px;
-
-  color:#f2f7ff;
-
-  font-size:17px;
-}
-
-.principle p{
-  margin:8px 0 0;
-
-  color:#9eafc4;
-
-  font-size:13px;
-}
-
-
-/* =========================================
-   SKILLS
-========================================= */
-
-.skills{
-  display:grid;
-
-  grid-template-columns:repeat(2,1fr);
-
-  border-top:
-    1px solid
-    var(--line);
-}
-
-.skill{
-  padding:20px 0;
-
-  border-bottom:
-    1px solid
-    var(--line);
-}
-
-.skill:nth-child(odd){
-  padding-right:30px;
-
-  border-right:
-    1px solid
-    var(--line);
-}
-
-.skill:nth-child(even){
-  padding-left:30px;
-}
-
-.skill h3{
-  color:#73859e;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-
-  text-transform:uppercase;
-  letter-spacing:.06em;
-}
-
-.skill p{
-  margin:6px 0 0;
-
-  color:#aebbd0;
-
-  font-size:14px;
-}
-
-
-/* =========================================
-   EDUCATION
-========================================= */
-
-.records{
-  border-top:
-    1px solid
-    var(--line);
-}
-
-.record{
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:20px;
-
-  padding:17px 0;
-
-  border-bottom:
-    1px solid
-    var(--line);
-}
-
-.record-name{
-  color:#eaf1fa;
-
-  font-size:14px;
-  font-weight:500;
-}
-
-.record-date{
-  flex:none;
-
-  color:#71839c;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-}
-
-
-/* =========================================
-   CONTACT
-========================================= */
-
-.contact{
-  padding:55px;
-
-  border:
-    1px solid
-    rgba(79,140,255,.18);
-
-  border-radius:15px;
-
-  background:
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(56,217,255,.08),
-      transparent 25%
-    ),
-    linear-gradient(
-      135deg,
-      #081322,
-      #050b14
-    );
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.25);
-}
-
-.contact h2{
-  color:#f4f8ff;
-
-  font-size:38px;
-}
-
-.contact p{
-  max-width:600px;
-
-  margin-top:10px;
-
-  color:#9eafc4;
-}
-
-.contact-links{
-  display:flex;
-  flex-wrap:wrap;
-
-  gap:10px;
-
-  margin-top:25px;
-}
-
-.contact .btn{
-  background:transparent;
-
-  color:white;
-
-  border-color:#344255;
-}
-
-.contact .btn:hover{
-  border-color:#6d9cff;
-}
-
-.contact .btn-primary{
-  background:var(--accent);
-
-  border-color:var(--accent);
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer{
-  padding:45px 0 70px;
-}
-
-.footer-inner{
-  display:flex;
-
-  align-items:center;
-  justify-content:space-between;
-
-  gap:20px;
-
-  padding-top:20px;
-
-  border-top:
-    1px solid
-    var(--line);
-}
-
-.footer-note{
-  color:#61738b;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-}
-
-.footer-links{
-  display:flex;
-
-  gap:18px;
-}
-
-.footer-links a{
-  color:#8494a9;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:11px;
-}
-
-.footer-links a:hover{
-  color:var(--cyan);
-}
-
-
-/* =========================================
-   SCROLL REVEAL
-========================================= */
-
-.js .reveal{
-  opacity:0;
-
-  transform:
-    translateY(18px);
-
-  transition:
-    opacity .65s ease,
-    transform .65s ease;
-}
-
-.js .reveal.visible{
-  opacity:1;
-
-  transform:none;
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media(max-width:850px){
-
-  .hero-grid{
-    grid-template-columns:1fr;
-
-    gap:40px;
-  }
-
-  .hero-meta{
-    border-left:0;
-
-    border-top:
-      1px solid
-      var(--line);
-
-    padding-left:0;
-    padding-top:8px;
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:0 20px;
-  }
-
-  .projects{
-    grid-template-columns:1fr;
-  }
-
-  .project.featured{
-    grid-row:auto;
-  }
-
-  .principles{
-    grid-template-columns:1fr;
-  }
-
-  .system-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-
-@media(max-width:700px){
-
-  .container{
-    width:min(100% - 32px,var(--max));
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .mobile-menu{
-    display:block;
-  }
-
-  .hero{
-    padding:65px 0 55px;
-  }
-
-  .hero h1{
-    font-size:
-      clamp(
-        40px,
-        12vw,
-        60px
-      );
-  }
-
-  .hero-description{
-    font-size:16px;
-  }
-
-  .stack-inner{
-    align-items:flex-start;
-
-    flex-direction:column;
-
-    padding:18px 0;
-
-    gap:10px;
-  }
-
-  section{
-    padding:65px 0;
-  }
-
-  .section-title{
-    font-size:29px;
-  }
-
-  .experience::before{
-    left:18px;
-  }
-
-  .experience-item{
-    grid-template-columns:1fr;
-
-    gap:7px;
-
-    padding:
-      24px
-      22px
-      24px
-      48px;
-  }
-
-  .experience-item::after{
-    left:12px;
-    top:27px;
-  }
-
-  .experience-date{
-    font-size:9px;
-  }
-
-  .experience-title{
-    font-size:17px;
-  }
-
-  .skills{
-    grid-template-columns:1fr;
-  }
-
-  .skill:nth-child(odd){
-    padding-right:0;
-
-    border-right:0;
-  }
-
-  .skill:nth-child(even){
-    padding-left:0;
-  }
-
-  .system-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .contact{
-    padding:30px 24px;
-  }
-
-  .contact h2{
-    font-size:30px;
-  }
-
-  .footer-inner{
-    align-items:flex-start;
-
-    flex-direction:column;
-  }
-}
-
-
-@media(max-width:450px){
-
-  .hero-actions,
-  .hero-actions .btn,
-  .contact-links,
-  .contact-links .btn{
-    width:100%;
-  }
-
-  .hero-actions .btn,
-  .contact-links .btn{
-    justify-content:center;
-  }
-
-  .hero-meta{
-    grid-template-columns:1fr;
-  }
-
-  .system-grid{
-    grid-template-columns:1fr;
-  }
-
-  .project,
-  .system-panel{
-    padding:22px;
-  }
-}
-
-
-@media(prefers-reduced-motion:reduce){
-
-  html{
-    scroll-behavior:auto;
-  }
-
-  *,
-  *::before,
-  *::after{
-    animation-duration:.001ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.001ms!important;
-  }
-
-  .reveal{
-    opacity:1;
-    transform:none;
-  }
-}
-
-
-/* =========================================
-   BACKGROUND CANVAS
-========================================= */
-
-#net-bg{
-  position:fixed;
-  inset:0;
-
-  display:block;
-
-  width:100%;
-  height:100%;
-
-  z-index:0;
-
-  pointer-events:none;
-}
-
-.bg-shade{
-  position:fixed;
-  inset:0;
-
-  z-index:1;
-
-  pointer-events:none;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(7,17,31,.52),
-      rgba(7,17,31,.68)
-    );
-}
-
 body::before{
-  z-index:2;
-}
-
-header,
-.stack,
-main,
-footer{
-  position:relative;
-  z-index:3;
-}
-
-
-/* =========================================
-   ACCESSIBILITY HELPERS
-========================================= */
-
-.sr-only{
-  position:absolute;
-
-  width:1px;
-  height:1px;
-
-  padding:0;
-  margin:-1px;
-
-  overflow:hidden;
-
-  clip:rect(0,0,0,0);
-  white-space:nowrap;
-
-  border:0;
-}
-
-.skip-link{
-  position:fixed;
-
-  top:-70px;
-  left:14px;
-
-  z-index:10001;
-
-  padding:10px 14px;
-
-  border:1px solid var(--cyan);
-  border-radius:8px;
-
-  background:#0b1627;
-
-  color:var(--ink);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:12px;
-
-  transition:top .2s ease;
-}
-
-.skip-link:focus{
-  top:12px;
-}
-
-:focus-visible{
-  outline:2px solid var(--cyan);
-  outline-offset:3px;
-}
-
-html{
-  scroll-padding-top:84px;
-}
-
-
-/* =========================================
-   HOMELAB INTERACTIVE TERMINAL
-========================================= */
-
-.system-terminal{
-  display:flex;
-  flex-direction:column;
-
-  max-height:min(62vh,480px);
-  min-height:320px;
-
-  padding:0;
-
-  overflow:hidden;
-}
-
-.term-scroll{
-  flex:1;
-
-  padding:18px 18px 6px;
-
-  overflow-y:auto;
-  overscroll-behavior:contain;
-
-  scrollbar-width:thin;
-  scrollbar-color:rgba(79,140,255,.35) transparent;
-}
-
-.term-scroll::-webkit-scrollbar{
-  width:8px;
-}
-
-.term-scroll::-webkit-scrollbar-thumb{
-  border-radius:8px;
-  background:rgba(79,140,255,.35);
-}
-
-.term-line{
-  white-space:pre-wrap;
-  overflow-wrap:anywhere;
-}
-
-.term-line.cmdline{
-  color:#8fb8ff;
-}
-
-.term-line.muted{
-  color:#71839c;
-}
-
-.term-line.error{
-  color:#ff9b9b;
-}
-
-.term-hints{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-
-  gap:6px;
-
-  padding:10px 14px 4px;
-
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
-.term-hint-label{
-  color:#71839c;
-
-  font-size:9px;
-
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.term-try{
-  min-height:30px;
-
-  padding:3px 8px;
-
-  border:1px solid rgba(56,217,255,.22);
-  border-radius:5px;
-
-  background:rgba(56,217,255,.06);
-
-  color:#9fe9ff;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  cursor:pointer;
-
-  transition:
-    background .2s ease,
-    border-color .2s ease;
-}
-
-.term-try:hover{
-  border-color:rgba(56,217,255,.5);
-
-  background:rgba(56,217,255,.12);
-}
-
-.term-form{
-  display:flex;
-  align-items:center;
-
-  gap:8px;
-
-  padding:10px 14px 12px;
-}
-
-.term-prompt{
-  flex:none;
-
-  color:var(--cyan);
-
-  font-size:12px;
-}
-
-.term-cursor{
-  flex:none;
-
-  color:var(--cyan);
-
-  font-size:11px;
-
-  animation:termBlink 1.1s steps(1) infinite;
-}
-
-.term-form:focus-within .term-cursor{
-  display:none;
-}
-
-.term-input{
-  flex:1;
-
-  min-width:0;
-
-  padding:4px 0;
-
-  border:0;
-
-  background:transparent;
-
-  color:#e8f0fc;
-
-  caret-color:var(--cyan);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:12px;
-
-  outline:none;
-}
-
-.term-input::placeholder{
-  color:#65758b;
-}
-
-.term-run{
-  flex:none;
-
-  min-height:32px;
-
-  padding:4px 10px;
-
-  border:1px solid rgba(79,140,255,.3);
-  border-radius:5px;
-
-  background:rgba(79,140,255,.1);
-
-  color:#a9c8ff;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  cursor:pointer;
-}
-
-.term-run:hover{
-  border-color:var(--accent);
-}
-
-@keyframes termBlink{
-  0%,49%{opacity:1}
-  50%,100%{opacity:0}
-}
-
-
-/* =========================================
-   CHAOS MONKEY SIMULATION
-========================================= */
-
-.chaos-panel{
-  position:relative;
-
-  margin-top:24px;
-  padding:30px;
-
-  overflow:hidden;
-
-  border:1px solid rgba(79,140,255,.18);
-  border-radius:15px;
-
-  background:
-    radial-gradient(
-      circle at 12% 0%,
-      rgba(243,184,91,.06),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #07111f,
-      #0a1626
-    );
-
-  box-shadow:
-    0 25px 70px rgba(0,0,0,.22);
-}
-
-.chaos-head{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-
-  gap:24px;
-  flex-wrap:wrap;
-}
-
-.chaos-kicker{
-  color:var(--amber);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  text-transform:uppercase;
-  letter-spacing:.1em;
-}
-
-.chaos-title{
-  margin-top:6px;
-
-  color:#f2f7ff;
-
-  font-size:22px;
-}
-
-.chaos-copy{
-  max-width:660px;
-
-  margin:8px 0 0;
-
-  color:var(--ink-soft);
-
-  font-size:13.5px;
-}
-
-.chaos-toggle{
-  display:inline-flex;
-  align-items:center;
-
-  gap:10px;
-
-  min-height:44px;
-
-  padding:8px 12px;
-
-  border:1px solid rgba(148,163,184,.22);
-  border-radius:8px;
-
-  background:rgba(255,255,255,.035);
-
-  color:var(--ink-soft);
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  text-transform:uppercase;
-  letter-spacing:.06em;
-
-  cursor:pointer;
-
-  transition:
-    border-color .2s ease,
-    background .2s ease,
-    color .2s ease;
-}
-
-.chaos-toggle[aria-checked="true"]{
-  border-color:rgba(243,184,91,.5);
-
-  background:rgba(243,184,91,.1);
-
-  color:var(--amber);
-}
-
-.toggle-track{
-  position:relative;
-
-  width:34px;
-  height:18px;
-
-  border-radius:9px;
-
-  background:rgba(148,163,184,.24);
-
-  transition:background .2s ease;
-}
-
-.toggle-track::after{
   content:"";
-
-  position:absolute;
-  top:3px;
-  left:3px;
-
-  width:12px;
-  height:12px;
-
-  border-radius:50%;
-
-  background:#cbd5e1;
-
-  transition:
-    left .2s ease,
-    background .2s ease;
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:repeating-linear-gradient(to bottom,rgba(23,19,14,.075) 0 1px,transparent 1px 7px);
+  -webkit-mask-image:repeating-linear-gradient(to right,#000 0 20%,transparent 20% 25%);
+  mask-image:repeating-linear-gradient(to right,#000 0 20%,transparent 20% 25%);
+  opacity:.55;
 }
-
-.chaos-toggle[aria-checked="true"] .toggle-track{
-  background:rgba(243,184,91,.35);
-}
-
-.chaos-toggle[aria-checked="true"] .toggle-track::after{
-  left:19px;
-
-  background:var(--amber);
-}
-
-.chaos-stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-
-  gap:1px;
-
-  margin-top:22px;
-
-  background:rgba(255,255,255,.08);
-}
-
-.chaos-stat{
-  padding:12px 14px;
-
-  background:rgba(5,11,20,.78);
-}
-
-.chaos-stat-label{
-  color:#71839c;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:9px;
-
-  text-transform:uppercase;
-  letter-spacing:.06em;
-}
-
-.chaos-stat-value{
-  margin-top:4px;
-
-  color:#f2f7ff;
-
-  font-family:"Space Grotesk",sans-serif;
-  font-size:18px;
-  font-weight:600;
-
-  font-variant-numeric:tabular-nums;
-}
-
-.pod-grid{
-  display:grid;
-  grid-template-columns:repeat(7,minmax(0,1fr));
-
-  gap:8px;
-
-  margin-top:22px;
-}
-
-.pod{
-  position:relative;
-
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-
-  gap:2px;
-
-  min-height:64px;
-
-  padding:9px 10px;
-
-  border:1px solid rgba(148,163,184,.18);
-  border-radius:8px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(19,36,58,.95),
-      rgba(10,24,40,.95)
-    );
-
-  color:#dfe9f6;
-
-  text-align:left;
-
-  font-family:"IBM Plex Mono",monospace;
-
-  cursor:pointer;
-
-  transition:
-    transform .2s ease,
-    border-color .2s ease,
-    background .2s ease;
-}
-
-.pod:hover{
-  transform:translateY(-1px);
-
-  border-color:rgba(79,140,255,.5);
-}
-
-.pod:active{
-  transform:translateY(0);
-}
-
-.pod-led{
-  width:6px;
-  height:6px;
-
-  border-radius:50%;
-
-  background:var(--green);
-
-  box-shadow:0 0 8px rgba(54,217,139,.55);
-
-  transition:
-    background .2s ease,
-    box-shadow .2s ease;
-}
-
-.pod-name{
-  max-width:100%;
-
-  overflow:hidden;
-
-  color:#e8f0fc;
-
-  font-size:10px;
-  font-weight:500;
-
-  text-overflow:ellipsis;
-  white-space:nowrap;
-}
-
-.pod-state{
-  color:#8fa1b8;
-
-  font-size:8.5px;
-
-  text-transform:uppercase;
-  letter-spacing:.04em;
-}
-
-.pod[data-state="down"]{
-  border-color:rgba(255,107,107,.55);
-
-  background:rgba(120,20,30,.38);
-
-  animation:podFlash .45s ease;
-}
-
-.pod[data-state="down"] .pod-led{
-  background:#ff6b6b;
-
-  box-shadow:0 0 10px rgba(255,107,107,.7);
-}
-
-.pod[data-state="down"] .pod-state{
-  color:#ff9b9b;
-}
-
-.pod[data-state="rescheduling"]{
-  border-color:rgba(243,184,91,.45);
-
-  background:rgba(80,58,18,.28);
-}
-
-.pod[data-state="rescheduling"] .pod-led{
-  background:var(--amber);
-
-  box-shadow:0 0 10px rgba(243,184,91,.55);
-
-  animation:podPulse 1s ease-in-out infinite;
-}
-
-.pod[data-state="rescheduling"] .pod-state{
-  color:var(--amber);
-}
-
-@keyframes podFlash{
-  0%{background:rgba(255,80,80,.55)}
-  100%{background:rgba(120,20,30,.38)}
-}
-
-@keyframes podPulse{
-  0%,100%{opacity:1}
-  50%{opacity:.35}
-}
-
-.chaos-foot{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-
-  gap:22px;
-  flex-wrap:wrap;
-
-  margin-top:20px;
-  padding-top:16px;
-
-  border-top:1px solid rgba(255,255,255,.08);
-}
-
-.gauge{
-  flex:1;
-
-  min-width:220px;
-}
-
-.gauge-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:16px;
-}
-
-.gauge-value{
-  color:#9fb2c9;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:10px;
-
-  font-variant-numeric:tabular-nums;
-}
-
-.gauge-bar{
-  height:8px;
-
-  margin-top:7px;
-
-  overflow:hidden;
-
-  border-radius:4px;
-
-  background:rgba(148,163,184,.14);
-}
-
-.gauge-fill{
-  display:block;
-
-  width:100%;
-  height:100%;
-
-  border-radius:inherit;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--accent),
-      var(--cyan)
-    );
-
-  transition:width .3s ease;
-}
-
-.chaos-note{
-  margin:0;
-
-  color:#71839c;
-
-  font-family:"IBM Plex Mono",monospace;
-  font-size:9px;
-
-  text-transform:uppercase;
-  letter-spacing:.06em;
-}
-
-
-/* =========================================
-   PROJECT TILT
-========================================= */
-
-@media(hover:hover) and (pointer:fine){
-
-  .project{
-    transform:
-      perspective(900px)
-      rotateX(var(--tilt-x,0deg))
-      rotateY(var(--tilt-y,0deg))
-      translateY(0);
-  }
-
-  .project:hover{
-    transform:
-      perspective(900px)
-      rotateX(var(--tilt-x,0deg))
-      rotateY(var(--tilt-y,0deg))
-      translateY(-3px);
+@media (prefers-color-scheme:dark){
+  body::before{
+    background:repeating-linear-gradient(to bottom,rgba(246,240,225,.06) 0 1px,transparent 1px 7px);
+    opacity:.58;
   }
 }
-
-
-/* =========================================
-   NEW RESPONSIVE RULES
-========================================= */
-
-@media(max-width:850px){
-
-  .pod-grid{
-    grid-template-columns:repeat(6,minmax(0,1fr));
-  }
+::selection{background:var(--red);color:var(--paper)}
+a{color:var(--red-deep);text-decoration-thickness:.075em;text-underline-offset:.16em}
+a:hover{color:var(--red)}
+:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+h1,h2,h3,p,ul,figure{margin-top:0}
+ul{padding-left:1.2em}
+button{font:inherit}
+img,svg{display:block;max-width:100%}
+.container{width:min(100% - 2.5rem,var(--max));margin-inline:auto}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:fixed;left:1rem;top:-5rem;z-index:100;background:var(--paper);color:var(--ink);padding:.7rem 1rem;border:2px solid var(--ink);font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
+.skip-link:focus{top:1rem}
+.masthead-wrap,.main,footer{position:relative;z-index:1}
+.paper{position:relative;filter:drop-shadow(var(--shadow))}
+.paper>.clip{position:relative;z-index:1;background:var(--paper);clip-path:var(--torn)}
+.tilt-l{transform:rotate(-.7deg)}
+.tilt-r{transform:rotate(.7deg)}
+.pin::before{content:"";position:absolute;top:-.55rem;left:50%;z-index:3;width:.95rem;height:.95rem;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8a80,var(--red) 45%,#6d0e09 100%);box-shadow:0 2px 0 rgba(23,19,14,.55),0 4px 7px rgba(23,19,14,.25)}
+.masthead-wrap{padding:1.25rem 0 0}
+.masthead{transform:rotate(-.35deg)}
+.masthead .clip{padding:1.05rem 1.4rem .8rem}
+.masthead-top{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;min-height:24px;font-family:var(--font-display);font-size:1.6rem;line-height:1;letter-spacing:.01em;color:var(--ink);text-decoration:none;text-transform:lowercase}
+.brand span{color:var(--red)}
+.brand:hover{color:var(--ink)}
+.nav-list{display:flex;align-items:center;flex-wrap:wrap;gap:1.15rem;margin:0;padding:0;list-style:none;font-size:.95rem;letter-spacing:.05em;text-transform:lowercase}
+.nav-list a{display:inline-flex;align-items:center;min-height:24px;color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;padding:.18rem 0}
+.nav-list a:hover{color:var(--red);border-color:var(--red)}
+.nav-cta{background:var(--red);color:var(--paper)!important;padding:.34rem .68rem .27rem!important;border:0!important;clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.82rem;letter-spacing:.09em;text-transform:uppercase!important;transform:rotate(1deg)}
+.nav-cta:hover{background:var(--ink);color:var(--paper)!important}
+.nav-cta:focus-visible{clip-path:none}
+.dateline{display:flex;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-top:.55rem;padding-top:.45rem;border-top:1px solid var(--line);color:var(--muted);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.hero{position:relative;padding:4.5rem 0 2.5rem}
+.hero-inner{position:relative}
+.thread{position:absolute;top:0;left:0;width:100%;height:280px;overflow:visible;z-index:0;color:var(--thread);pointer-events:none}
+.thread path{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;animation:thread-draw 2.4s .25s ease-out forwards}
+@keyframes thread-draw{to{stroke-dashoffset:0}}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(250px,.55fr);gap:3.5rem;align-items:start}
+.hero-main{min-width:0}
+.name-wrap{margin:1rem 0 0;filter:drop-shadow(0 16px 20px rgba(23,19,14,.22));transform:rotate(-.75deg)}
+.cut-name{--px:0px;--cut-scale:1;--name-pad:1.2rem 1.35rem 1rem;position:relative;overflow:hidden;padding:var(--name-pad);background:var(--ink);color:var(--paper);clip-path:var(--torn)}
+.cut-name__base{margin:0;color:var(--paper);font-family:var(--font-display);font-size:clamp(2.9rem,8vw,6.4rem);font-weight:400;line-height:.82;letter-spacing:-.015em;text-transform:uppercase;white-space:nowrap}
+.cut-name__base span{display:block}
+.cut-name.is-sliced>.cut-name__base{color:transparent}
+.cut-name__layers{position:absolute;inset:0;pointer-events:none}
+.cut-name__strip{position:absolute;inset:0;overflow:hidden;transform:translateX(calc((var(--cut-x,0px) + var(--px,0px) * var(--dir,1)) * var(--cut-scale)));will-change:transform}
+.cut-name__strip:nth-child(1){--cut-x:-7px;--dir:1;clip-path:inset(0 0 calc(83.333% + 1px) 0)}
+.cut-name__strip:nth-child(2){--cut-x:8px;--dir:-1;clip-path:inset(calc(16.667% + 1px) 0 calc(66.667% + 1px) 0)}
+.cut-name__strip:nth-child(3){--cut-x:-4px;--dir:1;clip-path:inset(calc(33.333% + 1px) 0 calc(50% + 1px) 0)}
+.cut-name__strip:nth-child(4){--cut-x:9px;--dir:-1;clip-path:inset(calc(50% + 1px) 0 calc(33.333% + 1px) 0)}
+.cut-name__strip:nth-child(5){--cut-x:-7px;--dir:1;clip-path:inset(calc(66.667% + 1px) 0 calc(16.667% + 1px) 0)}
+.cut-name__strip:nth-child(6){--cut-x:5px;--dir:-1;clip-path:inset(calc(83.333% + 1px) 0 0 0)}
+.cut-name__ghost{padding:var(--name-pad);color:var(--paper)}
+.cut-name[data-cut="off"] .cut-name__strip{--cut-x:0px;--px:0px}
+.cut-toggle{display:inline-block;margin:.9rem 0 1.15rem;padding:.4rem .72rem .32rem;border:1px solid var(--ink);background:var(--paper);color:var(--ink);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;transform:rotate(-1deg);cursor:pointer}
+.cut-toggle:hover{background:var(--ink);color:var(--paper)}
+.cut-toggle:focus-visible{clip-path:none}
+.role-label{display:inline-block;margin:0 0 1.4rem;padding:.35rem .75rem .27rem;background:var(--red);color:var(--paper);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:clamp(1.05rem,2vw,1.45rem);letter-spacing:.045em;line-height:1.1;text-transform:uppercase;transform:rotate(.8deg)}
+.hero-note{max-width:39rem;margin-bottom:1.3rem}
+.hero-note .clip{padding:1rem 1.2rem}
+.hero-description{margin:0;color:var(--muted);font-size:1.03rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.58rem .9rem .48rem;border:1px solid var(--ink);background:var(--paper);color:var(--ink);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.9rem;letter-spacing:.08em;line-height:1.15;text-transform:uppercase;text-decoration:none;transform:rotate(-.35deg)}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn:focus-visible{clip-path:none}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--red);color:var(--paper);border-color:var(--red)}
+.hero-side{position:relative;display:grid;gap:1.05rem;padding-top:8rem}
+.stamp{position:absolute;top:0;right:.2rem;z-index:3;display:grid;place-items:center;width:104px;height:104px;border:3px solid var(--red);border-radius:48% 52% 47% 53% / 52% 46% 54% 48%;color:var(--red);font-family:var(--font-display);font-size:.88rem;letter-spacing:.04em;line-height:1.03;text-align:center;text-transform:uppercase;transform:rotate(-12deg);pointer-events:none}
+.stamp::before{content:"";position:absolute;inset:5px;border:1px dashed var(--red);border-radius:50%;opacity:.7}
+.meta .clip{padding:.72rem .9rem .78rem}
+.meta-label{display:block;margin-bottom:.15rem;color:var(--red-deep);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+.meta-value{display:block;font-size:1rem;line-height:1.3}
+.tape-wrap{position:relative;z-index:1;margin:1rem 0 3.8rem;padding:1.2rem 0 1.5rem;overflow:hidden}
+.tape-band{position:relative;width:112%;margin-left:-6%;padding:1rem 0 1.15rem;background:var(--ink);color:var(--paper);transform:rotate(-1deg);box-shadow:0 14px 24px rgba(23,19,14,.24)}
+.tape-band::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(246,240,225,.035) 0 2px,transparent 2px 9px)}
+.tape-bar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1rem;width:min(100% - 3rem,var(--max));margin:0 auto .6rem}
+.tape-label{font-family:var(--font-display);font-size:.95rem;letter-spacing:.12em;text-transform:uppercase}
+.tape-pause{padding:.28rem .58rem .2rem;border:1px solid var(--paper);background:transparent;color:var(--paper);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.tape-pause:hover{background:var(--paper);color:var(--ink)}
+.tape-pause:focus-visible{clip-path:none;outline-color:var(--paper)}
+.marquee{overflow:hidden;padding:.25rem 0}
+.marquee-track{display:flex;width:max-content;animation:marquee 40s linear infinite;will-change:transform}
+.marquee:hover .marquee-track,.marquee.is-paused .marquee-track{animation-play-state:paused}
+.chips{display:flex;flex-shrink:0;gap:1rem;margin:0;padding:0 1rem 0 0;list-style:none}
+.chips li{display:inline-block;padding:.35rem .86rem .27rem;border:1px solid rgba(246,240,225,.3);font-family:var(--font-display);font-size:clamp(1.05rem,2vw,1.4rem);letter-spacing:.04em;line-height:1.05;text-transform:uppercase;white-space:nowrap}
+.chips li:nth-child(odd){transform:rotate(-1.2deg)}
+.chips li:nth-child(even){transform:rotate(.9deg)}
+.chips li:nth-child(3n){border-color:var(--red);background:var(--red);color:var(--paper)}
+.marquee:not(.is-running) .marquee-track{width:auto;animation:none}
+.marquee:not(.is-running) .chips{flex-wrap:wrap;justify-content:center;padding:0 1.5rem}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.content{padding:0 0 4rem}
+.content>section{margin-top:5rem;scroll-margin-top:2rem}
+.section-head{display:flex;flex-direction:column;align-items:flex-start;gap:.8rem;margin-bottom:2rem}
+.eyebrow{display:inline-block;padding:.3rem .55rem .22rem;border:1px solid var(--ink);background:var(--paper);color:var(--red-deep);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.73rem;letter-spacing:.12em;line-height:1.1;text-transform:uppercase;transform:rotate(-1deg)}
+.section-title{position:relative;z-index:0;display:inline-block;max-width:100%;margin:0;padding:.25rem .72rem .15rem;color:var(--paper);filter:drop-shadow(0 6px 0 rgba(23,19,14,.18));font-family:var(--font-display);font-size:clamp(1.9rem,4.5vw,3.55rem);font-weight:400;line-height:1.02;letter-spacing:.01em;text-transform:uppercase;transform:rotate(-.8deg)}
+.section-title::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);clip-path:var(--torn);transform:rotate(.4deg)}
+.section-title--red::before{background:var(--red)}
+.section-title--red{filter:drop-shadow(0 6px 0 rgba(23,19,14,.22))}
+.section-note{max-width:45rem;transform:rotate(.3deg)}
+.section-note .clip{padding:.9rem 1.1rem}
+.section-description{margin:0;color:var(--muted);font-size:1rem}
+.text-link{color:var(--red-deep);font-weight:700}
+.experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;align-items:start}
+.job:nth-child(even){margin-top:1.25rem}
+.job .clip{padding:1.2rem 1.3rem 1.3rem}
+.job-date{margin-bottom:.55rem;color:var(--red-deep);font-size:.72rem;letter-spacing:.13em;line-height:1.5;text-transform:uppercase}
+.job h3{margin:0 0 .3rem;font-family:var(--font-display);font-size:1.42rem;font-weight:400;line-height:1.1;text-transform:uppercase}
+.job-company{display:block;color:var(--muted);font-family:var(--font-body);font-size:1rem;font-style:italic;letter-spacing:0;line-height:1.35;text-transform:none}
+.job-focus{margin:.35rem 0 .75rem;padding:.35rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--muted);font-size:.68rem;letter-spacing:.12em;line-height:1.5;text-transform:uppercase}
+.job ul{margin:0;padding-left:1.15rem}
+.job li{margin:.35rem 0}
+.tech{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.9rem}
+.tech span{padding:.15rem .4rem .1rem;border:1px solid var(--line);background:var(--paper-2);font-size:.69rem;letter-spacing:.07em;line-height:1.35;text-transform:uppercase}
+.lab-panel .clip{padding:1.3rem 1.4rem 1.4rem}
+.lab-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-bottom:.8rem;border-bottom:1px solid var(--line)}
+.lab-title{font-family:var(--font-display);font-size:1.08rem;letter-spacing:.04em;line-height:1.1;text-transform:uppercase}
+.status-link{display:inline-flex;align-items:center;gap:.42rem;min-height:24px;color:var(--ink);font-size:.9rem;text-decoration:none;line-height:1.3}
+.status-link:hover{color:var(--red)}
+.status-dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--red);flex:none}
+.status-word{display:inline-block;padding:.06rem .34rem .02rem;border:2.5px solid var(--red);border-radius:46% 54% 49% 51% / 55% 45% 55% 45%;color:var(--red);font-family:var(--font-display);font-size:.86rem;letter-spacing:.04em;line-height:1.05;transform:rotate(-3deg)}
+.status-link:hover .status-word{background:var(--red);color:var(--paper)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:1.2rem 0 1.5rem}
+.stat{padding-top:.5rem;border-top:3px solid var(--ink)}
+.stat-label{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+.stat-value{display:block;font-family:var(--font-display);font-size:clamp(1.45rem,3vw,2.15rem);line-height:1.15}
+.pod-board{margin-top:1.6rem;padding:1.2rem 1.25rem 1.1rem;background:var(--ink);color:var(--paper);clip-path:var(--torn)}
+.pod-kicker{margin-bottom:.15rem;color:#f0a39d;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+.pod-board h3{margin:0 0 .35rem;font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;line-height:1.03;text-transform:uppercase}
+.pod-copy{max-width:42rem;margin:0 0 .9rem;color:rgba(246,240,225,.78);font-size:.98rem}
+.pod-stats{display:flex;flex-wrap:wrap;gap:1.5rem;margin:0 0 .9rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.pod-stats b{display:block;margin-top:.05rem;color:var(--paper);font-family:var(--font-display);font-size:1.25rem;font-weight:400;letter-spacing:.03em;line-height:1.05}
+.pod-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.45rem}
+.pod-grid:empty{display:none}
+.pod{position:relative;aspect-ratio:1;border:1px solid rgba(246,240,225,.42);background:transparent;color:var(--paper);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.8rem;letter-spacing:.04em;cursor:pointer}
+.pod:hover{background:var(--paper);color:var(--ink)}
+.pod.is-down{color:#ff8d85;border-color:#ff8d85;cursor:wait}
+.pod.is-down::after{content:"";position:absolute;top:50%;left:18%;right:18%;height:2px;background:#ff8d85;transform:rotate(-35deg)}
+.pod:focus-visible{clip-path:none;outline-color:var(--paper)}
+.sim-note{margin:.75rem 0 0;color:rgba(246,240,225,.62);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.projects> .section-head{margin-bottom:2rem}
+.featured-project .clip{padding:1.4rem 1.5rem 1.5rem}
+.featured-label{display:inline-block;margin-bottom:.65rem;padding:.26rem .55rem .2rem;background:var(--red);color:var(--paper);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;transform:rotate(-.7deg)}
+.featured-project h3,.project h3{margin:0 0 .55rem;font-family:var(--font-display);font-weight:400;line-height:1.08;text-transform:uppercase}
+.featured-project h3{font-size:clamp(1.7rem,3.5vw,2.65rem)}
+.featured-body{columns:2;column-gap:2.2rem;margin-top:.7rem}
+.featured-body p{margin:0 0 .8rem}
+.featured-body p:first-of-type::first-letter{float:left;margin:.1em .12em 0 0;color:var(--red);font-family:var(--font-display);font-size:4rem;line-height:.76}
+.featured-body ul{margin:0;padding-left:1.1rem}
+.featured-body li{break-inside:avoid;margin:.45rem 0}
+.tags{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:1rem}
+.tags span{padding:.16rem .44rem .11rem;border:1px solid var(--ink);background:var(--paper);font-size:.69rem;letter-spacing:.07em;line-height:1.35;text-transform:uppercase}
+.tags span:nth-child(3n){border-color:var(--red);background:var(--red);color:var(--paper)}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;margin-top:2rem}
+.project .clip{padding:1.2rem 1.3rem 1.3rem}
+.project h3{font-size:1.55rem;margin-top:.35rem}
+.project p{margin:0}
+.project-kicker{color:var(--red-deep);font-size:.69rem;letter-spacing:.12em;text-transform:uppercase}
+.approach-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem}
+.approach .clip{position:relative;padding:1.1rem 1.2rem 1.2rem .9rem}
+.approach .clip::before{content:"“";position:absolute;top:.15rem;right:.6rem;color:var(--red);font-family:var(--font-display);font-size:4.5rem;line-height:.75;opacity:.9}
+.approach-number{color:var(--red);font-family:var(--font-display);font-size:1.1rem;line-height:1;letter-spacing:.04em}
+.approach h3{margin:.35rem 0 .45rem;font-family:var(--font-display);font-size:1.35rem;font-weight:400;line-height:1.08;text-transform:uppercase}
+.approach p{margin:0;color:var(--muted);font-size:.98rem}
+.skills-panel .clip,.records-panel .clip{padding:1.4rem 1.5rem}
+.classifieds{columns:3;column-gap:2.2rem}
+.skill{break-inside:avoid;padding:.8rem 0 1rem;border-top:1px solid var(--ink)}
+.skill:first-child{border-top:3px solid var(--red)}
+.skill h3{margin:0 0 .2rem;color:var(--red);font-family:var(--font-display);font-size:1.08rem;font-weight:400;letter-spacing:.04em;line-height:1.1;text-transform:uppercase}
+.skill p{margin:0;color:var(--muted);font-size:.98rem}
+.records-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem}
+.record{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.record-name{font-size:1rem;line-height:1.4}
+.record-date{color:var(--red);font-family:var(--font-display);font-size:1.15rem;letter-spacing:.03em;white-space:nowrap}
+.contact-card .clip{padding:1.8rem 1.8rem 2rem;background:var(--red);color:var(--paper)}
+.contact-card .eyebrow{border-color:var(--paper);background:var(--paper);color:var(--red)}
+.contact-card h2{margin:.75rem 0 .55rem;color:var(--paper);font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:400;line-height:.97;text-transform:uppercase}
+.contact-card p{max-width:35rem;margin:0;color:var(--paper)}
+.contact-links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.35rem}
+.contact-card .btn{transform:rotate(-.4deg)}
+.btn-on-red{border-color:var(--paper);background:var(--paper);color:var(--red)}
+.btn-on-red:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.btn-outline{border-color:var(--paper);background:transparent;color:var(--paper)}
+.btn-outline:hover{border-color:var(--paper);background:var(--paper);color:var(--red)}
+.contact-card :focus-visible{outline-color:var(--paper)}
+.footer-wrap{padding:0 0 3rem}
+.footer .clip{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1rem 1.2rem}
+.footer-note{font-size:.9rem}
+.footer-links{display:flex;flex-wrap:wrap;gap:1rem}
+.footer-links a{display:inline-flex;align-items:center;min-height:24px;color:var(--red-deep);font-size:.82rem;letter-spacing:.08em;text-transform:lowercase;text-decoration:none;border-bottom:1px solid transparent}
+.footer-links a:hover{color:var(--red);border-color:var(--red)}
+@media (max-width:820px){
+  .hero{padding-top:3.5rem}
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-side{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:8rem}
+  .thread{height:200px}
+  .experience-grid{grid-template-columns:1fr}
+  .job:nth-child(even){margin-top:0}
+  .featured-body{columns:1}
+  .project-grid{grid-template-columns:1fr}
+  .approach-grid{grid-template-columns:1fr}
+  .classifieds{columns:2}
+  .records-grid{grid-template-columns:1fr}
 }
-
-@media(max-width:700px){
-
-  .nav-links.open{
-    display:flex;
-
-    position:absolute;
-    top:64px;
-    left:16px;
-    right:16px;
-
-    z-index:100;
-
-    flex-direction:column;
-    align-items:flex-start;
-
-    gap:14px;
-
-    padding:16px;
-
-    border:1px solid rgba(148,163,184,.15);
-    border-radius:10px;
-
-    background:#0f1d31;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
-  }
-
-  .nav-links.open a{
-    display:flex;
-    align-items:center;
-
-    min-height:40px;
-
-    padding:4px 0;
-  }
-
-  .mobile-menu{
-    min-width:44px;
-    min-height:44px;
-  }
-
-  .chaos-stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .pod-grid{
-    grid-template-columns:repeat(4,minmax(0,1fr));
-  }
-
-  .term-input{
-    font-size:16px;
-  }
-
-  .system-terminal{
-    max-height:520px;
-  }
+@media (max-width:600px){
+  .cut-name{--cut-scale:.45}
 }
-
-@media(max-width:450px){
-
-  .chaos-panel{
-    padding:22px;
-  }
-
-  .chaos-head{
-    gap:14px;
-  }
-
-  .chaos-toggle{
-    width:100%;
-    justify-content:space-between;
-  }
-
-  .pod-grid{
-    grid-template-columns:repeat(3,minmax(0,1fr));
-  }
-
-  .chaos-stats{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .chaos-foot{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .gauge{
-    width:100%;
-    min-width:0;
-  }
+@media (max-width:520px){
+  .container{width:min(100% - 1.5rem,var(--max))}
+  .masthead-wrap{padding-top:.8rem}
+  .masthead .clip{padding:.9rem 1rem .7rem}
+  .brand{font-size:1.4rem}
+  .nav-list{gap:.75rem;font-size:.88rem}
+  .hero{padding:3rem 0 2rem}
+  .cut-name{--name-pad:1rem 1rem .8rem}
+  .cut-name__base{font-size:clamp(2.45rem,10vw,3.5rem)}
+  .hero-side{grid-template-columns:1fr;padding-top:6.5rem}
+  .stamp{right:0;width:84px;height:84px;font-size:.74rem}
+  .tape-band{width:120%;margin-left:-10%}
+  .tape-bar{width:min(100% - 2rem,var(--max))}
+  .content>section{margin-top:4rem}
+  .section-title{font-size:clamp(1.75rem,8vw,2.7rem)}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pod-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .classifieds{columns:1}
+  .contact-card .clip{padding:1.3rem 1.2rem 1.5rem}
+  .footer .clip{align-items:flex-start;flex-direction:column}
+  .footer-links{gap:.7rem}
 }
-
-
-@media(prefers-reduced-motion:reduce){
-
-  .term-cursor{
-    animation:none;
-  }
-
-  .pod,
-  .pod[data-state="down"],
-  .pod[data-state="rescheduling"] .pod-led{
-    animation:none;
-  }
-
-  .project,
-  .project:hover{
-    transform:none!important;
-  }
-
-  .js .reveal,
-  .js .reveal.visible{
-    opacity:1;
-
-    transform:none;
-  }
+@media (max-width:420px){
+  .pod-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
-
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .thread path{stroke-dashoffset:0;animation:none}
+  .marquee-track{width:auto!important;animation:none!important}
+  .marquee .chips{flex-wrap:wrap;justify-content:center;padding:0 1.5rem}
+  .marquee .chips+.chips{display:none}
+  .tape-pause{display:none}
+  .cut-name__strip{will-change:auto}
+}
 </style>
 </head>
-
-
 <body>
-
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<canvas id="net-bg" aria-hidden="true"></canvas>
-
-<div class="bg-shade" aria-hidden="true"></div>
-
-
-<!-- =========================================
-     SCROLL PROGRESS
-========================================= -->
-
-<div class="progress" id="progress" aria-hidden="true"></div>
-
-
-<!-- =========================================
-     NAVIGATION
-========================================= -->
-
-<nav aria-label="Primary">
-
-  <div class="container nav-inner">
-
-    <a href="#" class="logo">
-      okechukwu<span>.dev</span>
-    </a>
-
-    <div class="nav-links" id="navLinks">
-
-      <a href="#experience">
-        experience
-      </a>
-
-      <a href="#homelab">
-        homelab
-      </a>
-
-      <a href="#projects">
-        projects
-      </a>
-
-      <a href="#skills">
-        skills
-      </a>
-
-      <a href="#contact" class="nav-cta">
-        contact
-      </a>
-
+<header class="masthead-wrap">
+  <div class="container masthead paper">
+    <div class="clip">
+      <div class="masthead-top">
+        <a class="brand" href="#" aria-label="Okechukwu.dev home">okechukwu<span>.dev</span></a>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#experience">experience</a></li>
+            <li><a href="#homelab">homelab</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#skills">skills</a></li>
+            <li><a href="#contact" class="nav-cta">contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="dateline">
+        <time id="dateline" datetime="2026-10-26">October 26, 2026</time>
+        <span>remote edition</span>
+      </div>
     </div>
-
-    <button
-      class="mobile-menu"
-      id="mobileMenu"
-      type="button"
-      aria-label="Open navigation"
-      aria-controls="navLinks"
-      aria-expanded="false">
-      ☰
-    </button>
-
   </div>
-
-</nav>
-
-
-<!-- =========================================
-     HERO
-========================================= -->
-
-<header class="hero">
-
-  <div class="container hero-grid">
-
-    <div>
-
-      <div class="terminal-line">
-
-        <span class="terminal-dot"></span>
-
-        <span id="terminalText">
-          $ whoami
-        </span>
-
-      </div>
-
-
-      <h1>
-        Okechukwu Joshua Onyedikachi
-      </h1>
-
-
-      <div class="hero-role">
-        DevOps Engineer / SRE
-      </div>
-
-
-      <p class="hero-description">
-        I build reliable cloud infrastructure, deployment systems and
-        observability platforms. My focus is Kubernetes, AWS, Terraform,
-        CI/CD and the engineering practices that make production systems
-        predictable.
-      </p>
-
-
-      <div class="hero-actions">
-
-        <a
-          href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf"
-          class="btn btn-primary">
-
-          Download résumé
-
-        </a>
-
-
-        <a
-          href="https://github.com/kaacchhiii"
-          target="_blank"
-          rel="noopener"
-          class="btn">
-
-          GitHub ↗
-
-        </a>
-
-
-        <a
-          href="https://www.linkedin.com/in/onyedikachiokechukwu/"
-          target="_blank"
-          rel="noopener"
-          class="btn">
-
-          LinkedIn ↗
-
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <aside class="hero-meta">
-
-      <div class="meta-item">
-
-        <div class="meta-label">
-          Location
-        </div>
-
-        <div class="meta-value">
-          Nigeria · Remote
-        </div>
-
-      </div>
-
-
-      <div class="meta-item">
-
-        <div class="meta-label">
-          Focus
-        </div>
-
-        <div class="meta-value">
-          Cloud & Platform Engineering
-        </div>
-
-      </div>
-
-
-      <div class="meta-item">
-
-        <div class="meta-label">
-          Experience
-        </div>
-
-        <div class="meta-value">
-          3+ years
-        </div>
-
-      </div>
-
-
-      <div class="meta-item">
-
-        <div class="meta-label">
-          Primary stack
-        </div>
-
-        <div class="meta-value">
-          AWS · Kubernetes · Terraform
-        </div>
-
-      </div>
-
-    </aside>
-
-  </div>
-
 </header>
 
-
-<!-- =========================================
-     CORE STACK
-========================================= -->
-
-<div class="stack">
-
-  <div class="container stack-inner">
-
-    <div class="stack-label">
-      Core stack
+<main class="main" id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-inner">
+      <svg class="thread" viewBox="0 0 1120 260" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M-40 176 C 140 34, 306 246, 500 122 S 792 26, 1160 172" pathLength="1"></path>
+      </svg>
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="name-wrap">
+            <div class="cut-name" id="cutName" data-cut="on">
+              <h1 class="cut-name__base" id="hero-title"><span>Okechukwu</span> <span>Joshua</span> <span>Onyedikachi</span></h1>
+              <div class="cut-name__layers" aria-hidden="true"></div>
+            </div>
+          </div>
+          <button class="cut-toggle" id="cutToggle" type="button" aria-pressed="false" hidden>Line it up</button>
+          <div class="role-label">DevOps Engineer and SRE</div>
+          <div class="hero-note paper tilt-r">
+            <div class="clip">
+              <p class="hero-description">I build reliable cloud infrastructure, deployment systems and observability platforms. My focus is Kubernetes, AWS, Terraform, CI/CD and the engineering practices that make production systems predictable.</p>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf" class="btn btn-primary">Download résumé</a>
+            <a href="https://github.com/kaacchhiii" target="_blank" rel="noopener" class="btn">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/onyedikachiokechukwu/" target="_blank" rel="noopener" class="btn">LinkedIn ↗</a>
+          </div>
+        </div>
+        <aside class="hero-side" aria-label="Profile details">
+          <div class="stamp" aria-hidden="true">Open to roles</div>
+          <article class="meta paper tilt-l pin">
+            <div class="clip">
+              <span class="meta-label">Location</span>
+              <span class="meta-value">Nigeria · Remote</span>
+            </div>
+          </article>
+          <article class="meta paper tilt-r">
+            <div class="clip">
+              <span class="meta-label">Focus</span>
+              <span class="meta-value">Cloud &amp; Platform Engineering</span>
+            </div>
+          </article>
+          <article class="meta paper tilt-l pin">
+            <div class="clip">
+              <span class="meta-label">Experience</span>
+              <span class="meta-value">3+ years</span>
+            </div>
+          </article>
+          <article class="meta paper tilt-r">
+            <div class="clip">
+              <span class="meta-label">Primary stack</span>
+              <span class="meta-value">AWS · Kubernetes · Terraform</span>
+            </div>
+          </article>
+        </aside>
+      </div>
     </div>
+  </section>
 
-    <div class="stack-items">
-
-      <span class="stack-item">AWS</span>
-      <span class="stack-item">Kubernetes</span>
-      <span class="stack-item">Terraform</span>
-      <span class="stack-item">Docker</span>
-      <span class="stack-item">GitHub Actions</span>
-      <span class="stack-item">GitLab CI</span>
-      <span class="stack-item">ArgoCD</span>
-      <span class="stack-item">Prometheus</span>
-      <span class="stack-item">Grafana</span>
-      <span class="stack-item">Python</span>
-      <span class="stack-item">Linux</span>
-
+  <section class="tape-wrap" aria-labelledby="stack-title">
+    <h2 class="sr-only" id="stack-title">Core stack</h2>
+    <div class="tape-band">
+      <div class="tape-bar">
+        <span class="tape-label">Core stack</span>
+        <button class="tape-pause" id="stackPause" type="button" aria-pressed="false" hidden>Pause</button>
+      </div>
+      <div class="marquee" id="stackMarquee">
+        <div class="marquee-track">
+          <ul class="chips">
+            <li>AWS</li>
+            <li>Kubernetes</li>
+            <li>Terraform</li>
+            <li>Docker</li>
+            <li>GitHub Actions</li>
+            <li>GitLab CI</li>
+            <li>ArgoCD</li>
+            <li>Prometheus</li>
+            <li>Grafana</li>
+            <li>Python</li>
+            <li>Linux</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </section>
 
+  <div class="container content">
+    <section id="experience">
+      <div class="section-head">
+        <span class="eyebrow">01 / Deployment history</span>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-note paper tilt-r">
+          <div class="clip">
+            <p class="section-description">Engineering experience across FinTech, startups and platform environments, with emphasis on automation, reliability and delivery.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-grid">
+        <article class="job paper tilt-l pin">
+          <div class="clip">
+            <div class="job-date">DEC 2025 — JUN 2026<br>REMOTE · CONTRACT</div>
+            <h3>Platform Engineer <span class="job-company">— Odera Training Academy</span></h3>
+            <div class="job-focus">Platform Engineering · Infrastructure Automation</div>
+            <ul>
+              <li>Designed infrastructure for a multi-region learning platform serving an international audience.</li>
+              <li>Automated student server provisioning with Terraform and configuration scripts.</li>
+              <li>Built CLI tooling and technical documentation for SSH, firewall and runtime configuration.</li>
+            </ul>
+            <div class="tech"><span>Terraform</span><span>AWS</span><span>Linux</span><span>Python</span><span>Automation</span></div>
+          </div>
+        </article>
+
+        <article class="job paper tilt-r">
+          <div class="clip">
+            <div class="job-date">FEB 2025 — JAN 2026<br>LAGOS · CONTRACT</div>
+            <h3>DevOps Engineer <span class="job-company">— First Bank of Nigeria</span></h3>
+            <div class="job-focus">DevSecOps · CI/CD · Release Engineering</div>
+            <ul>
+              <li>Led DevSecOps training covering container security scanning, static analysis and secure delivery practices.</li>
+              <li>Helped establish security gates across development, staging and testing pipelines.</li>
+              <li>Authored release workflow documentation covering approval gates, environment promotion and rollback procedures.</li>
+            </ul>
+            <div class="tech"><span>DevSecOps</span><span>CI/CD</span><span>Docker</span><span>Security</span><span>Release Engineering</span></div>
+          </div>
+        </article>
+
+        <article class="job paper tilt-r pin">
+          <div class="clip">
+            <div class="job-date">AUG 2024 — JUL 2025<br>REMOTE · CONTRACT</div>
+            <h3>DevOps Engineer <span class="job-company">— Techwings Global LLC</span></h3>
+            <div class="job-focus">Cloud Infrastructure · Python · Terraform</div>
+            <ul>
+              <li>Implemented autoscaling and capacity planning for Python microservices running on DigitalOcean.</li>
+              <li>Tuned Redis and worker configurations to improve throughput without additional infrastructure spend.</li>
+              <li>Investigated Terraform state drift and reconciled load balancers and compute resources with infrastructure code.</li>
+            </ul>
+            <div class="tech"><span>DigitalOcean</span><span>Terraform</span><span>Python</span><span>Redis</span><span>Docker</span></div>
+          </div>
+        </article>
+
+        <article class="job paper tilt-l">
+          <div class="clip">
+            <div class="job-date">DEC 2022 — APR 2024<br>PART-TIME</div>
+            <h3>Junior DevOps Engineer <span class="job-company">— Shuttle9ja</span></h3>
+            <div class="job-focus">CI/CD · Monitoring · Containerization</div>
+            <ul>
+              <li>Built the team's first GitLab CI/CD pipeline and automated SSH-based deployments.</li>
+              <li>Deployed Prometheus and Grafana to provide real-time infrastructure and application visibility.</li>
+              <li>Added CPU and memory limits to Docker workloads to improve stability during peak traffic.</li>
+            </ul>
+            <div class="tech"><span>GitLab CI</span><span>Docker</span><span>Prometheus</span><span>Grafana</span><span>Linux</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="homelab">
+      <div class="section-head">
+        <span class="eyebrow">02 / Infrastructure lab</span>
+        <h2 class="section-title section-title--red">Engineering under constraints</h2>
+        <div class="section-note paper tilt-l">
+          <div class="clip">
+            <p class="section-description">A self-hosted environment used to practice production engineering principles where hardware limitations make bad decisions visible. Full narrative in the <a class="text-link" href="https://github.com/kaacchhiii/homelab#readme" target="_blank" rel="noopener">README case study ↗</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lab-panel paper tilt-r pin">
+        <div class="clip">
+          <div class="lab-top">
+            <div class="lab-title">homelab / production-environment</div>
+            <a class="status-link" href="https://omo.colobus-fir.ts.net/status/portfolio" target="_blank" rel="noopener" title="Live public status page">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span class="status-word">OPERATIONAL</span>
+              <span aria-hidden="true">—</span>
+              <span>view live status ↗</span>
+            </a>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><span class="stat-label">Services</span><span class="stat-value">21</span></div>
+            <div class="stat"><span class="stat-label">Monthly cost</span><span class="stat-value">$0</span></div>
+            <div class="stat"><span class="stat-label">Memory</span><span class="stat-value">3.7 GB</span></div>
+            <div class="stat"><span class="stat-label">CPU</span><span class="stat-value">i3-3220</span></div>
+          </div>
+
+          <div class="pod-board">
+            <div class="pod-kicker">Chaos Monkey / simulation</div>
+            <h3>Break the homelab</h3>
+            <p class="pod-copy">Cross out a pod and watch it come back. This is a local simulation of the 21-service homelab, not the live cluster.</p>
+            <div class="pod-stats" role="status" aria-live="polite">
+              <span>Pods up <b id="podsUp">21/21</b></span>
+              <span>Crossed out <b id="podsOut">0</b></span>
+            </div>
+            <div class="pod-grid" id="podGrid" role="group" aria-label="Simulated pods. Activate a running pod to cross it out."></div>
+            <noscript>
+              <p class="pod-copy">Enable JavaScript to run the Chaos Monkey simulation.</p>
+            </noscript>
+            <p class="sim-note">simulation · not connected to the live cluster</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <span class="eyebrow">03 / Selected engineering work</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <article class="featured-project paper tilt-l pin">
+        <div class="clip">
+          <div class="featured-label">Featured · Kubernetes / SRE</div>
+          <h3>Production-grade Kubernetes platform</h3>
+          <div class="featured-body">
+            <p>A Kubernetes engineering program built around deployment safety, observability, security and platform engineering rather than simply running containers.</p>
+            <ul>
+              <li>Built Kubernetes environments with kubeadm and Kind, including workload scheduling and cluster configuration.</li>
+              <li>Implemented HPA/VPA, PodDisruptionBudgets and rolling, blue-green and canary deployment strategies.</li>
+              <li>Deployed Prometheus, Grafana, Loki and kube-state-metrics for cluster and application observability.</li>
+              <li>Integrated Trivy, Checkov and Gitleaks into delivery workflows.</li>
+              <li>Built GitOps workflows with ArgoCD and multi-environment promotion.</li>
+              <li>Implemented Terraform modules with Terragrunt, remote state and state locking.</li>
+              <li>Deployed AWS infrastructure across EKS/ECS with IAM and VPC security considerations.</li>
+              <li>Practiced SLOs, error budgets, chaos engineering and incident documentation.</li>
+            </ul>
+          </div>
+          <div class="tags">
+            <span>Kubernetes</span><span>AWS</span><span>Terraform</span><span>Terragrunt</span><span>ArgoCD</span><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>Trivy</span><span>Backstage</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="project-grid">
+        <article class="project paper tilt-r">
+          <div class="clip">
+            <div class="project-kicker">Infrastructure / GitOps</div>
+            <h3>Self-hosted GitOps infrastructure</h3>
+            <p>Operated containerized services on constrained hardware while applying resource governance, observability and controlled deployments.</p>
+            <div class="tags"><span>Docker</span><span>Linux</span><span>GitOps</span><span>Prometheus</span><span>Grafana</span></div>
+          </div>
+        </article>
+
+        <article class="project paper tilt-l">
+          <div class="clip">
+            <div class="project-kicker">Platform Engineering</div>
+            <h3>Developer platform</h3>
+            <p>Backstage-based developer portal with software catalog, golden-path templates and self-service infrastructure concepts.</p>
+            <div class="tags"><span>Backstage</span><span>GitOps</span><span>Terraform</span><span>Kubernetes</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="section-head">
+        <span class="eyebrow">04 / Operating philosophy</span>
+        <h2 class="section-title section-title--red">How I approach infrastructure</h2>
+      </div>
+
+      <div class="approach-grid">
+        <article class="approach paper tilt-l">
+          <div class="clip">
+            <div class="approach-number">01</div>
+            <h3>Automate the repeatable</h3>
+            <p>If an operation is performed repeatedly, it should become code, a pipeline or a self-service workflow.</p>
+          </div>
+        </article>
+        <article class="approach paper tilt-r">
+          <div class="clip">
+            <div class="approach-number">02</div>
+            <h3>Observe before optimizing</h3>
+            <p>Metrics, logs and traces should establish what is actually happening before infrastructure is changed.</p>
+          </div>
+        </article>
+        <article class="approach paper tilt-l">
+          <div class="clip">
+            <div class="approach-number">03</div>
+            <h3>Design for failure</h3>
+            <p>Reliability comes from explicit failure handling, safe deployments, resource limits and documented recovery paths.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <span class="eyebrow">05 / Technical specification</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+
+      <div class="skills-panel paper tilt-r">
+        <div class="clip">
+          <div class="classifieds">
+            <div class="skill"><h3>Cloud</h3><p>AWS, EKS, ECS, Lambda, IAM, VPC, CloudWatch, X-Ray, GuardDuty, Cost Explorer, Azure, DigitalOcean</p></div>
+            <div class="skill"><h3>Containers &amp; orchestration</h3><p>Docker, Kubernetes, kubeadm, CRDs, Operators, Helm</p></div>
+            <div class="skill"><h3>Infrastructure as code</h3><p>Terraform, Terragrunt, Ansible, Bash</p></div>
+            <div class="skill"><h3>CI/CD &amp; GitOps</h3><p>GitHub Actions, GitLab CI, Jenkins, Azure DevOps, ArgoCD, Git</p></div>
+            <div class="skill"><h3>Observability &amp; SRE</h3><p>Prometheus, Grafana, Loki, kube-state-metrics, SLIs, SLOs, error budgets, incident response, LitmusChaos</p></div>
+            <div class="skill"><h3>Security</h3><p>Trivy, Gitleaks, Checkov, Prowler, container scanning, DevSecOps</p></div>
+            <div class="skill"><h3>Programming &amp; automation</h3><p>Python, Go, Bash, PowerShell, CLI development</p></div>
+            <div class="skill"><h3>Platform engineering</h3><p>Backstage, software catalogs, golden paths, internal developer platforms and self-service infrastructure</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-head">
+        <span class="eyebrow">06 / Credentials</span>
+        <h2 class="section-title section-title--red">Education &amp; certifications</h2>
+      </div>
+
+      <div class="records-panel paper tilt-l">
+        <div class="clip">
+          <div class="records-grid">
+            <div class="record"><span class="record-name">B.Sc. Computer Science — Babcock University</span><span class="record-date">2024</span></div>
+            <div class="record"><span class="record-name">Oracle Cloud Infrastructure DevOps Professional</span><span class="record-date">2023</span></div>
+            <div class="record"><span class="record-name">Oracle Cloud Infrastructure AI Foundations Associate</span><span class="record-date">2025</span></div>
+            <div class="record"><span class="record-name">NYSC Discharge Certificate</span><span class="record-date">2026</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-card paper tilt-r pin">
+        <div class="clip">
+          <span class="eyebrow">07 / Contact</span>
+          <h2>Building infrastructure?</h2>
+          <p>Open to DevOps, SRE and Platform Engineering opportunities. Email is the fastest way to reach me.</p>
+          <div class="contact-links">
+            <a class="btn btn-on-red" href="mailto:onyedikachi0813@gmail.com">Email me</a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/onyedikachiokechukwu/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn btn-outline" href="https://github.com/kaacchhiii" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="btn btn-outline" href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf">Résumé PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-
-</div>
-
-
-<main class="container" id="main">
-
-
-<!-- =========================================
-     EXPERIENCE
-========================================= -->
-
-<section id="experience">
-
-  <div class="section-head reveal">
-
-    <div class="eyebrow">
-      01 / Deployment history
-    </div>
-
-    <h2 class="section-title">
-      Experience
-    </h2>
-
-    <p class="section-description">
-      Engineering experience across FinTech, startups and platform
-      environments, with emphasis on automation, reliability and delivery.
-    </p>
-
-  </div>
-
-
-  <div class="experience reveal">
-
-
-    <!-- ODERA -->
-
-    <article class="experience-item">
-
-      <div class="experience-date">
-
-        DEC 2025 — JUN 2026<br>
-
-        REMOTE · CONTRACT
-
-      </div>
-
-
-      <div>
-
-        <h3 class="experience-title">
-
-          Platform Engineer
-
-          <span class="experience-company">
-            — Odera Training Academy
-          </span>
-
-        </h3>
-
-
-        <div class="experience-location">
-          PLATFORM ENGINEERING · INFRASTRUCTURE AUTOMATION
-        </div>
-
-
-        <ul class="experience-list">
-
-          <li>
-            Designed infrastructure for a multi-region learning platform
-            serving an international audience.
-          </li>
-
-          <li>
-            Automated student server provisioning with Terraform and
-            configuration scripts.
-          </li>
-
-          <li>
-            Built CLI tooling and technical documentation for SSH,
-            firewall and runtime configuration.
-          </li>
-
-        </ul>
-
-
-        <div class="experience-tech">
-
-          <span>Terraform</span>
-          <span>AWS</span>
-          <span>Linux</span>
-          <span>Python</span>
-          <span>Automation</span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- FIRST BANK -->
-
-    <article class="experience-item">
-
-      <div class="experience-date">
-
-        FEB 2025 — JAN 2026<br>
-
-        LAGOS · CONTRACT
-
-      </div>
-
-
-      <div>
-
-        <h3 class="experience-title">
-
-          DevOps Engineer
-
-          <span class="experience-company">
-            — First Bank of Nigeria
-          </span>
-
-        </h3>
-
-
-        <div class="experience-location">
-          DEVSECOPS · CI/CD · RELEASE ENGINEERING
-        </div>
-
-
-        <ul class="experience-list">
-
-          <li>
-            Led DevSecOps training covering container security scanning,
-            static analysis and secure delivery practices.
-          </li>
-
-          <li>
-            Helped establish security gates across development,
-            staging and testing pipelines.
-          </li>
-
-          <li>
-            Authored release workflow documentation covering approval
-            gates, environment promotion and rollback procedures.
-          </li>
-
-        </ul>
-
-
-        <div class="experience-tech">
-
-          <span>DevSecOps</span>
-          <span>CI/CD</span>
-          <span>Docker</span>
-          <span>Security</span>
-          <span>Release Engineering</span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- TECHWINGS -->
-
-    <article class="experience-item">
-
-      <div class="experience-date">
-
-        AUG 2024 — JUL 2025<br>
-
-        REMOTE · CONTRACT
-
-      </div>
-
-
-      <div>
-
-        <h3 class="experience-title">
-
-          DevOps Engineer
-
-          <span class="experience-company">
-            — Techwings Global LLC
-          </span>
-
-        </h3>
-
-
-        <div class="experience-location">
-          CLOUD INFRASTRUCTURE · PYTHON · TERRAFORM
-        </div>
-
-
-        <ul class="experience-list">
-
-          <li>
-            Implemented autoscaling and capacity planning for Python
-            microservices running on DigitalOcean.
-          </li>
-
-          <li>
-            Tuned Redis and worker configurations to improve throughput
-            without additional infrastructure spend.
-          </li>
-
-          <li>
-            Investigated Terraform state drift and reconciled load
-            balancers and compute resources with infrastructure code.
-          </li>
-
-        </ul>
-
-
-        <div class="experience-tech">
-
-          <span>DigitalOcean</span>
-          <span>Terraform</span>
-          <span>Python</span>
-          <span>Redis</span>
-          <span>Docker</span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- SHUTTLE9JA -->
-
-    <article class="experience-item">
-
-      <div class="experience-date">
-
-        DEC 2022 — APR 2024<br>
-
-        PART-TIME
-
-      </div>
-
-
-      <div>
-
-        <h3 class="experience-title">
-
-          Junior DevOps Engineer
-
-          <span class="experience-company">
-            — Shuttle9ja
-          </span>
-
-        </h3>
-
-
-        <div class="experience-location">
-          CI/CD · MONITORING · CONTAINERIZATION
-        </div>
-
-
-        <ul class="experience-list">
-
-          <li>
-            Built the team's first GitLab CI/CD pipeline and automated
-            SSH-based deployments.
-          </li>
-
-          <li>
-            Deployed Prometheus and Grafana to provide real-time
-            infrastructure and application visibility.
-          </li>
-
-          <li>
-            Added CPU and memory limits to Docker workloads to improve
-            stability during peak traffic.
-          </li>
-
-        </ul>
-
-
-        <div class="experience-tech">
-
-          <span>GitLab CI</span>
-          <span>Docker</span>
-          <span>Prometheus</span>
-          <span>Grafana</span>
-          <span>Linux</span>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================================
-     HOMELAB
-========================================= -->
-
-<section id="homelab">
-
-  <div class="section-head reveal">
-
-    <div class="eyebrow">
-      02 / Infrastructure lab
-    </div>
-
-    <h2 class="section-title">
-      Engineering under constraints
-    </h2>
-
-    <p class="section-description">
-      A self-hosted environment used to practice production engineering
-      principles where hardware limitations make bad decisions visible.
-      Full narrative in the
-      <a href="https://github.com/kaacchhiii/homelab#readme" style="color:var(--cyan);">
-        README case study ↗
-      </a>
-    </p>
-
-  </div>
-
-
-  <div class="system-panel reveal">
-
-    <div class="system-header">
-
-      <div class="system-title">
-        homelab / production-environment
-      </div>
-
-      <a
-        class="system-status"
-        href="https://omo.colobus-fir.ts.net/status/portfolio"
-        target="_blank"
-        rel="noopener"
-        title="Live public status page">
-        ● OPERATIONAL — view live status ↗
-      </a>
-
-    </div>
-
-
-    <div class="system-grid">
-
-      <div class="system-stat">
-
-        <div class="system-stat-label">
-          Services
-        </div>
-
-        <div class="system-stat-value" data-count="21">
-          21
-        </div>
-
-      </div>
-
-
-      <div class="system-stat">
-
-        <div class="system-stat-label">
-          Monthly cost
-        </div>
-
-        <div class="system-stat-value">
-          $0
-        </div>
-
-      </div>
-
-
-      <div class="system-stat">
-
-        <div class="system-stat-label">
-          Memory
-        </div>
-
-        <div class="system-stat-value" data-count="3.7" data-decimals="1" data-suffix=" GB">
-          3.7 GB
-        </div>
-
-      </div>
-
-
-      <div class="system-stat">
-
-        <div class="system-stat-label">
-          CPU
-        </div>
-
-        <div class="system-stat-value">
-          i3-3220
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="system-terminal" id="terminal" role="region" aria-label="Interactive homelab terminal">
-
-      <div class="term-scroll" id="termOutput" role="log" aria-live="polite" aria-relevant="additions">
-
-      <div>
-        <span class="cmd">$</span>
-        docker ps --format "{{.Names}}"
-      </div>
-
-      <div class="ok">
-        ✓ reverse-proxy
-      </div>
-
-      <div class="ok">
-        ✓ monitoring
-      </div>
-
-      <div class="ok">
-        ✓ logging
-      </div>
-
-      <div class="ok">
-        ✓ media
-      </div>
-
-      <div class="ok">
-        ✓ applications
-      </div>
-
-      <div>
-        <span class="cmd">$</span>
-        free -h
-      </div>
-
-      <div>
-        Mem: 3.7Gi · resource limits enforced · log rotation enabled
-      </div>
-
-      <div>
-        <span class="cmd">$</span>
-        gitops status
-      </div>
-
-      <div class="ok">
-        ✓ repository synchronized
-      </div>
-
-      </div>
-
-      <div class="term-hints">
-
-        <span class="term-hint-label">
-          try:
-        </span>
-
-        <button type="button" class="term-try" data-cmd="help">
-          help
-        </button>
-
-        <button type="button" class="term-try" data-cmd="whoami">
-          whoami
-        </button>
-
-        <button type="button" class="term-try" data-cmd="ls">
-          ls
-        </button>
-
-        <button type="button" class="term-try" data-cmd="contact">
-          contact
-        </button>
-
-      </div>
-
-      <form class="term-form" id="termForm">
-
-        <label class="sr-only" for="termInput">
-          Terminal command
-        </label>
-
-        <span class="term-prompt" aria-hidden="true">$</span>
-
-        <span class="term-cursor" aria-hidden="true">▌</span>
-
-        <input
-          class="term-input"
-          id="termInput"
-          name="command"
-          type="text"
-          autocomplete="off"
-          autocapitalize="none"
-          autocorrect="off"
-          spellcheck="false"
-          placeholder="type a command or tap help"
-          aria-describedby="termHelp">
-
-        <button class="term-run" type="submit">
-          run
-        </button>
-
-      </form>
-
-      <span class="sr-only" id="termHelp">
-        Commands: help, whoami, ls, cat experience, cat skills,
-        kubectl get pods, docker ps, free -h, contact, clear.
-      </span>
-
-    </div>
-
-  </div>
-
-
-  <div class="chaos-panel reveal" id="chaosPanel">
-
-    <div class="chaos-head">
-
-      <div>
-
-        <div class="chaos-kicker">
-          Chaos Monkey / simulation
-        </div>
-
-        <h3 class="chaos-title">
-          Break the homelab
-        </h3>
-
-        <p class="chaos-copy">
-          Kill a pod and watch the autoscaler bring it back. This is a
-          local simulation of the 21-service homelab, not the live cluster.
-        </p>
-
-      </div>
-
-
-      <button
-        class="chaos-toggle"
-        id="chaosToggle"
-        type="button"
-        role="switch"
-        aria-checked="false"
-        aria-label="Chaos mode: randomly kill pods">
-
-        <span>
-          chaos mode
-        </span>
-
-        <span class="toggle-track" aria-hidden="true"></span>
-
-      </button>
-
-    </div>
-
-
-    <div class="chaos-stats">
-
-      <div class="chaos-stat">
-
-        <div class="chaos-stat-label">
-          Pods up
-        </div>
-
-        <div class="chaos-stat-value" id="podsUp">
-          21/21
-        </div>
-
-      </div>
-
-
-      <div class="chaos-stat">
-
-        <div class="chaos-stat-label">
-          Kills
-        </div>
-
-        <div class="chaos-stat-value" id="chaosKills">
-          0
-        </div>
-
-      </div>
-
-
-      <div class="chaos-stat">
-
-        <div class="chaos-stat-label">
-          Mean time to recovery
-        </div>
-
-        <div class="chaos-stat-value" id="chaosMttr">
-          —
-        </div>
-
-      </div>
-
-
-      <div class="chaos-stat">
-
-        <div class="chaos-stat-label">
-          Uptime
-        </div>
-
-        <div class="chaos-stat-value" id="chaosUptime">
-          100.0%
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="pod-grid"
-      id="podGrid"
-      role="group"
-      aria-label="Simulated pods. Activate a running pod to kill it.">
-    </div>
-
-    <noscript>
-      <p class="chaos-copy">
-        Enable JavaScript to run the Chaos Monkey simulation.
-      </p>
-    </noscript>
-
-
-    <div class="chaos-foot">
-
-      <div class="gauge">
-
-        <div class="gauge-head">
-
-          <span class="chaos-stat-label">
-            Memory (simulated)
-          </span>
-
-          <span class="gauge-value" id="chaosMemory">
-            3.7 / 3.7 GB
-          </span>
-
-        </div>
-
-        <div
-          class="gauge-bar"
-          id="chaosMemoryGauge"
-          role="meter"
-          aria-label="Simulated memory use"
-          aria-valuemin="0"
-          aria-valuemax="3.7"
-          aria-valuenow="3.7">
-
-          <span class="gauge-fill" id="chaosMemoryFill"></span>
-
-        </div>
-
-      </div>
-
-
-      <p class="chaos-note">
-        simulation · not connected to the live cluster
-      </p>
-
-    </div>
-
-    <div class="sr-only" id="chaosLive" role="status" aria-live="polite"></div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================
-     PROJECTS
-========================================= -->
-
-<section id="projects">
-
-  <div class="section-head reveal">
-
-    <div class="eyebrow">
-      03 / Selected engineering work
-    </div>
-
-    <h2 class="section-title">
-      Projects
-    </h2>
-
-  </div>
-
-
-  <div class="projects">
-
-
-    <!-- KUBERNETES -->
-
-    <article class="project featured reveal">
-
-      <div class="project-kicker">
-        Featured · Kubernetes / SRE
-      </div>
-
-      <h3>
-        Production-grade Kubernetes platform
-      </h3>
-
-      <p>
-        A Kubernetes engineering program built around deployment safety,
-        observability, security and platform engineering rather than
-        simply running containers.
-      </p>
-
-
-      <ul class="project-list">
-
-        <li>
-          Built Kubernetes environments with kubeadm and Kind,
-          including workload scheduling and cluster configuration.
-        </li>
-
-        <li>
-          Implemented HPA/VPA, PodDisruptionBudgets and rolling,
-          blue-green and canary deployment strategies.
-        </li>
-
-        <li>
-          Deployed Prometheus, Grafana, Loki and kube-state-metrics
-          for cluster and application observability.
-        </li>
-
-        <li>
-          Integrated Trivy, Checkov and Gitleaks into delivery workflows.
-        </li>
-
-        <li>
-          Built GitOps workflows with ArgoCD and multi-environment
-          promotion.
-        </li>
-
-        <li>
-          Implemented Terraform modules with Terragrunt,
-          remote state and state locking.
-        </li>
-
-        <li>
-          Deployed AWS infrastructure across EKS/ECS with IAM and
-          VPC security considerations.
-        </li>
-
-        <li>
-          Practiced SLOs, error budgets, chaos engineering and
-          incident documentation.
-        </li>
-
-      </ul>
-
-
-      <div class="tags">
-
-        <span class="tag">Kubernetes</span>
-        <span class="tag">AWS</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">Terragrunt</span>
-        <span class="tag">ArgoCD</span>
-        <span class="tag">Prometheus</span>
-        <span class="tag">Grafana</span>
-        <span class="tag">Loki</span>
-        <span class="tag">Trivy</span>
-        <span class="tag">Backstage</span>
-
-      </div>
-
-    </article>
-
-
-    <!-- GITOPS -->
-
-    <article class="project reveal">
-
-      <div class="project-kicker">
-        Infrastructure / GitOps
-      </div>
-
-      <h3>
-        Self-hosted GitOps infrastructure
-      </h3>
-
-      <p>
-        Operated containerized services on constrained hardware while
-        applying resource governance, observability and controlled
-        deployments.
-      </p>
-
-
-      <div class="tags">
-
-        <span class="tag">Docker</span>
-        <span class="tag">Linux</span>
-        <span class="tag">GitOps</span>
-        <span class="tag">Prometheus</span>
-        <span class="tag">Grafana</span>
-
-      </div>
-
-    </article>
-
-
-    <!-- PLATFORM -->
-
-    <article class="project reveal">
-
-      <div class="project-kicker">
-        Platform Engineering
-      </div>
-
-      <h3>
-        Developer platform
-      </h3>
-
-      <p>
-        Backstage-based developer portal with software catalog,
-        golden-path templates and self-service infrastructure concepts.
-      </p>
-
-
-      <div class="tags">
-
-        <span class="tag">Backstage</span>
-        <span class="tag">GitOps</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">Kubernetes</span>
-
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================
-     ENGINEERING PRINCIPLES
-========================================= -->
-
-<section>
-
-  <div class="section-head reveal">
-
-    <div class="eyebrow">
-      04 / Operating philosophy
-    </div>
-
-    <h2 class="section-title">
-      How I approach infrastructure
-    </h2>
-
-  </div>
-
-
-  <div class="principles">
-
-
-    <article class="principle reveal">
-
-      <div class="principle-number">
-        01
-      </div>
-
-      <h3>
-        Automate the repeatable
-      </h3>
-
-      <p>
-        If an operation is performed repeatedly, it should become code,
-        a pipeline or a self-service workflow.
-      </p>
-
-    </article>
-
-
-    <article class="principle reveal">
-
-      <div class="principle-number">
-        02
-      </div>
-
-      <h3>
-        Observe before optimizing
-      </h3>
-
-      <p>
-        Metrics, logs and traces should establish what is actually
-        happening before infrastructure is changed.
-      </p>
-
-    </article>
-
-
-    <article class="principle reveal">
-
-      <div class="principle-number">
-        03
-      </div>
-
-      <h3>
-        Design for failure
-      </h3>
-
-      <p>
-        Reliability comes from explicit failure handling, safe
-        deployments, resource limits and documented recovery paths.
-      </p>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================================
-     SKILLS
-========================================= -->
-
-<section id="skills">
-
-  <div class="section-head reveal">
-
-    <div class="eyebrow">
-      05 / Technical specification
-    </div>
-
-    <h2 class="section-title">
-      Skills
-    </h2>
-
-  </div>
-
-
-  <div class="skills reveal">
-
-
-    <div class="skill">
-
-      <h3>
-        Cloud
-      </h3>
-
-      <p>
-        AWS, EKS, ECS, Lambda, IAM, VPC, CloudWatch, X-Ray,
-        GuardDuty, Cost Explorer, Azure, DigitalOcean
-      </p>
-
-    </div>
-
-
-    <div class="skill">
-
-      <h3>
-        Containers & orchestration
-      </h3>
-
-      <p>
-        Docker, Kubernetes, kubeadm, CRDs, Operators, Helm
-      </p>
-
-    </div>
-
-
-    <div class="skill">
-
-      <h3>
-        Infrastructure as code
-      </h3>
-
-      <p>
-        Terraform, Terragrunt, Ansible, Bash
-      </p>
-
-    </div>
-
-
-    <div class="skill">
-
-      <h3>
-        CI/CD & GitOps
-      </h3>
-
-      <p>
-        GitHub Actions, GitLab CI, Jenkins, Azure DevOps,
-        ArgoCD, Git
-      </p>
-
-    </div>
-
-
-    <div class="skill">
-
-      <h3>
-        Observability & SRE
-      </h3>
-
-      <p>
-        Prometheus, Grafana, Loki, kube-state-metrics,
-        SLIs, SLOs, error budgets, incident response,
-        LitmusChaos
-      </p>
-
-    </div>
-
-
-    <div class="skill">
-
-      <h3>
-        Security
-      </h3>
-
-      <p>
-        Trivy, Gitleaks, Checkov, Prowler, container scanning,
-        DevSecOps
-      </p>
-
-    </div>
-
-
-    <div class="skill">
-
-      <h3>
-        Programming & automation
-      </h3>
-
-      <p>
-        Python, Go, Bash, PowerShell, CLI development
-      </p>
-
-    </div>
-
-
-    <div class="skill">
-
-      <h3>
-        Platform engineering
-      </h3>
-
-      <p>
-        Backstage, software catalogs, golden paths,
-        internal developer platforms and self-service infrastructure
-      </p>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================================
-     EDUCATION
-========================================= -->
-
-<section>
-
-  <div class="section-head reveal">
-
-    <div class="eyebrow">
-      06 / Credentials
-    </div>
-
-    <h2 class="section-title">
-      Education & certifications
-    </h2>
-
-  </div>
-
-
-  <div class="records reveal">
-
-
-    <div class="record">
-
-      <div class="record-name">
-        B.Sc. Computer Science — Babcock University
-      </div>
-
-      <div class="record-date">
-        2024
-      </div>
-
-    </div>
-
-
-    <div class="record">
-
-      <div class="record-name">
-        Oracle Cloud Infrastructure DevOps Professional
-      </div>
-
-      <div class="record-date">
-        2023
-      </div>
-
-    </div>
-
-
-    <div class="record">
-
-      <div class="record-name">
-        Oracle Cloud Infrastructure AI Foundations Associate
-      </div>
-
-      <div class="record-date">
-        2025
-      </div>
-
-    </div>
-
-
-    <div class="record">
-
-      <div class="record-name">
-        NYSC Discharge Certificate
-      </div>
-
-      <div class="record-date">
-        2026
-      </div>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================================
-     CONTACT
-========================================= -->
-
-<section id="contact">
-
-  <div class="contact reveal">
-
-    <div
-      class="eyebrow"
-      style="color:#72a4ff;">
-
-      07 / Contact
-
-    </div>
-
-
-    <h2>
-      Building infrastructure?
-    </h2>
-
-
-    <p>
-      Open to DevOps, SRE and Platform Engineering opportunities.
-      Email is the fastest way to reach me.
-    </p>
-
-
-    <div class="contact-links">
-
-
-      <a
-        class="btn btn-primary"
-        href="mailto:onyedikachi0813@gmail.com">
-
-        Email me
-
-      </a>
-
-
-      <a
-        class="btn"
-        href="https://www.linkedin.com/in/onyedikachiokechukwu/"
-        target="_blank"
-        rel="noopener">
-
-        LinkedIn ↗
-
-      </a>
-
-
-      <a
-        class="btn"
-        href="https://github.com/kaacchhiii"
-        target="_blank"
-        rel="noopener">
-
-        GitHub ↗
-
-      </a>
-
-
-      <a
-        class="btn"
-        href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf">
-
-        Résumé PDF
-
-      </a>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
 </main>
 
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer>
-
-  <div class="container footer-inner">
-
-
-    <div class="footer-note">
-
-      © 2026 Okechukwu Joshua Onyedikachi
-
+<footer class="footer-wrap">
+  <div class="container footer paper tilt-l">
+    <div class="clip">
+      <div class="footer-note">© 2026 Okechukwu Joshua Onyedikachi</div>
+      <div class="footer-links">
+        <a href="mailto:onyedikachi0813@gmail.com">email</a>
+        <a href="https://omo.colobus-fir.ts.net/status/portfolio" target="_blank" rel="noopener">status</a>
+        <a href="https://github.com/kaacchhiii" target="_blank" rel="noopener">github</a>
+        <a href="https://www.linkedin.com/in/onyedikachiokechukwu/" target="_blank" rel="noopener">linkedin</a>
+      </div>
     </div>
-
-
-    <div class="footer-links">
-
-      <a
-        href="mailto:onyedikachi0813@gmail.com">
-
-        email
-
-      </a>
-
-
-      <a
-        href="https://omo.colobus-fir.ts.net/status/portfolio"
-        target="_blank"
-        rel="noopener">
-
-        status
-
-      </a>
-
-
-      <a
-        href="https://github.com/kaacchhiii"
-        target="_blank"
-        rel="noopener">
-
-        github
-
-      </a>
-
-
-      <a
-        href="https://www.linkedin.com/in/onyedikachiokechukwu/"
-        target="_blank"
-        rel="noopener">
-
-        linkedin
-
-      </a>
-
-    </div>
-
   </div>
-
 </footer>
 
-
 <script>
-
-/* =========================================
-   TERMINAL TYPEWRITER
-========================================= */
-
-(function(){
-
-  const element =
-    document.getElementById("terminalText");
-
-  if(!element) return;
-
-  const text =
-    "$ whoami → devops / sre / platform engineering";
-
-  const motion =
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
-
-  let index = 0;
-  let raf = 0;
-  let last = 0;
-  let elapsed = 0;
-  let done = false;
-
-  function finish(){
-
-    done = true;
-
-    element.textContent = text;
-
+(() => {
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  const dateline = document.getElementById("dateline");
+  if (dateline) {
+    const now = new Date();
+    dateline.textContent = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(now);
+    dateline.dateTime = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
   }
 
-  function type(timestamp){
-
-    raf = 0;
-
-    if(document.hidden) return;
-
-    if(!last) last = timestamp;
-
-    elapsed += Math.min(80, timestamp - last);
-    last = timestamp;
-
-    if(elapsed >= 16){
-
-      elapsed = 0;
-
-      index++;
-
-      element.textContent =
-        text.slice(0,index) +
-        (index < text.length ? "▌" : "");
-
+  const cut = document.getElementById("cutName");
+  const cutBase = cut && cut.querySelector(".cut-name__base");
+  const cutLayers = cut && cut.querySelector(".cut-name__layers");
+  const cutToggle = document.getElementById("cutToggle");
+  if (cut && cutBase && cutLayers) {
+    for (let i = 0; i < 6; i++) {
+      const strip = document.createElement("div");
+      strip.className = "cut-name__strip";
+      strip.innerHTML = '<div class="cut-name__base cut-name__ghost">' + cutBase.innerHTML + "</div>";
+      cutLayers.append(strip);
     }
-
-    if(index < text.length){
-
-      raf = requestAnimationFrame(type);
-
-    }else{
-
-      finish();
-
+    cut.classList.add("is-sliced");
+    if (cutToggle) {
+      cutToggle.hidden = false;
+      let lined = false;
+      cut.addEventListener("pointermove", (event) => {
+        if (reduced.matches || lined) return;
+        const box = cut.getBoundingClientRect();
+        cut.style.setProperty("--px", ((event.clientX - box.left) / box.width - .5) * 28 + "px");
+      });
+      cut.addEventListener("pointerleave", () => cut.style.setProperty("--px", "0px"));
+      cutToggle.addEventListener("click", () => {
+        lined = !lined;
+        cut.dataset.cut = lined ? "off" : "on";
+        cutToggle.textContent = lined ? "Cut it again" : "Line it up";
+        cutToggle.setAttribute("aria-pressed", String(lined));
+        if (lined) cut.style.setProperty("--px", "0px");
+      });
     }
-
   }
 
-  function start(){
-
-    if(done || raf) return;
-
-    last = 0;
-
-    raf = requestAnimationFrame(type);
-
-  }
-
-  if(motion.matches){
-
-    finish();
-
-  }else{
-
-    start();
-
-  }
-
-  document.addEventListener(
-    "visibilitychange",
-    function(){
-
-      if(document.hidden){
-
-        if(raf) cancelAnimationFrame(raf);
-
-        raf = 0;
-
-      }else{
-
-        start();
-
-      }
-
-    }
-  );
-
-  motion.addEventListener(
-    "change",
-    function(event){
-
-      if(event.matches){
-
-        if(raf) cancelAnimationFrame(raf);
-
-        raf = 0;
-
-        finish();
-
-      }else if(!done){
-
-        start();
-
-      }
-
-    }
-  );
-
-})();
-
-
-/* =========================================
-   SCROLL PROGRESS
-========================================= */
-
-(function(){
-
-  const progress =
-    document.getElementById("progress");
-
-  function update(){
-
-    const scrollTop =
-      window.scrollY;
-
-    const height =
-      document.documentElement.scrollHeight -
-      window.innerHeight;
-
-    const percentage =
-      height > 0
-        ? (scrollTop / height) * 100
-        : 0;
-
-    progress.style.width =
-      percentage + "%";
-
-  }
-
-  window.addEventListener(
-    "scroll",
-    update,
-    {passive:true}
-  );
-
-  update();
-
-})();
-
-
-/* =========================================
-   REVEAL ON SCROLL
-========================================= */
-
-(function(){
-
-  const items =
-    document.querySelectorAll(".reveal");
-
-  if(
-    !("IntersectionObserver" in window) ||
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches
-  ){
-
-    items.forEach(item =>
-      item.classList.add("visible")
-    );
-
-    return;
-
-  }
-
-  const observer =
-    new IntersectionObserver(
-      entries => {
-
-        entries.forEach(entry => {
-
-          if(entry.isIntersecting){
-
-            entry.target.classList.add(
-              "visible"
-            );
-
-            observer.unobserve(
-              entry.target
-            );
-
-          }
-
+  const marquee = document.getElementById("stackMarquee");
+  const marqueeTrack = marquee && marquee.querySelector(".marquee-track");
+  const marqueeChips = marqueeTrack && marqueeTrack.querySelector(".chips");
+  const marqueePause = document.getElementById("stackPause");
+  if (marquee && marqueeTrack && marqueeChips) {
+    if (!reduced.matches) {
+      const clone = marqueeChips.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      marqueeTrack.append(clone);
+      marquee.classList.add("is-running");
+      if (marqueePause) {
+        marqueePause.hidden = false;
+        marqueePause.addEventListener("click", () => {
+          const paused = marquee.classList.toggle("is-paused");
+          marqueePause.textContent = paused ? "Play" : "Pause";
+          marqueePause.setAttribute("aria-pressed", String(paused));
         });
-
-      },
-      {
-        threshold:.08,
-        rootMargin:"0px 0px -50px 0px"
       }
-    );
-
-  items.forEach(item =>
-    observer.observe(item)
-  );
-
-})();
-
-
-/* =========================================
-   MOBILE NAV
-========================================= */
-
-(function(){
-
-  const button =
-    document.getElementById("mobileMenu");
-
-  const nav =
-    document.getElementById("navLinks");
-
-  if(!button || !nav) return;
-
-  const desktop =
-    window.matchMedia(
-      "(min-width:701px)"
-    );
-
-  function setOpen(open){
-
-    nav.classList.toggle("open",open);
-
-    button.setAttribute(
-      "aria-expanded",
-      open ? "true" : "false"
-    );
-
-    button.setAttribute(
-      "aria-label",
-      open ? "Close navigation" : "Open navigation"
-    );
-
-  }
-
-  button.addEventListener(
-    "click",
-    function(){
-
-      setOpen(
-        !nav.classList.contains("open")
-      );
-
     }
-  );
+  }
 
-  document.addEventListener(
-    "keydown",
-    function(event){
-
-      if(
-        event.key === "Escape" &&
-        nav.classList.contains("open")
-      ){
-
-        setOpen(false);
-
-        button.focus();
-
-      }
-
+  const podGrid = document.getElementById("podGrid");
+  if (podGrid) {
+    const podsUp = document.getElementById("podsUp");
+    const podsOut = document.getElementById("podsOut");
+    let crossedOut = 0;
+    const pods = [];
+    for (let i = 1; i <= 21; i++) {
+      const number = String(i).padStart(2, "0");
+      const pod = document.createElement("button");
+      pod.type = "button";
+      pod.className = "pod";
+      pod.dataset.pod = number;
+      pod.textContent = number;
+      pod.setAttribute("aria-label", "Pod " + number + " running. Cross it out.");
+      podGrid.append(pod);
+      pods.push(pod);
     }
-  );
-
-  nav.addEventListener(
-    "click",
-    function(event){
-
-      const link =
-        event.target.closest("a");
-
-      if(
-        link &&
-        window.innerWidth <= 700
-      ){
-
-        setOpen(false);
-
-      }
-
-    }
-  );
-
-  document.addEventListener(
-    "click",
-    function(event){
-
-      if(!nav.classList.contains("open")) return;
-
-      if(
-        nav.contains(event.target) ||
-        button.contains(event.target)
-      ) return;
-
-      setOpen(false);
-
-    }
-  );
-
-  function closeOnDesktop(event){
-
-    if(event.matches) setOpen(false);
-
-  }
-
-  if(desktop.addEventListener){
-
-    desktop.addEventListener(
-      "change",
-      closeOnDesktop
-    );
-
-  }else if(desktop.addListener){
-
-    desktop.addListener(closeOnDesktop);
-
-  }
-
-})();
-
-
-/* Network background */
-
-(function(){
-
-  const canvas = document.getElementById("net-bg");
-  if(!canvas) return;
-
-  const ctx = canvas.getContext("2d",{alpha:true});
-  if(!ctx) return;
-
-  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const low = window.matchMedia("(max-width:700px)").matches ||
-    (navigator.hardwareConcurrency || 8) <= 4;
-
-  const NODES = low ? 26 : 64;
-  const PACKETS = low ? 30 : 80;
-  const DPR_CAP = low ? 1.5 : 2;
-  const TAU = Math.PI * 2;
-
-  const COLOR_A = [79,140,255];
-  const COLOR_B = [56,217,255];
-  const COLOR_PACKET = [54,217,139];
-
-  const pointer = {x:-9999,y:-9999,active:false};
-
-  let width = 0;
-  let height = 0;
-  let dpr = 1;
-  let nodes = [];
-  let links = [];
-  let packets = [];
-  let frameId = 0;
-  let running = false;
-  let armed = false;
-  let onScreen = true;
-  let lastFrame = 0;
-  let resizeFrame = 0;
-  let reduced = motion.matches;
-
-  const random = (min,max) => min + Math.random() * (max - min);
-  const rgba = (color,alpha) =>
-    "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," +
-    alpha.toFixed(3) + ")";
-
-  function makeNodes(){
-
-    nodes = [];
-
-    for(let i = 0; i < NODES; i++){
-      nodes.push({
-        x:random(24,Math.max(25,width - 24)),
-        y:random(24,Math.max(25,height - 24)),
-        vx:random(-7,7),
-        vy:random(-7,7),
-        r:random(1.2,3),
-        phase:random(0,TAU),
-        glow:0
-      });
-    }
-
-  }
-
-  function makeLinks(){
-
-    links = [];
-    packets = [];
-
-    const seen = new Set();
-    const maxDistance = Math.min(width,height) * (low ? .34 : .28);
-
-    for(let i = 0; i < nodes.length; i++){
-
-      const nearest = [];
-
-      for(let j = 0; j < nodes.length; j++){
-
-        if(i === j) continue;
-
-        const distance = Math.hypot(
-          nodes[j].x - nodes[i].x,
-          nodes[j].y - nodes[i].y
-        );
-
-        if(distance < maxDistance){
-          nearest.push([j,distance]);
-        }
-
-      }
-
-      nearest.sort((a,b) => a[1] - b[1]);
-
-      for(let k = 0; k < Math.min(low ? 2 : 3,nearest.length); k++){
-
-        const j = nearest[k][0];
-        const key = i < j ? i + "-" + j : j + "-" + i;
-
-        if(seen.has(key)) continue;
-
-        seen.add(key);
-        links.push({
-          a:i,
-          b:j,
-          phase:random(0,TAU),
-          pulse:random(.4,1.4)
-        });
-
-      }
-
-    }
-
-    if(!links.length) return;
-
-    for(let i = 0; i < PACKETS; i++){
-      packets.push({
-        link:Math.floor(Math.random() * links.length),
-        t:Math.random(),
-        speed:random(.06,.2),
-        size:random(.8,1.8)
-      });
-    }
-
-  }
-
-  function resizeCanvas(){
-
-    width = Math.max(1,window.innerWidth);
-    height = Math.max(1,window.innerHeight);
-    dpr = Math.min(window.devicePixelRatio || 1,DPR_CAP);
-
-    canvas.width = Math.round(width * dpr);
-    canvas.height = Math.round(height * dpr);
-    canvas.style.width = width + "px";
-    canvas.style.height = height + "px";
-
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-
-    if(!nodes.length){
-      makeNodes();
-    }else{
-      nodes.forEach(node => {
-        node.x = Math.min(width - 12,Math.max(12,node.x));
-        node.y = Math.min(height - 12,Math.max(12,node.y));
-      });
-    }
-
-    makeLinks();
-
-    if(reduced || !running) draw(0);
-
-  }
-
-  function draw(timestamp){
-
-    ctx.clearRect(0,0,width,height);
-
-    const time = reduced ? 0 : timestamp / 1000;
-    const shift = reduced ? .5 : (Math.sin(time * .08) + 1) / 2;
-
-    const color = [
-      Math.round(COLOR_A[0] + (COLOR_B[0] - COLOR_A[0]) * shift),
-      Math.round(COLOR_A[1] + (COLOR_B[1] - COLOR_A[1]) * shift),
-      Math.round(COLOR_A[2] + (COLOR_B[2] - COLOR_A[2]) * shift)
-    ];
-
-    const radius = Math.min(230,Math.max(150,Math.min(width,height) * .22));
-
-    nodes.forEach(node => {
-
-      node.glow = 0;
-
-      if(!pointer.active || reduced) return;
-
-      const distance = Math.hypot(
-        pointer.x - node.x,
-        pointer.y - node.y
-      );
-
-      if(distance < radius){
-        node.glow = 1 - distance / radius;
-      }
-
-    });
-
-    links.forEach(link => {
-
-      const a = nodes[link.a];
-      const b = nodes[link.b];
-      if(!a || !b) return;
-
-      const glow = Math.max(a.glow,b.glow);
-      const pulse = reduced
-        ? .5
-        : (Math.sin(time * link.pulse + link.phase) + 1) / 2;
-
-      ctx.strokeStyle = rgba(
-        color,
-        .07 + pulse * .035 + glow * .32
-      );
-
-      ctx.lineWidth = .5 + glow * 1.1;
-      ctx.beginPath();
-      ctx.moveTo(a.x,a.y);
-      ctx.lineTo(b.x,b.y);
-      ctx.stroke();
-
-    });
-
-    packets.forEach(packet => {
-
-      const link = links[packet.link];
-      if(!link) return;
-
-      const a = nodes[link.a];
-      const b = nodes[link.b];
-      if(!a || !b) return;
-
-      const x = a.x + (b.x - a.x) * packet.t;
-      const y = a.y + (b.y - a.y) * packet.t;
-      const glow = Math.max(a.glow,b.glow);
-
-      ctx.fillStyle = rgba(COLOR_PACKET,.35 + glow * .4);
-      ctx.beginPath();
-      ctx.arc(x,y,packet.size + glow * 1.6,0,TAU);
-      ctx.fill();
-
-      ctx.fillStyle = rgba(COLOR_PACKET,.85);
-      ctx.beginPath();
-      ctx.arc(x,y,packet.size * .55,0,TAU);
-      ctx.fill();
-
-    });
-
-    nodes.forEach(node => {
-
-      if(node.glow > .02){
-
-        ctx.fillStyle = rgba(color,.08 + node.glow * .22);
-        ctx.beginPath();
-        ctx.arc(node.x,node.y,node.r + 6 + node.glow * 13,0,TAU);
-        ctx.fill();
-
-      }
-
-      ctx.fillStyle = rgba(color,.42 + node.glow * .5);
-      ctx.beginPath();
-      ctx.arc(node.x,node.y,node.r + node.glow * 1.4,0,TAU);
-      ctx.fill();
-
-      ctx.fillStyle =
-        "rgba(240,248,255," + (.55 + node.glow * .4).toFixed(3) + ")";
-      ctx.beginPath();
-      ctx.arc(node.x,node.y,Math.max(.6,node.r * .38),0,TAU);
-      ctx.fill();
-
-    });
-
-  }
-
-  function update(delta,timestamp){
-
-    const radius = Math.min(230,Math.max(150,Math.min(width,height) * .22));
-
-    nodes.forEach(node => {
-
-      if(pointer.active){
-
-        const dx = pointer.x - node.x;
-        const dy = pointer.y - node.y;
-        const distance = Math.hypot(dx,dy) || 1;
-
-        if(distance < radius){
-
-          const force = 1 - distance / radius;
-          node.vx += (dx / distance) * force * 28 * delta;
-          node.vy += (dy / distance) * force * 28 * delta;
-
-        }
-
-      }
-
-      node.vx += Math.sin(timestamp * .0003 + node.phase) * 2 * delta;
-      node.vy += Math.cos(timestamp * .00026 + node.phase) * 2 * delta;
-
-      const damping = Math.pow(.999,delta * 60);
-      node.vx *= damping;
-      node.vy *= damping;
-
-      const speed = Math.hypot(node.vx,node.vy);
-
-      if(speed > 30){
-        node.vx = node.vx / speed * 30;
-        node.vy = node.vy / speed * 30;
-      }
-
-      node.x += node.vx * delta;
-      node.y += node.vy * delta;
-
-      if(node.x < 12){
-        node.x = 12;
-        node.vx = Math.abs(node.vx);
-      }else if(node.x > width - 12){
-        node.x = width - 12;
-        node.vx = -Math.abs(node.vx);
-      }
-
-      if(node.y < 12){
-        node.y = 12;
-        node.vy = Math.abs(node.vy);
-      }else if(node.y > height - 12){
-        node.y = height - 12;
-        node.vy = -Math.abs(node.vy);
-      }
-
-    });
-
-    packets.forEach(packet => {
-      packet.t += packet.speed * delta;
-      if(packet.t > 1){
-        packet.t -= 1;
-        packet.link = Math.floor(Math.random() * links.length);
-      }
-    });
-
-  }
-
-  function frame(timestamp){
-
-    frameId = 0;
-
-    if(!running) return;
-
-    if(document.hidden){
-      stop();
-      return;
-    }
-
-    const delta = Math.min(.05,(timestamp - lastFrame) / 1000 || .016);
-    lastFrame = timestamp;
-
-    update(delta,timestamp);
-    draw(timestamp);
-
-    frameId = requestAnimationFrame(frame);
-
-  }
-
-  function start(){
-
-    if(!armed || running || reduced || document.hidden || !onScreen) return;
-
-    running = true;
-    lastFrame = performance.now();
-    frameId = requestAnimationFrame(frame);
-
-  }
-
-  function stop(){
-
-    running = false;
-
-    if(frameId) cancelAnimationFrame(frameId);
-    frameId = 0;
-
-  }
-
-  if("IntersectionObserver" in window){
-
-    new IntersectionObserver(entries => {
-
-      onScreen = entries[0].isIntersecting;
-      onScreen ? start() : stop();
-
-    },{threshold:0}).observe(canvas);
-
-  }
-
-  window.addEventListener("pointermove",event => {
-    pointer.x = event.clientX;
-    pointer.y = event.clientY;
-    pointer.active = true;
-    armed = true;
-    start();
-  },{passive:true});
-
-  window.addEventListener("pointerdown",event => {
-    pointer.x = event.clientX;
-    pointer.y = event.clientY;
-    pointer.active = true;
-    armed = true;
-    start();
-  },{passive:true});
-
-  ["scroll","keydown","touchstart"].forEach(type => {
-    window.addEventListener(type,() => {
-      armed = true;
-      start();
-    },{passive:true,once:true});
-  });
-
-  window.addEventListener("pointerup",event => {
-    if(event.pointerType === "touch") pointer.active = false;
-  },{passive:true});
-
-  window.addEventListener("pointercancel",() => {
-    pointer.active = false;
-  },{passive:true});
-
-  window.addEventListener("blur",() => {
-    pointer.active = false;
-  });
-
-  document.addEventListener("visibilitychange",() => {
-    if(document.hidden) stop();
-    else if(reduced) draw(0);
-    else start();
-  });
-
-  motion.addEventListener("change",event => {
-
-    reduced = event.matches;
-
-    if(reduced){
-      stop();
-      draw(0);
-    }else{
-      start();
-    }
-
-  });
-
-  window.addEventListener("resize",() => {
-
-    if(resizeFrame) return;
-
-    resizeFrame = requestAnimationFrame(() => {
-      resizeFrame = 0;
-      resizeCanvas();
-    });
-
-  },{passive:true});
-
-  resizeCanvas();
-
-})();
-
-
-/* Stat count-up */
-
-(function(){
-
-  const values = document.querySelectorAll("[data-count]");
-  if(!values.length) return;
-
-  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  const setFinal = element => {
-    element.textContent =
-      (+element.dataset.count).toFixed(
-        +(element.dataset.decimals || 0)
-      ) + (element.dataset.suffix || "");
-  };
-
-  if(!("IntersectionObserver" in window) || motion.matches){
-    values.forEach(setFinal);
-    return;
-  }
-
-  const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-      if(!entry.isIntersecting) return;
-
-      const element = entry.target;
-      observer.unobserve(element);
-
-      const target = +element.dataset.count;
-      const decimals = +(element.dataset.decimals || 0);
-      const suffix = element.dataset.suffix || "";
-      const startedAt = performance.now();
-
-      element.textContent = (0).toFixed(decimals) + suffix;
-
-      function step(timestamp){
-
-        if(document.hidden){
-          setFinal(element);
-          return;
-        }
-
-        const progress = Math.min(1,(timestamp - startedAt) / 1100);
-        const eased = 1 - Math.pow(1 - progress,3);
-
-        element.textContent =
-          (target * eased).toFixed(decimals) + suffix;
-
-        if(progress < 1) requestAnimationFrame(step);
-
-      }
-
-      requestAnimationFrame(step);
-
-    });
-
-  },{threshold:.4});
-
-  values.forEach(element => observer.observe(element));
-
-})();
-
-
-/* Project tilt */
-
-(function(){
-
-  const cards = document.querySelectorAll(".project");
-  if(!cards.length) return;
-
-  const fine = window.matchMedia("(hover:hover) and (pointer:fine)");
-  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  function reset(card){
-    card.style.setProperty("--tilt-x","0deg");
-    card.style.setProperty("--tilt-y","0deg");
-  }
-
-  cards.forEach(card => {
-
-    card.addEventListener("pointermove",event => {
-
-      if(
-        !fine.matches ||
-        motion.matches ||
-        event.pointerType === "touch"
-      ) return;
-
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - .5;
-      const y = (event.clientY - rect.top) / rect.height - .5;
-
-      card.style.setProperty("--tilt-x",(-y * 4).toFixed(2) + "deg");
-      card.style.setProperty("--tilt-y",(x * 4).toFixed(2) + "deg");
-
-    });
-
-    card.addEventListener("pointerleave",() => reset(card));
-    card.addEventListener("pointercancel",() => reset(card));
-
-  });
-
-})();
-
-
-/* Chaos Monkey simulation */
-
-(function(){
-
-  const grid = document.getElementById("podGrid");
-  if(!grid) return;
-
-  const panel = document.getElementById("chaosPanel");
-  const toggle = document.getElementById("chaosToggle");
-  const live = document.getElementById("chaosLive");
-
-  const podsUp = document.getElementById("podsUp");
-  const killsOutput = document.getElementById("chaosKills");
-  const mttrOutput = document.getElementById("chaosMttr");
-  const uptimeOutput = document.getElementById("chaosUptime");
-  const memoryOutput = document.getElementById("chaosMemory");
-  const memoryGauge = document.getElementById("chaosMemoryGauge");
-  const memoryFill = document.getElementById("chaosMemoryFill");
-
-  const TOTAL = 21;
-  const memoryNode = document.querySelector(
-    '.system-stat-value[data-count="3.7"]'
-  );
-
-  const MEMORY_TOTAL = memoryNode
-    ? parseFloat(memoryNode.dataset.count)
-    : 3.7;
-
-  const pods = [];
-  const recoveryTimes = [];
-
-  let kills = 0;
-  let elapsed = 0;
-  let downMilliseconds = 0;
-  let chaos = false;
-  let nextChaosAt = 0;
-  let timer = 0;
-  let lastTick = 0;
-  let pausedAt = 0;
-  let pageVisible = !document.hidden;
-  let panelVisible = true;
-
-  const formatTime = value => value.toFixed(1) + "s";
-  const announce = message => { if(live) live.textContent = message; };
-
-  function updatePod(pod){
-
-    pod.el.dataset.state = pod.state;
-
-    const state = pod.el.querySelector(".pod-state");
-    if(state) state.textContent = pod.state;
-
-    pod.el.setAttribute(
-      "aria-label",
-      pod.name + ": " + pod.state + ". " +
-      (
-        pod.state === "running"
-          ? "Activate to kill this pod."
-          : "Autoscaler recovery in progress."
-      )
-    );
-
-  }
-
-  function updateStats(){
-
-    const up = pods.filter(pod => pod.state === "running").length;
-
-    if(podsUp) podsUp.textContent = up + "/" + TOTAL;
-    if(killsOutput) killsOutput.textContent = String(kills);
-
-    if(mttrOutput){
-      mttrOutput.textContent = recoveryTimes.length
-        ? formatTime(
-            recoveryTimes.reduce((sum,value) => sum + value,0) /
-            recoveryTimes.length
-          )
-        : "—";
-    }
-
-    if(uptimeOutput){
-
-      const uptime = elapsed > 0
-        ? Math.max(0,Math.min(
-            100,
-            100 * (1 - downMilliseconds / (elapsed * TOTAL))
-          ))
-        : 100;
-
-      uptimeOutput.textContent = uptime.toFixed(1) + "%";
-
-    }
-
-    const memory = MEMORY_TOTAL * (up / TOTAL);
-
-    if(memoryOutput){
-      memoryOutput.textContent =
-        memory.toFixed(1) + " / " + MEMORY_TOTAL.toFixed(1) + " GB";
-    }
-
-    if(memoryFill){
-      memoryFill.style.width = ((up / TOTAL) * 100).toFixed(1) + "%";
-    }
-
-    if(memoryGauge){
-      memoryGauge.setAttribute("aria-valuenow",memory.toFixed(1));
-    }
-
-  }
-
-  function killPod(pod,source){
-
-    if(pod.state !== "running") return;
-
-    const now = performance.now();
-
-    pod.state = "down";
-    pod.downSince = now;
-    pod.rescheduleAt = now + 350;
-    pod.recoverAt = now + 900 + Math.random() * 1600;
-
-    kills++;
-
-    updatePod(pod);
-    updateStats();
-
-    announce(
-      pod.name + " killed" +
-      (source === "chaos" ? " by chaos mode" : "") +
-      ". Autoscaler recovery started."
-    );
-
-  }
-
-  function tick(){
-
-    if(!pageVisible || !panelVisible || document.hidden) return;
-
-    const now = performance.now();
-    const delta = Math.min(1000,now - lastTick || 250);
-
-    lastTick = now;
-    elapsed += delta;
-
-    downMilliseconds += pods.filter(
-      pod => pod.state !== "running"
-    ).length * delta;
-
-    pods.forEach(pod => {
-
-      if(pod.state === "down" && now >= pod.rescheduleAt){
-        pod.state = "rescheduling";
-        updatePod(pod);
-      }
-
-      if(pod.state === "rescheduling" && now >= pod.recoverAt){
-
-        const recovery = (now - pod.downSince) / 1000;
-
-        recoveryTimes.push(recovery);
-        pod.state = "running";
-        updatePod(pod);
-
-        announce(
-          pod.name + " recovered in " + formatTime(recovery) + "."
-        );
-
-      }
-
-    });
-
-    if(chaos && now >= nextChaosAt){
-
-      const running = pods.filter(pod => pod.state === "running");
-
-      if(running.length > 1){
-        killPod(
-          running[Math.floor(Math.random() * running.length)],
-          "chaos"
-        );
-      }
-
-      nextChaosAt = now + 1800 + Math.random() * 2600;
-
-    }
-
-    updateStats();
-
-  }
-
-  const canRun = () =>
-    pageVisible && panelVisible && !document.hidden;
-
-  function startTimer(){
-
-    if(timer || !canRun()) return;
-
-    const now = performance.now();
-
-    if(pausedAt){
-
-      const gap = now - pausedAt;
-
-      pods.forEach(pod => {
-        if(pod.downSince){
-          pod.downSince += gap;
-          pod.rescheduleAt += gap;
-          pod.recoverAt += gap;
-        }
-      });
-
-      if(nextChaosAt) nextChaosAt += gap;
-      pausedAt = 0;
-
-    }
-
-    lastTick = now;
-    timer = window.setInterval(tick,250);
-
-  }
-
-  function stopTimer(){
-
-    if(!timer && pausedAt) return;
-
-    if(timer){
-      window.clearInterval(timer);
-      timer = 0;
-    }
-
-    pausedAt = performance.now();
-
-  }
-
-  const syncTimer = () => canRun() ? startTimer() : stopTimer();
-
-  const fragment = document.createDocumentFragment();
-
-  for(let i = 1; i <= TOTAL; i++){
-
-    const name = "svc-" + String(i).padStart(2,"0");
-    const button = document.createElement("button");
-
-    button.type = "button";
-    button.className = "pod";
-    button.dataset.state = "running";
-    button.dataset.name = name;
-
-    const led = document.createElement("span");
-    led.className = "pod-led";
-    led.setAttribute("aria-hidden","true");
-
-    const label = document.createElement("span");
-    label.className = "pod-name";
-    label.textContent = name;
-
-    const state = document.createElement("span");
-    state.className = "pod-state";
-    state.textContent = "running";
-
-    button.append(led,label,state);
-    button.setAttribute(
-      "aria-label",
-      name + ": running. Activate to kill this pod."
-    );
-
-    const pod = {
-      name:name,
-      el:button,
-      state:"running",
-      downSince:0,
-      rescheduleAt:0,
-      recoverAt:0
+    const countUp = () => {
+      const down = podGrid.querySelectorAll(".is-down").length;
+      podsUp.textContent = (pods.length - down) + "/" + pods.length;
     };
-
-    button.addEventListener(
-      "click",
-      () => killPod(pod,"manual")
-    );
-
-    fragment.appendChild(button);
-    pods.push(pod);
-
-  }
-
-  grid.appendChild(fragment);
-
-  if(toggle){
-
-    toggle.addEventListener("click",() => {
-
-      chaos = !chaos;
-
-      toggle.setAttribute(
-        "aria-checked",
-        chaos ? "true" : "false"
-      );
-
-      toggle.setAttribute(
-        "aria-label",
-        chaos
-          ? "Chaos mode on: randomly killing pods"
-          : "Chaos mode off"
-      );
-
-      if(chaos) nextChaosAt = performance.now() + 1200;
-
-      announce(
-        chaos
-          ? "Chaos mode on. Random pod kills enabled."
-          : "Chaos mode off."
-      );
-
+    podGrid.addEventListener("click", (event) => {
+      const pod = event.target.closest(".pod");
+      if (!pod || pod.classList.contains("is-down")) return;
+      pod.classList.add("is-down");
+      pod.setAttribute("aria-disabled", "true");
+      pod.setAttribute("aria-label", "Pod " + pod.dataset.pod + " crossed out. Recovering.");
+      crossedOut++;
+      podsOut.textContent = crossedOut;
+      countUp();
+      setTimeout(() => {
+        pod.classList.remove("is-down");
+        pod.removeAttribute("aria-disabled");
+        pod.setAttribute("aria-label", "Pod " + pod.dataset.pod + " running. Cross it out.");
+        countUp();
+      }, 1600);
     });
-
   }
-
-  document.addEventListener("visibilitychange",() => {
-    pageVisible = !document.hidden;
-    syncTimer();
-  });
-
-  if(panel && "IntersectionObserver" in window){
-
-    new IntersectionObserver(entries => {
-      panelVisible = entries[0].isIntersecting;
-      syncTimer();
-    },{threshold:0}).observe(panel);
-
-  }
-
-  updateStats();
-  syncTimer();
-
 })();
-
-
-/* Terminal */
-
-(function(){
-
-  const terminal = document.getElementById("terminal");
-  const output = document.getElementById("termOutput");
-  const form = document.getElementById("termForm");
-  const input = document.getElementById("termInput");
-
-  if(!terminal || !output || !form || !input) return;
-
-  const COMMANDS = [
-    "help",
-    "whoami",
-    "ls",
-    "cat experience",
-    "cat skills",
-    "kubectl get pods",
-    "docker ps",
-    "free -h",
-    "contact",
-    "clear"
-  ];
-
-  const history = [];
-  let historyIndex = 0;
-
-  const normalize = value =>
-    (value || "").replace(/\s+/g," ").trim();
-
-  const text = selector => {
-    const element = document.querySelector(selector);
-    return element ? normalize(element.textContent) : "";
-  };
-
-  const dockerNames = Array.from(
-    output.querySelectorAll(".ok")
-  ).slice(0,5).map(line =>
-    normalize(line.textContent.replace("✓",""))
-  );
-
-  const freeLine = Array.from(
-    output.querySelectorAll("div")
-  ).map(line => normalize(line.textContent)).find(
-    line => line.indexOf("Mem: 3.7Gi") === 0
-  ) || "Mem: 3.7Gi · resource limits enforced · log rotation enabled";
-
-  function appendLines(lines,className){
-
-    const fragment = document.createDocumentFragment();
-
-    lines.forEach(line => {
-
-      const element = document.createElement("div");
-
-      element.className =
-        "term-line" + (className ? " " + className : "");
-
-      element.textContent = line;
-      fragment.appendChild(element);
-
-    });
-
-    output.appendChild(fragment);
-    output.scrollTop = output.scrollHeight;
-
-  }
-
-  function appendEcho(command){
-
-    const line = document.createElement("div");
-    const prompt = document.createElement("span");
-
-    line.className = "term-line cmdline";
-    prompt.className = "cmd";
-    prompt.textContent = "$";
-
-    line.appendChild(prompt);
-    line.appendChild(document.createTextNode(" " + command));
-
-    output.appendChild(line);
-    output.scrollTop = output.scrollHeight;
-
-  }
-
-  function help(){
-
-    return [
-      "Available commands:",
-      "  help              show this list",
-      "  whoami            identity and focus",
-      "  ls                sections on this page",
-      "  cat experience    roles and impact",
-      "  cat skills        technical skills",
-      "  kubectl get pods  simulated homelab pods",
-      "  docker ps         homelab containers",
-      "  free -h           homelab memory",
-      "  contact           contact links",
-      "  clear             clear the terminal"
-    ];
-
-  }
-
-  function whoami(){
-
-    const name = text(".hero h1");
-    const role = text(".hero-role");
-
-    const item = Array.from(
-      document.querySelectorAll(".meta-item")
-    ).find(element => {
-      const label = element.querySelector(".meta-label");
-      return label && /location/i.test(label.textContent);
-    });
-
-    const location = item
-      ? normalize(item.querySelector(".meta-value").textContent)
-      : "";
-
-    return [
-      name,
-      role + (location ? " · " + location : "")
-    ];
-
-  }
-
-  function listSections(){
-
-    const labels = Array.from(
-      document.querySelectorAll(".nav-links a")
-    ).map(link => normalize(link.textContent)).filter(Boolean);
-
-    return [
-      "Sections on this page:",
-      "  " + labels.join("   ")
-    ];
-
-  }
-
-  function catExperience(){
-
-    const items = document.querySelectorAll(".experience-item");
-    if(!items.length) return ["No experience entries found."];
-
-    const lines = [];
-
-    items.forEach(item => {
-
-      const date = normalize(
-        item.querySelector(".experience-date").innerText ||
-        item.querySelector(".experience-date").textContent
-      );
-
-      const title = normalize(
-        item.querySelector(".experience-title").textContent
-      );
-
-      const location = normalize(
-        item.querySelector(".experience-location").textContent
-      );
-
-      lines.push("");
-      lines.push(date + " · " + title);
-      if(location) lines.push("  " + location);
-
-      item.querySelectorAll(".experience-list li").forEach(bullet => {
-        lines.push("  - " + normalize(bullet.textContent));
-      });
-
-    });
-
-    return lines;
-
-  }
-
-  function catSkills(){
-
-    const skills = document.querySelectorAll(".skill");
-    if(!skills.length) return ["No skills found."];
-
-    const lines = [""];
-
-    skills.forEach(skill => {
-      lines.push(
-        normalize(skill.querySelector("h3").textContent) + ": " +
-        normalize(skill.querySelector("p").textContent)
-      );
-    });
-
-    return lines;
-
-  }
-
-  function kubectlPods(){
-
-    const podElements = document.querySelectorAll(".pod");
-    if(!podElements.length) return ["No simulated pods available yet."];
-
-    const status = {
-      running:"Running",
-      down:"Down",
-      rescheduling:"Rescheduling"
-    };
-
-    const lines = ["NAME          READY   STATUS"];
-
-    podElements.forEach(pod => {
-      lines.push(
-        (pod.dataset.name || "pod").padEnd(14) +
-        "1/1     " +
-        (status[pod.dataset.state] || pod.dataset.state)
-      );
-    });
-
-    lines.push("");
-    lines.push("simulation · live state from Chaos Monkey panel");
-
-    return lines;
-
-  }
-
-  function dockerPs(){
-
-    if(!dockerNames.length) return ["No container data available."];
-
-    return ["NAMES"].concat(
-      dockerNames.map(name => "✓ " + name)
-    );
-
-  }
-
-  function contactInfo(){
-
-    const email = document.querySelector('a[href^="mailto:"]');
-    const linkedin = document.querySelector(
-      'a[href*="linkedin.com/in/onyedikachiokechukwu"]'
-    );
-    const github = document.querySelector(
-      'a[href^="https://github.com/kaacchhiii"]'
-    );
-    const resume = document.querySelector('a[href$="Resume.pdf"]');
-
-    const lines = [];
-
-    if(email){
-      lines.push(
-        "email:    " +
-        email.getAttribute("href").replace("mailto:","")
-      );
-    }
-
-    if(linkedin) lines.push("linkedin: " + linkedin.href);
-    if(github) lines.push("github:   " + github.href);
-    if(resume) lines.push("resume:   " + resume.getAttribute("href"));
-
-    return lines.length
-      ? lines
-      : ["Contact links are listed in the contact section."];
-
-  }
-
-  function run(command){
-
-    const value = normalize(command);
-    if(!value) return;
-
-    const entry = value.toLowerCase();
-
-    if(entry === "clear"){
-      output.textContent = "";
-      input.value = "";
-      return;
-    }
-
-    appendEcho(value);
-
-    let lines = null;
-
-    if(entry === "help") lines = help();
-    else if(entry === "whoami") lines = whoami();
-    else if(entry === "ls") lines = listSections();
-    else if(entry === "cat experience") lines = catExperience();
-    else if(entry === "cat skills") lines = catSkills();
-    else if(entry === "kubectl get pods") lines = kubectlPods();
-    else if(entry === "docker ps") lines = dockerPs();
-    else if(entry === "free -h") lines = [freeLine];
-    else if(entry === "contact") lines = contactInfo();
-
-    if(lines){
-      appendLines(lines);
-    }else{
-      appendLines(
-        [
-          "command not found: " + value,
-          "Type help for available commands."
-        ],
-        "error"
-      );
-    }
-
-    input.value = "";
-
-  }
-
-  form.addEventListener("submit",event => {
-
-    event.preventDefault();
-
-    const value = normalize(input.value);
-    if(!value) return;
-
-    if(history[history.length - 1] !== value) history.push(value);
-
-    historyIndex = history.length;
-    input.value = "";
-
-    run(value);
-    input.focus({preventScroll:true});
-
-  });
-
-  input.addEventListener("keydown",event => {
-
-    if(event.key === "ArrowUp"){
-
-      if(!history.length) return;
-
-      event.preventDefault();
-      historyIndex = Math.max(0,historyIndex - 1);
-      input.value = history[historyIndex] || "";
-      return;
-
-    }
-
-    if(event.key === "ArrowDown"){
-
-      if(!history.length) return;
-
-      event.preventDefault();
-
-      if(historyIndex < history.length - 1){
-        historyIndex++;
-        input.value = history[historyIndex] || "";
-      }else{
-        historyIndex = history.length;
-        input.value = "";
-      }
-
-      return;
-
-    }
-
-    if(event.key !== "Tab") return;
-
-    const value = input.value.toLowerCase();
-    if(!value.trim()){ event.preventDefault(); return; }
-
-    const matches = COMMANDS.filter(
-      command => command.indexOf(value) === 0
-    );
-
-    if(!matches.length) return;
-
-    event.preventDefault();
-
-    if(matches.length === 1){
-      input.value = matches[0];
-      return;
-    }
-
-    const prefix = matches.reduce((common,command) => {
-
-      let index = 0;
-
-      while(
-        index < common.length &&
-        index < command.length &&
-        common[index] === command[index]
-      ){
-        index++;
-      }
-
-      return common.slice(0,index);
-
-    });
-
-    input.value = prefix;
-
-    if(prefix === value){
-      appendLines(
-        matches.map(command => "  " + command),
-        "muted"
-      );
-    }
-
-  });
-
-  document.querySelectorAll(".term-try").forEach(button => {
-
-    button.addEventListener("click",() => {
-
-      const command = button.getAttribute("data-cmd");
-      if(command) run(command);
-
-    });
-
-  });
-
-  terminal.addEventListener("click",event => {
-
-    if(event.target.closest("button,input,a")) return;
-
-    input.focus({preventScroll:true});
-
-  });
-
-})();
-
 </script>
-
 </body>
 </html>
