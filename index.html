@@ -2,76 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%2307111f'/%3E%3Cpath%20d='M18%2024l10%208-10%208'%20fill='none'%20stroke='%2338d9ff'%20stroke-width='4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cpath%20d='M34%2040h12'%20stroke='%234f8cff'%20stroke-width='4'%20stroke-linecap='round'/%3E%3C/svg%3E">
-<meta name="description" content="Okechukwu Joshua Onyedikachi — DevOps Engineer and SRE with FinTech, EdTech and startup experience across Azure, Kubernetes, AWS, Terraform, GitOps and CI/CD.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='8'%20fill='%2317130E'/%3E%3Cpath%20d='M9%2013h46v38H9z'%20fill='%23F6F0E1'/%3E%3Cpath%20d='M9%2013h46v9H9z'%20fill='%23C4231A'/%3E%3Ctext%20x='32'%20y='46'%20font-family='Impact,sans-serif'%20font-size='25'%20text-anchor='middle'%20fill='%2317130E'%3EO%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Okechukwu Joshua Onyedikachi - DevOps Engineer and SRE with FinTech, EdTech and startup experience in CI/CD, Kubernetes, AWS and Azure, GitOps, SLOs, error budgets and blameless postmortems.">
 <meta name="author" content="Okechukwu Joshua Onyedikachi">
 <title>Okechukwu Joshua Onyedikachi | DevOps Engineer &amp; SRE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"></noscript>
 <style>
 :root{
   --desk:#e4d9bf;
   --desk-deep:#d5c5a2;
-  --glow-a:rgba(196,35,26,.11);
-  --glow-b:rgba(255,159,28,.17);
-  --paper-glow:rgba(255,255,255,.24);
-  --paper-stain:rgba(158,114,55,.055);
+  --glow-a:rgba(196,35,26,.12);
+  --glow-b:rgba(255,159,28,.18);
   --paper:#f6f0e1;
   --paper-2:#efe6d2;
   --ink:#17130e;
   --muted:#4b4337;
   --red:#c4231a;
   --red-deep:#9e1a12;
+  --link:#9e1a12;
   --thread:#c4231a;
-  --line:rgba(23,19,14,.16);
+  --line:rgba(23,19,14,.17);
+  --focus:#17130e;
   --font-display:"Anton",Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;
   --font-body:"Old Standard TT",Georgia,"Times New Roman",serif;
   --max:1120px;
-  --torn:polygon(0% 1%,4% .3%,8% 1.2%,13% .2%,18% .9%,24% .1%,30% 1.1%,37% .4%,44% .8%,51% .2%,58% 1.2%,65% .5%,72% .9%,79% .2%,86% 1.1%,92% .4%,97% .9%,100% .2%,99.4% 8%,100% 18%,99.6% 30%,100% 41%,99.5% 52%,100% 63%,99.7% 75%,100% 86%,99.4% 94%,100% 99.8%,95% 99.1%,90% 99.9%,85% 99.2%,79% 99.8%,73% 99.1%,66% 99.9%,60% 99.3%,53% 99.8%,46% 99.2%,39% 99.9%,32% 99.3%,25% 99.8%,18% 99.2%,12% 99.9%,6% 99.2%,0% 99.8%);
+  --safe-l:env(safe-area-inset-left,0px);
+  --safe-r:env(safe-area-inset-right,0px);
+  --safe-t:env(safe-area-inset-top,0px);
+  --safe-b:env(safe-area-inset-bottom,0px);
+  --torn:polygon(0% 1.2%,4% .3%,8% 1.1%,13% .2%,18% .9%,24% .1%,30% 1.2%,37% .4%,44% .8%,51% .2%,58% 1.1%,65% .5%,72% .9%,79% .2%,86% 1.2%,92% .4%,97% .9%,100% .2%,99.4% 8%,100% 18%,99.6% 30%,100% 41%,99.5% 52%,100% 63%,99.7% 75%,100% 86%,99.4% 94%,100% 99.8%,95% 99.1%,90% 99.9%,85% 99.2%,79% 99.8%,73% 99.1%,66% 99.9%,60% 99.3%,53% 99.8%,46% 99.2%,39% 99.9%,32% 99.3%,25% 99.8%,18% 99.2%,12% 99.9%,6% 99.2%,0% 99.8%);
   --tape-cut:polygon(1% 12%,5% 0,96% 5%,100% 0,99% 88%,95% 100%,4% 95%,0 100%);
-  --shadow:0 12px 18px rgba(23,19,14,.17);
-}
-[data-theme="dark"]{
-  --desk:#150b3d;
-  --desk-deep:#0d0629;
-  --glow-a:rgba(180,37,107,.24);
-  --glow-b:rgba(0,168,143,.18);
-  --paper-glow:rgba(246,240,225,.055);
-  --paper-stain:rgba(180,37,107,.08);
-  --thread:#ffe14d;
-  --line:rgba(246,240,225,.12);
-  --shadow:0 12px 20px rgba(0,0,0,.35);
-}
-[data-theme="black"]{
-  --desk:#000000;
-  --desk-deep:#000000;
-  --glow-a:rgba(255,255,255,.08);
-  --glow-b:rgba(255,255,255,.06);
-  --paper-glow:rgba(255,255,255,.03);
-  --paper-stain:rgba(255,255,255,.04);
-  --paper:#f6f0e1;
-  --paper-2:#efe6d2;
-  --ink:#17130e;
-  --muted:#4b4337;
-  --red:#ff4444;
-  --red-deep:#cc0000;
-  --thread:#ff4444;
-  --line:rgba(255,255,255,.12);
-  --shadow:0 12px 20px rgba(0,0,0,.8);
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme]){
+  :root{
     --desk:#150b3d;
     --desk-deep:#0d0629;
-    --glow-a:rgba(180,37,107,.24);
-    --glow-b:rgba(0,168,143,.18);
-    --paper-glow:rgba(246,240,225,.055);
-    --paper-stain:rgba(180,37,107,.08);
+    --glow-a:rgba(139,30,107,.36);
+    --glow-b:rgba(14,107,122,.34);
     --thread:#ffe14d;
-    --line:rgba(246,240,225,.12);
-    --shadow:0 12px 20px rgba(0,0,0,.35);
+    --line:rgba(246,240,225,.16);
+    --focus:#ffe14d;
   }
 }
 *{box-sizing:border-box}
@@ -80,20 +55,19 @@ body{
   margin:0;
   min-width:320px;
   overflow-x:hidden;
+  padding-left:env(safe-area-inset-left,0px);
+  padding-right:env(safe-area-inset-right,0px);
   color:var(--ink);
   background-color:var(--desk);
   background-image:
     radial-gradient(circle at 8% 4%,var(--glow-a),transparent 32%),
-    radial-gradient(circle at 92% 18%,var(--glow-b),transparent 30%),
-    radial-gradient(ellipse at 42% 58%,var(--paper-glow),transparent 45%),
-    radial-gradient(ellipse at 84% 76%,var(--paper-stain),transparent 38%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
-  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,repeat;
-  background-size:auto,auto,auto,auto,180px 180px;
+    radial-gradient(circle at 92% 18%,var(--glow-b),transparent 30%);
+  background-repeat:no-repeat;
   font-family:var(--font-body);
   font-size:18px;
   line-height:1.55;
   text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
 }
 body::before{
   content:"";
@@ -104,308 +78,330 @@ body::before{
   background:repeating-linear-gradient(to bottom,rgba(23,19,14,.075) 0 1px,transparent 1px 7px);
   -webkit-mask-image:repeating-linear-gradient(to right,#000 0 20%,transparent 20% 25%);
   mask-image:repeating-linear-gradient(to right,#000 0 20%,transparent 20% 25%);
-  opacity:.55;
+  opacity:.5;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");
+  background-size:180px 180px;
+  opacity:.055;
+  mix-blend-mode:multiply;
 }
 @media (prefers-color-scheme:dark){
-  body::before{
-    background:repeating-linear-gradient(to bottom,rgba(246,240,225,.06) 0 1px,transparent 1px 7px);
-    opacity:.58;
-  }
+  body::before{background:repeating-linear-gradient(to bottom,rgba(246,240,225,.06) 0 1px,transparent 1px 7px);opacity:.55}
+  body::after{opacity:.075;mix-blend-mode:screen}
 }
-.desk-art{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;contain:strict}
-.desk-art::before{content:"";position:absolute;inset:-28%;background:radial-gradient(circle at 24% 26%,rgba(255,255,255,.62),transparent 26%),radial-gradient(circle at 78% 10%,rgba(255,195,110,.42),transparent 30%),radial-gradient(circle at 66% 88%,rgba(196,35,26,.14),transparent 28%);opacity:.78;animation:desk-light 24s ease-in-out infinite alternate;will-change:transform}
-.desk-art::after{content:"";position:absolute;inset:-18%;background-image:repeating-linear-gradient(103deg,rgba(23,19,14,.065) 0 1px,transparent 1px 8px),repeating-linear-gradient(12deg,rgba(255,255,255,.18) 0 1px,transparent 1px 11px),repeating-linear-gradient(74deg,rgba(23,19,14,.032) 0 1px,transparent 1px 15px);background-size:190px 250px,140px 210px,260px 340px;opacity:.6;animation:desk-fibers 110s linear infinite;will-change:transform}
-.desk-scrap{position:absolute;left:0;width:clamp(84px,10vw,150px);aspect-ratio:1.45;background-color:rgba(255,252,240,.58);background-image:repeating-linear-gradient(to bottom,transparent 0 13px,rgba(23,19,14,.065) 13px 14px);border:1px solid rgba(23,19,14,.075);clip-path:var(--torn);box-shadow:0 12px 18px rgba(23,19,14,.12);opacity:.42;animation:desk-scrap var(--dur,64s) linear var(--delay,0s) infinite;will-change:transform}
-.scrap-1{top:18%;--r:-8deg;--r2:4deg;--dur:58s;--delay:-9s}
-.scrap-2{top:59%;width:clamp(64px,7vw,118px);--r:7deg;--r2:-5deg;--dur:76s;--delay:-37s;opacity:.34}
-.scrap-3{top:78%;width:clamp(100px,12vw,190px);--r:-4deg;--r2:6deg;--dur:92s;--delay:-62s;opacity:.28}
-.scrap-float{top:auto;left:clamp(1rem,4vw,4rem);bottom:14%;width:clamp(74px,7vw,110px);opacity:.32;animation:paper-float 7s ease-in-out infinite alternate}
-.float-1{--r:-7deg;--r2:-2deg}
-.float-2{left:auto;right:clamp(1rem,4vw,4rem);bottom:36%;width:clamp(58px,5.5vw,86px);--r:6deg;--r2:2deg;opacity:.26;animation-delay:-3.5s}
-.paper-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.35;mix-blend-mode:multiply}
-[data-theme="dark"] .paper-canvas{opacity:.25;mix-blend-mode:screen}
-[data-theme="black"] .paper-canvas{opacity:.15;mix-blend-mode:screen}
-body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(23,19,14,.14) 100%)}
-.theme-toggle{background:transparent;border:1px solid var(--ink);color:var(--ink);padding:.2rem .4rem;cursor:pointer;font-size:.9rem;border-radius:4px}
-.theme-toggle:hover{background:var(--ink);color:var(--paper)}
-[data-theme="dark"] .theme-toggle{border-color:var(--paper);color:var(--paper)}
-[data-theme="dark"] .theme-toggle:hover{background:var(--paper);color:var(--ink)}
-[data-theme="black"] .theme-toggle{border-color:var(--paper);color:var(--paper)}
-[data-theme="black"] .theme-toggle:hover{background:var(--paper);color:var(--ink)}
-[data-theme="black"] .desk-art::before{background:radial-gradient(circle at 28% 30%,rgba(255,68,68,.15),transparent 28%),radial-gradient(circle at 72% 12%,rgba(255,255,255,.1),transparent 32%),radial-gradient(circle at 60% 85%,rgba(255,68,68,.2),transparent 30%);opacity:.9}
-[data-theme="black"] .desk-art::after{background-image:repeating-linear-gradient(103deg,rgba(255,255,255,.03) 0 1px,transparent 1px 8px),repeating-linear-gradient(12deg,rgba(255,255,255,.02) 0 1px,transparent 1px 11px),repeating-linear-gradient(74deg,rgba(0,0,0,.4) 0 1px,transparent 1px 15px);opacity:.4}
-[data-theme="black"] .desk-scrap{background-color:rgba(246,240,225,.08);background-image:repeating-linear-gradient(to bottom,transparent 0 13px,rgba(255,255,255,.03) 13px 14px);border-color:rgba(255,255,255,.08);box-shadow:0 14px 22px rgba(0,0,0,.6)}
-[data-theme="black"] body::after{background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.6) 100%)}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme]) .desk-art::before{background:radial-gradient(circle at 28% 30%,rgba(255,225,77,.17),transparent 28%),radial-gradient(circle at 72% 12%,rgba(0,168,143,.28),transparent 32%),radial-gradient(circle at 60% 85%,rgba(180,37,107,.32),transparent 30%);opacity:.8}
-  :root:not([data-theme]) .desk-art::after{background-image:repeating-linear-gradient(103deg,rgba(246,240,225,.055) 0 1px,transparent 1px 8px),repeating-linear-gradient(12deg,rgba(246,240,225,.03) 0 1px,transparent 1px 11px),repeating-linear-gradient(74deg,rgba(0,0,0,.16) 0 1px,transparent 1px 15px);opacity:.55}
-  :root:not([data-theme]) .desk-scrap{background-color:rgba(246,240,225,.13);background-image:repeating-linear-gradient(to bottom,transparent 0 13px,rgba(246,240,225,.055) 13px 14px);border-color:rgba(246,240,225,.12);box-shadow:0 14px 22px rgba(0,0,0,.26)}
-  :root:not([data-theme]) body::after{background:radial-gradient(ellipse at center,transparent 50%,rgba(0,0,0,.28) 100%)}
-}
-@keyframes desk-light{from{transform:translate3d(-2%,-1%,0) scale(1)}to{transform:translate3d(3%,2%,0) scale(1.04)}}
-@keyframes desk-fibers{to{transform:translate3d(-5%,-2%,0)}}
-@keyframes desk-scrap{0%{transform:translate3d(-20vw,2vh,0) rotate(var(--r))}50%{transform:translate3d(48vw,-2vh,0) rotate(var(--r2))}100%{transform:translate3d(120vw,1vh,0) rotate(var(--r))}}
-@keyframes paper-float{from{transform:translate3d(0,0,0) rotate(var(--r))}to{transform:translate3d(8px,-20px,0) rotate(var(--r2))}}
-@media (max-width:1279px){.scrap-float{display:none}}
-@media (max-width:520px){.scrap-3{display:none}.desk-art::after{opacity:.45}}
-::selection{background:var(--red);color:var(--paper)}
-a{color:var(--red-deep);text-decoration-thickness:.075em;text-underline-offset:.16em}
+img,svg{max-width:100%}
+a{color:var(--link);text-underline-offset:.16em;text-decoration-thickness:.06em}
 a:hover{color:var(--red)}
-:focus-visible{outline:3px solid var(--red);outline-offset:4px}
-h1,h2,h3,p,ul,figure{margin-top:0}
-ul{padding-left:1.2em}
-button{font:inherit}
-img,svg{display:block;max-width:100%}
-.container{width:min(100% - 2.5rem,var(--max));margin-inline:auto}
-.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.skip-link{position:fixed;left:1rem;top:-5rem;z-index:100;background:var(--paper);color:var(--ink);padding:.7rem 1rem;border:2px solid var(--ink);font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
-.skip-link:focus{top:1rem}
-.masthead-wrap,.main,footer{position:relative;z-index:1}
-.paper{position:relative;filter:drop-shadow(var(--shadow))}
-.paper>.clip{position:relative;z-index:1;background:var(--paper);clip-path:var(--torn)}
-.tilt-l{transform:rotate(-.7deg)}
+p{margin:0 0 .9rem}
+p:last-child{margin-bottom:0}
+h1,h2,h3{margin:0}
+ul{margin-top:0}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:max(1rem,var(--safe-l));top:-6rem;z-index:100;background:var(--ink);color:var(--paper);padding:.7rem 1rem;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;clip-path:var(--tape-cut)}
+.skip-link:focus{top:calc(.8rem + var(--safe-t))}
+.container{width:min(calc(100% - 2rem),var(--max));margin-inline:auto}
+
+/* background scraps */
+.desk-art{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.scrap{position:absolute;left:0;top:var(--top,20%);width:var(--w,120px);aspect-ratio:1.5;opacity:var(--o,.4);animation:scrap-drift var(--dur,50s) linear var(--delay,0s) infinite;will-change:transform}
+.scrap--cream{--o:.5;background-color:var(--paper);background-image:repeating-linear-gradient(to bottom,transparent 0 11px,rgba(23,19,14,.08) 11px 12px)}
+.scrap--red{--o:.35;background-color:var(--red)}
+.scrap--ink{--o:.22;background-color:var(--ink)}
+.scrap--s0{clip-path:polygon(0 7%,17% 0,45% 5%,74% 0,100% 8%,96% 93%,70% 100%,39% 96%,9% 100%,0 88%)}
+.scrap--s1{clip-path:polygon(2% 5%,22% 2%,50% 0,78% 4%,100% 0,98% 90%,76% 96%,48% 100%,20% 94%,0 100%)}
+.scrap--s2{clip-path:polygon(0 0,20% 6%,42% 1%,66% 7%,86% 2%,100% 9%,94% 100%,68% 94%,44% 100%,18% 95%,3% 100%)}
+.scrap--s3{clip-path:polygon(0 10%,19% 1%,42% 6%,67% 0,90% 5%,100% 12%,97% 96%,74% 100%,47% 93%,24% 99%,2% 94%)}
+@keyframes scrap-drift{
+  from{transform:translate3d(-22vw,var(--y1,0px),0) rotate(var(--r1,0deg))}
+  to{transform:translate3d(122vw,var(--y2,0px),0) rotate(var(--r2,0deg))}
+}
+
+/* shared paper and clipping */
+.paper{position:relative;filter:drop-shadow(0 10px 13px rgba(23,19,14,.16))}
+.clip{position:relative;background:var(--paper);color:var(--ink);clip-path:var(--torn)}
+.tilt-l{transform:rotate(-.62deg)}
 .tilt-r{transform:rotate(.7deg)}
-.pin::before{content:"";position:absolute;top:-.55rem;left:50%;z-index:3;width:.95rem;height:.95rem;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8a80,var(--red) 45%,#6d0e09 100%);box-shadow:0 2px 0 rgba(23,19,14,.55),0 4px 7px rgba(23,19,14,.25)}
-.masthead-wrap{padding:1.25rem 0 0}
+.pin::before{
+  content:"";
+  position:absolute;
+  top:-7px;
+  left:50%;
+  width:14px;
+  height:14px;
+  margin-left:-7px;
+  border-radius:50%;
+  background:radial-gradient(circle at 34% 28%,#ff9b8d 0 16%,var(--red) 55%,#7d100a 100%);
+  box-shadow:0 2px 3px rgba(0,0,0,.35);
+  z-index:3;
+}
+.eyebrow{display:inline-block;background:var(--red);color:#fff;font-family:var(--font-display);font-size:.76rem;letter-spacing:.13em;line-height:1.1;text-transform:uppercase;padding:.18rem .48rem .13rem;transform:rotate(-1.4deg);clip-path:var(--tape-cut)}
+.section-head{display:flex;flex-direction:column;align-items:flex-start;gap:.85rem;margin:clamp(3rem,6vw,5rem) 0 1.5rem}
+.section-title{display:inline-block;margin:0;padding:.2em .62em .15em;background:var(--ink);color:var(--paper);font-family:var(--font-display);font-size:clamp(1.65rem,4.3vw,3rem);font-weight:400;line-height:1;letter-spacing:.015em;text-transform:uppercase;transform:rotate(-1deg);clip-path:polygon(0 6%,3% 0,20% 4%,38% 0,58% 5%,78% 0,100% 4%,99% 92%,97% 100%,76% 96%,54% 100%,34% 95%,14% 100%,1% 96%)}
+.section-title--red{background:var(--red);color:#fff;transform:rotate(.8deg)}
+.section-note{max-width:48rem;margin-top:.15rem}
+.section-note .clip{padding:1rem 1.15rem}
+.section-description{font-size:.98rem;color:var(--muted);margin:0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.35em;min-height:44px;padding:.62rem 1.05rem .55rem;border:0;background:var(--paper);color:var(--ink);font-family:var(--font-display);font-size:1rem;letter-spacing:.05em;line-height:1.1;text-transform:uppercase;text-decoration:none;cursor:pointer;clip-path:var(--tape-cut);transform:rotate(-.5deg)}
+.btn:hover{color:var(--ink);transform:rotate(.45deg) translateY(-1px)}
+.btn--primary{background:var(--red);color:#fff}
+.btn--primary:hover{color:#fff}
+.btn:focus-visible,.cut-toggle:focus-visible,.tape-pause:focus-visible,.pod:focus-visible,.mascot-toggle:focus-visible,.nav-cta:focus-visible,.mascot:focus-visible{clip-path:none;outline:3px solid var(--focus);outline-offset:3px}
+.btn:nth-child(2){transform:rotate(.55deg)}
+.btn:nth-child(3){transform:rotate(-.35deg)}
+
+/* masthead */
+.masthead-wrap{position:relative;z-index:2;padding-top:calc(1.3rem + var(--safe-t))}
 .masthead{transform:rotate(-.35deg)}
-.masthead .clip{padding:1.05rem 1.4rem .8rem}
-.masthead-top{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
-.brand{display:inline-flex;align-items:center;min-height:24px;font-family:var(--font-display);font-size:1.6rem;line-height:1;letter-spacing:.01em;color:var(--ink);text-decoration:none;text-transform:lowercase}
+.masthead .clip{padding:1.05rem 1.3rem .85rem}
+.masthead-top{display:flex;align-items:center;justify-content:space-between;gap:.9rem 1.4rem;flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;min-height:44px;font-family:var(--font-display);font-size:1.32rem;line-height:1;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
 .brand span{color:var(--red)}
-.brand:hover{color:var(--ink)}
-.nav-list{display:flex;align-items:center;flex-wrap:wrap;gap:1.15rem;margin:0;padding:0;list-style:none;font-size:.95rem;letter-spacing:.05em;text-transform:lowercase}
-.nav-list a{display:inline-flex;align-items:center;min-height:24px;color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;padding:.18rem 0}
+.nav-list{display:flex;align-items:center;flex-wrap:wrap;gap:.15rem .9rem;margin:0;padding:0;list-style:none}
+.nav-list a{display:inline-flex;align-items:center;min-height:44px;padding:.35rem .08rem;font-family:var(--font-display);font-size:.82rem;letter-spacing:.08em;line-height:1;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid transparent}
 .nav-list a:hover{color:var(--red);border-color:var(--red)}
-.nav-cta{background:var(--red);color:var(--paper)!important;padding:.34rem .68rem .27rem!important;border:0!important;clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.82rem;letter-spacing:.09em;text-transform:uppercase!important;transform:rotate(1deg)}
-.nav-cta:hover{background:var(--ink);color:var(--paper)!important}
-.nav-cta:focus-visible{clip-path:none}
-.dateline{display:flex;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-top:.55rem;padding-top:.45rem;border-top:1px solid var(--line);color:var(--muted);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
-.hero{position:relative;padding:4.5rem 0 2.5rem}
-.hero-inner{position:relative}
-.thread{position:absolute;top:0;left:0;width:100%;height:280px;overflow:visible;z-index:0;color:var(--thread);pointer-events:none}
-.thread path{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;animation:thread-draw 2.4s .25s ease-out forwards}
+.nav-cta{background:var(--red);color:#fff!important;padding:.38rem .55rem!important;clip-path:var(--tape-cut);transform:rotate(-1deg)}
+.mascot-toggle{display:inline-flex;align-items:center;min-height:44px;padding:.38rem .58rem;border:0;background:var(--ink);color:var(--paper);font-family:var(--font-display);font-size:.78rem;letter-spacing:.07em;line-height:1;text-transform:uppercase;cursor:pointer;clip-path:var(--tape-cut);transform:rotate(.8deg)}
+.mascot-toggle:hover{background:var(--red);color:#fff}
+.dateline{display:flex;align-items:center;gap:.55rem;margin-top:.7rem;padding-top:.45rem;border-top:1px solid var(--line);font-size:.86rem;font-style:italic;color:var(--muted)}
+.dateline__sep{font-style:normal;color:var(--red)}
+
+/* hero */
+.hero{position:relative;z-index:1;padding:clamp(2.2rem,5vw,4rem) 0 1rem}
+.thread{position:absolute;left:0;right:0;top:0;width:100%;height:clamp(120px,19vw,250px);z-index:0;overflow:visible;pointer-events:none}
+.thread path{fill:none;stroke:var(--thread);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;vector-effect:non-scaling-stroke;animation:thread-draw 2.2s .15s ease forwards}
 @keyframes thread-draw{to{stroke-dashoffset:0}}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(250px,.55fr);gap:3.5rem;align-items:start}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:clamp(1.4rem,4vw,2.6rem);align-items:start}
 .hero-main{min-width:0}
-.name-wrap{margin:1rem 0 0;filter:drop-shadow(0 16px 20px rgba(23,19,14,.22));transform:rotate(-.75deg)}
-.cut-name{--px:0px;--cut-scale:1;--name-pad:1.2rem 1.35rem 1rem;position:relative;overflow:hidden;padding:var(--name-pad);background:var(--ink);color:var(--paper);clip-path:var(--torn)}
-.cut-name__base{margin:0;color:var(--paper);font-family:var(--font-display);font-size:clamp(2.9rem,8vw,6.4rem);font-weight:400;line-height:.82;letter-spacing:-.015em;text-transform:uppercase;white-space:nowrap}
-.cut-name__base span{display:block}
-.cut-name.is-sliced>.cut-name__base{color:transparent}
+.cut-name{--px:0px;--scale:1;--name-pad:1.05rem 1.25rem 1.15rem;position:relative;overflow:hidden;background:var(--ink);color:var(--paper);clip-path:var(--torn);transform:rotate(-.35deg)}
+.cut-name__strip{position:relative;padding:var(--name-pad)}
 .cut-name__layers{position:absolute;inset:0;pointer-events:none}
-.cut-name__strip{position:absolute;inset:0;overflow:hidden;transform:translateX(calc((var(--cut-x,0px) + var(--px,0px) * var(--dir,1)) * var(--cut-scale)));will-change:transform}
-.cut-name__strip:nth-child(1){--cut-x:-7px;--dir:1;clip-path:inset(0 0 calc(83.333% + 1px) 0)}
-.cut-name__strip:nth-child(2){--cut-x:8px;--dir:-1;clip-path:inset(calc(16.667% + 1px) 0 calc(66.667% + 1px) 0)}
-.cut-name__strip:nth-child(3){--cut-x:-4px;--dir:1;clip-path:inset(calc(33.333% + 1px) 0 calc(50% + 1px) 0)}
-.cut-name__strip:nth-child(4){--cut-x:9px;--dir:-1;clip-path:inset(calc(50% + 1px) 0 calc(33.333% + 1px) 0)}
-.cut-name__strip:nth-child(5){--cut-x:-7px;--dir:1;clip-path:inset(calc(66.667% + 1px) 0 calc(16.667% + 1px) 0)}
-.cut-name__strip:nth-child(6){--cut-x:5px;--dir:-1;clip-path:inset(calc(83.333% + 1px) 0 0 0)}
-.cut-name__ghost{padding:var(--name-pad);color:var(--paper)}
-.cut-name[data-cut="off"] .cut-name__strip{--cut-x:0px;--px:0px}
-.cut-toggle{display:inline-block;margin:.9rem 0 1.15rem;padding:.4rem .72rem .32rem;border:1px solid var(--ink);background:var(--paper);color:var(--ink);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;transform:rotate(-1deg);cursor:pointer}
-.cut-toggle:hover{background:var(--ink);color:var(--paper)}
-.cut-toggle:focus-visible{clip-path:none}
-.role-label{display:inline-block;margin:0 0 1.4rem;padding:.35rem .75rem .27rem;background:var(--red);color:var(--paper);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:clamp(1.05rem,2vw,1.45rem);letter-spacing:.045em;line-height:1.1;text-transform:uppercase;transform:rotate(.8deg)}
-.hero-note{max-width:39rem;margin-bottom:1.3rem}
-.hero-note .clip{padding:1rem 1.2rem}
-.hero-description{margin:0;color:var(--muted);font-size:1.03rem}
-.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:.58rem .9rem .48rem;border:1px solid var(--ink);background:var(--paper);color:var(--ink);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.9rem;letter-spacing:.08em;line-height:1.15;text-transform:uppercase;text-decoration:none;transform:rotate(-.35deg)}
-.btn:hover{background:var(--ink);color:var(--paper)}
-.btn:focus-visible{clip-path:none}
-.btn-primary{background:var(--ink);color:var(--paper)}
-.btn-primary:hover{background:var(--red);color:var(--paper);border-color:var(--red)}
-.hero-side{position:relative;display:grid;gap:1.05rem;padding-top:8rem}
-.stamp{position:absolute;top:0;right:.2rem;z-index:3;display:grid;place-items:center;width:104px;height:104px;border:3px solid var(--red);border-radius:48% 52% 47% 53% / 52% 46% 54% 48%;color:var(--red);font-family:var(--font-display);font-size:.88rem;letter-spacing:.04em;line-height:1.03;text-align:center;text-transform:uppercase;transform:rotate(-12deg);pointer-events:none}
-.stamp::before{content:"";position:absolute;inset:5px;border:1px dashed var(--red);border-radius:50%;opacity:.7}
-.meta .clip{padding:.72rem .9rem .78rem}
-.meta-label{display:block;margin-bottom:.15rem;color:var(--red-deep);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
-.meta-value{display:block;font-size:1rem;line-height:1.3}
-.tape-wrap{position:relative;z-index:1;margin:1rem 0 3.8rem;padding:1.2rem 0 1.5rem;overflow:hidden}
-.tape-band{position:relative;width:112%;margin-left:-6%;padding:1rem 0 1.15rem;background:var(--ink);color:var(--paper);transform:rotate(-1deg);box-shadow:0 14px 24px rgba(23,19,14,.24)}
-.tape-band::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(246,240,225,.035) 0 2px,transparent 2px 9px)}
-.tape-bar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1rem;width:min(100% - 3rem,var(--max));margin:0 auto .6rem}
-.tape-label{font-family:var(--font-display);font-size:.95rem;letter-spacing:.12em;text-transform:uppercase}
-.tape-pause{padding:.28rem .58rem .2rem;border:1px solid var(--paper);background:transparent;color:var(--paper);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
-.tape-pause:hover{background:var(--paper);color:var(--ink)}
-.tape-pause:focus-visible{clip-path:none;outline-color:var(--paper)}
-.marquee{overflow:hidden;padding:.25rem 0}
+.cut-name__layers .cut-name__strip{position:absolute;inset:0;overflow:hidden;transform:translateX(calc((var(--x,0px) + var(--px) * var(--dir,1)) * var(--scale)))}
+.cut-name__base{margin:0;color:var(--paper);font-family:var(--font-display);font-size:clamp(2.8rem,8.4vw,6.2rem);font-weight:400;line-height:.84;letter-spacing:-.015em;text-transform:uppercase;white-space:nowrap}
+.cut-name__base span{display:block}
+.cut-name.is-sliced .cut-name__strip--base{overflow:hidden;clip-path:inset(0 0 calc(83.333% + 1px) 0);transform:translateX(calc(var(--px) * var(--scale)))}
+.cut-name.is-sliced .cut-name__layers .cut-name__strip:nth-child(1){--x:16px;--dir:-1;clip-path:inset(calc(16.667% + 1px) 0 calc(66.667% + 1px) 0)}
+.cut-name.is-sliced .cut-name__layers .cut-name__strip:nth-child(2){--x:-12px;--dir:1;clip-path:inset(calc(33.333% + 1px) 0 calc(50% + 1px) 0)}
+.cut-name.is-sliced .cut-name__layers .cut-name__strip:nth-child(3){--x:20px;--dir:-1;clip-path:inset(calc(50% + 1px) 0 calc(33.333% + 1px) 0)}
+.cut-name.is-sliced .cut-name__layers .cut-name__strip:nth-child(4){--x:-14px;--dir:1;clip-path:inset(calc(66.667% + 1px) 0 calc(16.667% + 1px) 0)}
+.cut-name.is-sliced .cut-name__layers .cut-name__strip:nth-child(5){--x:9px;--dir:-1;clip-path:inset(calc(83.333% + 1px) 0 0 0)}
+.cut-name[data-cut="off"] .cut-name__strip--base,.cut-name[data-cut="off"] .cut-name__layers .cut-name__strip{transform:none}
+.cut-toggle{display:inline-flex;align-items:center;min-height:44px;margin-top:.7rem;padding:.35rem .6rem;border:0;background:var(--ink);color:var(--paper);font-family:var(--font-display);font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;clip-path:var(--tape-cut);transform:rotate(-1deg)}
+.cut-toggle:hover{background:var(--red);color:#fff}
+.role-label{display:inline-block;margin:.9rem 0 .75rem;padding:.32rem .62rem .26rem;background:var(--red);color:#fff;font-family:var(--font-display);font-size:clamp(.92rem,2vw,1.16rem);letter-spacing:.055em;line-height:1;text-transform:uppercase;transform:rotate(-1deg);clip-path:var(--tape-cut)}
+.hero-note .clip{padding:1.05rem 1.2rem}
+.hero-description{font-size:1.02rem;line-height:1.55;margin:0;color:var(--ink)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.1rem}
+.hero-side{position:relative;display:flex;flex-direction:column;gap:.7rem;padding-top:6.4rem}
+.stamp{position:absolute;top:0;right:.1rem;width:92px;height:92px;display:grid;place-items:center;border-radius:50%;background:var(--red);color:#fff;font-family:var(--font-display);font-size:.76rem;line-height:1.03;text-align:center;text-transform:uppercase;transform:rotate(-12deg);filter:drop-shadow(0 5px 6px rgba(23,19,14,.22))}
+.stamp::before{content:"";position:absolute;inset:6px;border:2px dashed rgba(255,255,255,.75);border-radius:50%}
+.meta .clip{padding:.68rem .82rem}
+.meta-label{display:block;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--red);margin-bottom:.1rem}
+.meta-value{display:block;font-family:var(--font-display);font-size:1.02rem;line-height:1.15;text-transform:uppercase;letter-spacing:.015em}
+
+/* core stack tape */
+.tape-wrap{position:relative;z-index:1;width:100vw;margin:clamp(1.6rem,4vw,3rem) 0 clamp(1.2rem,3vw,2rem) calc(50% - 50vw);overflow:hidden}
+.tape-band{width:104%;margin-left:-2%;padding:.5rem 0 .65rem;background:var(--ink);color:var(--paper);transform:rotate(-1deg);box-shadow:0 12px 18px rgba(23,19,14,.18)}
+.tape-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 1.3rem .45rem;border-bottom:1px dashed rgba(246,240,225,.28)}
+.tape-label{font-family:var(--font-display);font-size:.8rem;letter-spacing:.13em;text-transform:uppercase}
+.tape-pause{display:inline-flex;align-items:center;min-height:44px;padding:.25rem .55rem;border:0;background:var(--paper);color:var(--ink);font-family:var(--font-display);font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;clip-path:var(--tape-cut)}
+.tape-pause:hover{background:var(--red);color:#fff}
+.marquee{overflow:hidden;padding:.55rem 0 .05rem}
 .marquee-track{display:flex;width:max-content;animation:marquee 40s linear infinite;will-change:transform}
-.marquee:hover .marquee-track,.marquee.is-paused .marquee-track{animation-play-state:paused}
-.chips{display:flex;flex-shrink:0;gap:1rem;margin:0;padding:0 1rem 0 0;list-style:none}
-.chips li{display:inline-block;padding:.35rem .86rem .27rem;border:1px solid rgba(246,240,225,.3);font-family:var(--font-display);font-size:clamp(1.05rem,2vw,1.4rem);letter-spacing:.04em;line-height:1.05;text-transform:uppercase;white-space:nowrap}
-.chips li:nth-child(odd){transform:rotate(-1.2deg)}
-.chips li:nth-child(even){transform:rotate(.9deg)}
-.chips li:nth-child(3n){border-color:var(--red);background:var(--red);color:var(--paper)}
+.chips{display:flex;flex:none;gap:.55rem;margin:0;padding:0 1.2rem;list-style:none}
+.chips li{flex:none;padding:.3rem .62rem .25rem;background:var(--paper);color:var(--ink);font-family:var(--font-display);font-size:.92rem;letter-spacing:.05em;line-height:1;text-transform:uppercase;transform:rotate(-1.4deg)}
+.chips li:nth-child(even){transform:rotate(1.2deg)}
+.chips li:nth-child(3n){background:var(--red);color:#fff}
+.marquee:hover .marquee-track,.tape-band:hover .marquee-track,.marquee.is-paused .marquee-track{animation-play-state:paused}
 .marquee:not(.is-running) .marquee-track{width:auto;animation:none}
-.marquee:not(.is-running) .chips{flex-wrap:wrap;justify-content:center;padding:0 1.5rem}
+.marquee:not(.is-running) .chips{flex-wrap:wrap;justify-content:center;padding:0 1.2rem}
+.marquee:not(.is-running) .chips+.chips{display:none}
 @keyframes marquee{to{transform:translateX(-50%)}}
-.content{padding:0 0 4rem}
-.content>section{margin-top:5rem;scroll-margin-top:2rem}
-.section-head{display:flex;flex-direction:column;align-items:flex-start;gap:.8rem;margin-bottom:2rem}
-.eyebrow{display:inline-block;padding:.3rem .55rem .22rem;border:1px solid var(--ink);background:var(--paper);color:var(--red-deep);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.73rem;letter-spacing:.12em;line-height:1.1;text-transform:uppercase;transform:rotate(-1deg)}
-.section-title{position:relative;z-index:0;display:inline-block;max-width:100%;margin:0;padding:.25rem .72rem .15rem;color:var(--paper);filter:drop-shadow(0 6px 0 rgba(23,19,14,.18));font-family:var(--font-display);font-size:clamp(1.9rem,4.5vw,3.55rem);font-weight:400;line-height:1.02;letter-spacing:.01em;text-transform:uppercase;transform:rotate(-.8deg)}
-.section-title::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);clip-path:var(--torn);transform:rotate(.4deg)}
-.section-title--red::before{background:var(--red)}
-.section-title--red{filter:drop-shadow(0 6px 0 rgba(23,19,14,.22))}
-.section-note{max-width:45rem;transform:rotate(.3deg)}
-.section-note .clip{padding:.9rem 1.1rem}
-.section-description{margin:0;color:var(--muted);font-size:1rem}
-.text-link{color:var(--red-deep);font-weight:700}
-.experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;align-items:start}
-.job:nth-child(even){margin-top:1.25rem}
-.job .clip{padding:1.2rem 1.3rem 1.3rem}
-.job-date{margin-bottom:.55rem;color:var(--red-deep);font-size:.72rem;letter-spacing:.13em;line-height:1.5;text-transform:uppercase}
-.job h3{margin:0 0 .3rem;font-family:var(--font-display);font-size:1.42rem;font-weight:400;line-height:1.1;text-transform:uppercase}
-.job-company{display:block;color:var(--muted);font-family:var(--font-body);font-size:1rem;font-style:italic;letter-spacing:0;line-height:1.35;text-transform:none}
-.job-focus{margin:.35rem 0 .75rem;padding:.35rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--muted);font-size:.68rem;letter-spacing:.12em;line-height:1.5;text-transform:uppercase}
-.job ul{margin:0;padding-left:1.15rem}
-.job li{margin:.35rem 0}
-.tech{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.9rem}
-.tech span{padding:.15rem .4rem .1rem;border:1px solid var(--line);background:var(--paper-2);font-size:.69rem;letter-spacing:.07em;line-height:1.35;text-transform:uppercase}
-.lab-panel .clip{padding:1.3rem 1.4rem 1.4rem}
-.lab-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-bottom:.8rem;border-bottom:1px solid var(--line)}
-.lab-title{font-family:var(--font-display);font-size:1.08rem;letter-spacing:.04em;line-height:1.1;text-transform:uppercase}
-.status-link{display:inline-flex;align-items:center;gap:.42rem;min-height:24px;color:var(--ink);font-size:.9rem;text-decoration:none;line-height:1.3}
+
+/* content */
+.content{position:relative;z-index:1;padding-bottom:1rem}
+section{scroll-margin-top:1rem}
+
+/* experience */
+.experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem 1.5rem;align-items:start}
+.job:nth-child(even){margin-top:20px}
+.job .clip{padding:1.3rem 1.35rem 1.4rem}
+.job-date{font-size:.9rem;font-style:italic;line-height:1.4;color:var(--muted);margin-bottom:.6rem}
+.current-tag{display:inline-block;margin-left:.35rem;padding:.1rem .34rem .07rem;background:var(--red);color:#fff;font-family:var(--font-display);font-size:.62rem;font-style:normal;letter-spacing:.07em;line-height:1.15;text-transform:uppercase;transform:rotate(-2deg)}
+.job-role{display:flex;flex-wrap:wrap;align-items:center;gap:.42rem;margin-bottom:.55rem}
+.job-role .role-label{margin:0}
+.job-company{font-family:var(--font-display);font-size:1.05rem;line-height:1.15;letter-spacing:.02em;text-transform:uppercase}
+.job ul{margin:.45rem 0 .8rem;padding-left:1.15rem}
+.job li{margin:.38rem 0;padding-left:.1rem}
+.job li::marker{color:var(--red)}
+.tech{padding-top:.55rem;border-top:1px solid var(--line);font-size:.84rem;line-height:1.4;color:var(--muted)}
+
+/* homelab */
+.lab-panel .clip{padding:1.35rem 1.4rem 1.45rem}
+.lab-top{display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.2rem;flex-wrap:wrap;padding-bottom:.75rem;border-bottom:1px solid var(--line)}
+.lab-title{font-family:var(--font-display);font-size:.86rem;letter-spacing:.08em;line-height:1.15;text-transform:uppercase}
+.status-link{display:inline-flex;align-items:center;gap:.42rem;min-height:44px;color:var(--ink);font-size:.88rem;line-height:1.2;text-decoration:none}
 .status-link:hover{color:var(--red)}
-.status-dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--red);flex:none}
-.status-word{display:inline-block;padding:.06rem .34rem .02rem;border:2.5px solid var(--red);border-radius:46% 54% 49% 51% / 55% 45% 55% 45%;color:var(--red);font-family:var(--font-display);font-size:.86rem;letter-spacing:.04em;line-height:1.05;transform:rotate(-3deg)}
+.status-dot{width:.55rem;height:.55rem;flex:none;border-radius:50%;background:var(--red)}
+.status-word{display:inline-block;padding:.08rem .37rem .03rem;border:2.5px solid var(--red);border-radius:46% 54% 49% 51% / 55% 45% 55% 45%;color:var(--red);font-family:var(--font-display);font-size:.82rem;letter-spacing:.04em;line-height:1.05;transform:rotate(-3deg)}
 .status-link:hover .status-word{background:var(--red);color:var(--paper)}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:1.2rem 0 1.5rem}
-.stat{padding-top:.5rem;border-top:3px solid var(--ink)}
-.stat-label{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
-.stat-value{display:block;font-family:var(--font-display);font-size:clamp(1.45rem,3vw,2.15rem);line-height:1.15}
-.pod-board{margin-top:1.6rem;padding:1.2rem 1.25rem 1.1rem;background:var(--ink);color:var(--paper);clip-path:var(--torn)}
-.pod-kicker{margin-bottom:.15rem;color:#f0a39d;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
-.pod-board h3{margin:0 0 .35rem;font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;line-height:1.03;text-transform:uppercase}
-.pod-copy{max-width:42rem;margin:0 0 .9rem;color:rgba(246,240,225,.78);font-size:.98rem}
-.pod-stats{display:flex;flex-wrap:wrap;gap:1.5rem;margin:0 0 .9rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
-.pod-stats b{display:block;margin-top:.05rem;color:var(--paper);font-family:var(--font-display);font-size:1.25rem;font-weight:400;letter-spacing:.03em;line-height:1.05}
-.pod-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.45rem}
-.pod-grid:empty{display:none}
-.pod{position:relative;aspect-ratio:1;border:1px solid rgba(246,240,225,.42);background:transparent;color:var(--paper);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.8rem;letter-spacing:.04em;cursor:pointer}
-.pod:hover{background:var(--paper);color:var(--ink)}
-.pod.is-down{color:#ff8d85;border-color:#ff8d85;cursor:wait}
-.pod.is-down::after{content:"";position:absolute;top:50%;left:18%;right:18%;height:2px;background:#ff8d85;transform:rotate(-35deg)}
-.pod:focus-visible{clip-path:none;outline-color:var(--paper)}
-.sim-note{margin:.75rem 0 0;color:rgba(246,240,225,.62);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
-.projects> .section-head{margin-bottom:2rem}
-.featured-project .clip{padding:1.4rem 1.5rem 1.5rem}
-.featured-label{display:inline-block;margin-bottom:.65rem;padding:.26rem .55rem .2rem;background:var(--red);color:var(--paper);clip-path:var(--tape-cut);font-family:var(--font-display);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;transform:rotate(-.7deg)}
-.featured-project h3,.project h3{margin:0 0 .55rem;font-family:var(--font-display);font-weight:400;line-height:1.08;text-transform:uppercase}
-.featured-project h3{font-size:clamp(1.7rem,3.5vw,2.65rem)}
-.featured-body{columns:2;column-gap:2.2rem;margin-top:.7rem}
-.featured-body p{margin:0 0 .8rem}
-.featured-body p:first-of-type::first-letter{float:left;margin:.1em .12em 0 0;color:var(--red);font-family:var(--font-display);font-size:4rem;line-height:.76}
-.featured-body ul{margin:0;padding-left:1.1rem}
-.featured-body li{break-inside:avoid;margin:.45rem 0}
-.tags{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:1rem}
-.tags span{padding:.16rem .44rem .11rem;border:1px solid var(--ink);background:var(--paper);font-size:.69rem;letter-spacing:.07em;line-height:1.35;text-transform:uppercase}
-.tags span:nth-child(3n){border-color:var(--red);background:var(--red);color:var(--paper)}
-.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;margin-top:2rem}
-.project .clip{padding:1.2rem 1.3rem 1.3rem}
-.project h3{font-size:1.55rem;margin-top:.35rem}
-.project p{margin:0}
-.project-kicker{color:var(--red-deep);font-size:.69rem;letter-spacing:.12em;text-transform:uppercase}
-.approach-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem}
-.approach .clip{position:relative;padding:1.1rem 1.2rem 1.2rem .9rem}
-.approach .clip::before{content:"“";position:absolute;top:.15rem;right:.6rem;color:var(--red);font-family:var(--font-display);font-size:4.5rem;line-height:.75;opacity:.9}
-.approach-number{color:var(--red);font-family:var(--font-display);font-size:1.1rem;line-height:1;letter-spacing:.04em}
-.approach h3{margin:.35rem 0 .45rem;font-family:var(--font-display);font-size:1.35rem;font-weight:400;line-height:1.08;text-transform:uppercase}
-.approach p{margin:0;color:var(--muted);font-size:.98rem}
-.skills-panel .clip,.records-panel .clip{padding:1.4rem 1.5rem}
-.classifieds{columns:3;column-gap:2.2rem}
-.skill{break-inside:avoid;padding:.8rem 0 1rem;border-top:1px solid var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;margin:1rem 0 0}
+.stat{padding:.55rem .6rem;border:1px solid var(--line);background:rgba(239,230,210,.42)}
+.stat dt{font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.stat dd{margin:.08rem 0 0;font-family:var(--font-display);font-size:clamp(1.15rem,2.6vw,1.55rem);line-height:1;letter-spacing:.02em}
+.pod-board{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--line)}
+.pod-kicker{font-family:var(--font-display);font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;color:var(--red)}
+.pod-board h3{font-family:var(--font-display);font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:400;line-height:1.1;text-transform:uppercase;margin:.15rem 0 .4rem}
+.pod-copy{max-width:48rem;font-size:.95rem;color:var(--muted);margin-bottom:.7rem}
+.pod-stats{display:flex;flex-wrap:wrap;gap:.55rem 1.1rem;margin-bottom:.65rem;font-family:var(--font-display);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase}
+.pod-stats b{color:var(--red)}
+.pod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:.5rem;margin-bottom:.7rem}
+.pod{position:relative;display:grid;place-items:center;min-width:44px;min-height:44px;aspect-ratio:1;padding:0;border:0;background:var(--paper-2);color:var(--ink);font-family:var(--font-display);font-size:.95rem;line-height:1;cursor:pointer;clip-path:var(--torn);transition:transform .18s ease,opacity .18s ease}
+.pod:hover{background:var(--paper);transform:rotate(-2deg)}
+.pod[data-down="true"]{transform:rotate(10deg) translateY(2px);opacity:.7}
+.pod-x{position:absolute;inset:18%;opacity:0;pointer-events:none;transition:opacity .15s ease}
+.pod-x::before,.pod-x::after{content:"";position:absolute;left:50%;top:50%;width:120%;height:3px;background:var(--red);border-radius:2px;transform:translate(-50%,-50%) rotate(45deg)}
+.pod-x::after{transform:translate(-50%,-50%) rotate(-45deg)}
+.pod[data-down="true"] .pod-x{opacity:1}
+.sim-note{margin:0;font-size:.78rem;font-style:italic;color:var(--muted)}
+
+/* projects */
+.featured{margin-bottom:1.5rem}
+.featured .clip{padding:1.45rem 1.5rem}
+.featured-label{font-family:var(--font-display);font-size:.76rem;letter-spacing:.1em;line-height:1.2;text-transform:uppercase;color:var(--red)}
+.featured h3{font-family:var(--font-display);font-size:clamp(1.35rem,3vw,2.1rem);font-weight:400;line-height:1.05;text-transform:uppercase;margin:.25rem 0 .75rem}
+.news-cols{columns:2;column-gap:2rem;margin:.1rem 0 .95rem;padding-left:1.15rem}
+.news-cols li{break-inside:avoid;margin:.36rem 0;padding-left:.1rem}
+.news-cols li::marker{color:var(--red)}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;padding-top:.7rem;border-top:1px solid var(--line)}
+.tags span{padding:.15rem .4rem .12rem;background:var(--paper-2);font-family:var(--font-display);font-size:.7rem;letter-spacing:.055em;line-height:1.2;text-transform:uppercase;transform:rotate(-.8deg)}
+.tags span:nth-child(even){transform:rotate(.8deg)}
+
+/* approach */
+.approach-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.15rem}
+.approach .clip{padding:1.25rem 1.25rem 1.45rem}
+.quote-mark{display:block;margin-bottom:.1rem;color:var(--red);font-family:Georgia,"Times New Roman",serif;font-size:5rem;line-height:.65}
+.approach h3{font-family:var(--font-display);font-size:clamp(1.1rem,2.3vw,1.45rem);font-weight:400;line-height:1.1;text-transform:uppercase;margin-bottom:.45rem}
+.approach p{margin:0;font-size:.96rem;color:var(--muted)}
+
+/* skills */
+.skills-panel .clip{padding:1.35rem 1.45rem}
+.classifieds{columns:3;column-gap:2rem;column-rule:1px solid var(--line)}
+.skill{break-inside:avoid;padding:.72rem 0 .88rem;border-top:1px solid var(--ink)}
 .skill:first-child{border-top:3px solid var(--red)}
-.skill h3{margin:0 0 .2rem;color:var(--red);font-family:var(--font-display);font-size:1.08rem;font-weight:400;letter-spacing:.04em;line-height:1.1;text-transform:uppercase}
-.skill p{margin:0;color:var(--muted);font-size:.98rem}
-.records-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem}
-.record{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
-.record-name{font-size:1rem;line-height:1.4}
-.record-date{color:var(--red);font-family:var(--font-display);font-size:1.15rem;letter-spacing:.03em;white-space:nowrap}
+.skill h3{font-family:var(--font-display);font-size:1.02rem;font-weight:400;line-height:1.1;letter-spacing:.035em;text-transform:uppercase;color:var(--red);margin-bottom:.2rem}
+.skill p{margin:0;font-size:.94rem;line-height:1.5;color:var(--muted)}
+
+/* education */
+.records-panel .clip{padding:1.35rem 1.45rem}
+.records-subhead{font-family:var(--font-display);font-size:.78rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:.1rem 0 .55rem}
+.records-subhead+.record{border-top:1px solid var(--ink)}
+.records-subhead:not(:first-child){margin-top:1rem}
+.record{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--line)}
+.record-name{font-size:1rem}
+.record-date{flex:none;font-family:var(--font-display);font-size:.9rem;letter-spacing:.04em;color:var(--red)}
+
+/* contact */
+.contact-card{--focus:var(--paper);margin-top:clamp(3rem,6vw,5rem)}
 .contact-card .clip{padding:1.8rem 1.8rem 2rem;background:var(--red);color:var(--paper)}
-.contact-card .eyebrow{border-color:var(--paper);background:var(--paper);color:var(--red)}
-.contact-card h2{margin:.75rem 0 .55rem;color:var(--paper);font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:400;line-height:.97;text-transform:uppercase}
-.contact-card p{max-width:35rem;margin:0;color:var(--paper)}
-.contact-links{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.35rem}
-.contact-card .btn{transform:rotate(-.4deg)}
-.btn-on-red{border-color:var(--paper);background:var(--paper);color:var(--red)}
-.btn-on-red:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
-.btn-outline{border-color:var(--paper);background:transparent;color:var(--paper)}
-.btn-outline:hover{border-color:var(--paper);background:var(--paper);color:var(--red)}
-.contact-card :focus-visible{outline-color:var(--paper)}
-.footer-wrap{padding:0 0 3rem}
-.footer .clip{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1rem 1.2rem}
-.footer-note{font-size:.9rem}
-.footer-links{display:flex;flex-wrap:wrap;gap:1rem}
-.footer-links a{display:inline-flex;align-items:center;min-height:24px;color:var(--red-deep);font-size:.82rem;letter-spacing:.08em;text-transform:lowercase;text-decoration:none;border-bottom:1px solid transparent}
-.footer-links a:hover{color:var(--red);border-color:var(--red)}
-.nav-list{display:flex;align-items:center;flex-wrap:wrap;gap:1.15rem;margin:0;padding:0;list-style:none;font-size:.95rem;letter-spacing:.05em;text-transform:lowercase}
-.nav-list li{display:flex;align-items:center}
+.contact-card .eyebrow{background:var(--paper);color:var(--red)}
+.contact-card h2{font-family:var(--font-display);font-size:clamp(2rem,5vw,3.4rem);font-weight:400;line-height:.97;text-transform:uppercase;margin:.7rem 0 .55rem}
+.contact-card p{max-width:36rem;color:var(--paper)}
+.contact-links{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.2rem}
+.contact-card .btn{background:var(--paper);color:var(--red)}
+.contact-card .btn:hover{color:var(--red)}
+
+/* footer */
+.footer-wrap{position:relative;z-index:1;padding:2rem 0 calc(2.6rem + var(--safe-b))}
+.footer .clip{padding:1rem 1.2rem 1.05rem}
+.footer-note{font-size:.9rem;color:var(--muted)}
+.footer-links{display:flex;flex-wrap:wrap;gap:.2rem 1rem;margin-top:.25rem;font-size:.88rem}
+.footer-links a{display:inline-flex;align-items:center;min-height:44px}
+
+/* mascot */
+.mascot-wrap{position:fixed;left:0;top:0;width:70px;height:96px;z-index:60;pointer-events:none;will-change:transform}
+.mascot-wrap[hidden]{display:none}
+.mascot{position:absolute;inset:0;width:70px;height:96px;padding:0;border:0;background:none;pointer-events:auto;touch-action:none;cursor:grab;transform-origin:50% 100%;user-select:none;-webkit-user-select:none}
+.mascot.is-dragging{cursor:grabbing}
+.mascot__head{position:absolute;top:2px;left:9px;width:52px;height:38px;background:var(--ink);clip-path:polygon(2% 8%,10% 0,26% 5%,44% 0,64% 4%,82% 0,98% 7%,100% 88%,90% 100%,72% 95%,52% 100%,32% 96%,12% 100%,0 92%)}
+.mascot__head::before{content:"";position:absolute;inset:2px;background:var(--paper);clip-path:polygon(2% 8%,10% 0,26% 5%,44% 0,64% 4%,82% 0,98% 7%,100% 88%,90% 100%,72% 95%,52% 100%,32% 96%,12% 100%,0 92%)}
+.mascot__eye{position:absolute;top:12px;width:9px;height:9px;border:1.5px solid var(--ink);border-radius:50%;background:#fff;overflow:hidden}
+.mascot__eye--l{left:15px}
+.mascot__eye--r{right:15px}
+.mascot__pupil{position:absolute;left:50%;top:50%;width:3.5px;height:3.5px;margin:-1.75px 0 0 -1.75px;border-radius:50%;background:var(--ink)}
+.mascot__mouth{position:absolute;left:50%;top:26px;width:9px;height:4px;margin-left:-4.5px;border-radius:1px;background:var(--ink)}
+.mascot.is-air .mascot__mouth{width:7px;height:7px;margin-left:-3.5px;border-radius:50%}
+.mascot__pin{position:absolute;top:-6px;left:22px;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#ff9b8d 0 16%,var(--red) 55%,#7d100a 100%);box-shadow:0 1px 1px rgba(0,0,0,.35)}
+.mascot__pin::after{content:"";position:absolute;left:3px;top:7px;width:2px;height:5px;background:var(--ink)}
+.mascot__body{position:absolute;top:38px;left:18px;width:34px;height:36px;background:var(--ink);clip-path:polygon(6% 4%,24% 0,46% 5%,68% 0,94% 6%,100% 82%,84% 100%,58% 95%,34% 100%,8% 94%,0 20%)}
+.mascot__body::before{content:"";position:absolute;inset:2px;background:var(--red);clip-path:polygon(6% 4%,24% 0,46% 5%,68% 0,94% 6%,100% 82%,84% 100%,58% 95%,34% 100%,8% 94%,0 20%)}
+.mascot__foot{position:absolute;bottom:0;width:18px;height:8px;background:var(--ink);clip-path:polygon(0 12%,18% 0,100% 8%,94% 100%,8% 92%)}
+.mascot__foot--l{left:13px}
+.mascot__foot--r{right:13px;transform:scaleX(-1)}
+.mascot-bubble{position:absolute;bottom:calc(100% + 8px);left:50%;width:max-content;max-width:min(220px,75vw);margin:0;padding:.5rem .65rem;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:.84rem;line-height:1.35;text-align:left;clip-path:var(--torn);filter:drop-shadow(0 5px 7px rgba(23,19,14,.2));opacity:0;visibility:hidden;transform:translateX(-50%);transition:opacity .18s ease,visibility .18s ease;pointer-events:none}
+.mascot-bubble.is-visible{opacity:1;visibility:visible}
+.mascot-wrap.is-near-right .mascot-bubble{left:auto;right:0;transform:none}
+.mascot-wrap.is-near-left .mascot-bubble{left:0;transform:none}
+
 @media (max-width:820px){
-  .hero{padding-top:3.5rem}
-  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
-  .hero-side{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:8rem}
-  .thread{height:200px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;padding-top:6.4rem}
+  .stamp{right:0}
   .experience-grid{grid-template-columns:1fr}
   .job:nth-child(even){margin-top:0}
-  .featured-body{columns:1}
-  .project-grid{grid-template-columns:1fr}
   .approach-grid{grid-template-columns:1fr}
   .classifieds{columns:2}
-  .records-grid{grid-template-columns:1fr}
-  .nav-list{gap:.75rem;font-size:.88rem}
+  .news-cols{columns:1}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:600px){
-  .cut-name{--cut-scale:.45}
+  .cut-name{--scale:.45}
 }
 @media (max-width:520px){
-  .container{width:min(100% - 1.5rem,var(--max))}
-  .masthead-wrap{padding-top:.8rem}
-  .masthead .clip{padding:.9rem 1rem .7rem}
-  .brand{font-size:1.4rem}
-  .nav-list{gap:.75rem;font-size:.88rem}
-  .hero{padding:3rem 0 2rem}
-  .cut-name{--name-pad:1rem 1rem .8rem}
-  .cut-name__base{font-size:clamp(2.45rem,10vw,3.5rem)}
-  .hero-side{grid-template-columns:1fr;padding-top:6.5rem}
-  .stamp{right:0;width:84px;height:84px;font-size:.74rem}
-  .tape-band{width:120%;margin-left:-10%}
-  .tape-bar{width:min(100% - 2rem,var(--max))}
-  .content>section{margin-top:4rem}
-  .section-title{font-size:clamp(1.75rem,8vw,2.7rem)}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .pod-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+  body{font-size:17px}
+  .masthead .clip{padding:.9rem 1rem .75rem}
+  .hero-side{grid-template-columns:1fr;padding-top:0}
+  .stamp{position:static;width:84px;height:84px;margin:.2rem 0 .3rem auto}
   .classifieds{columns:1}
-  .contact-card .clip{padding:1.3rem 1.2rem 1.5rem}
-  .footer .clip{align-items:flex-start;flex-direction:column}
-  .footer-links{gap:.7rem}
-}
-@media (max-width:420px){
-  .pod-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .featured .clip,.job .clip,.lab-panel .clip,.skills-panel .clip,.records-panel .clip{padding:1.1rem 1.05rem 1.2rem}
+  .contact-card .clip{padding:1.35rem 1.15rem 1.5rem}
+  .record{flex-direction:column;gap:.1rem}
+  .pod-grid{grid-template-columns:repeat(auto-fill,minmax(44px,1fr))}
+  .nav-list{gap:.1rem .7rem}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-  .thread path{stroke-dashoffset:0;animation:none}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .thread path{stroke-dashoffset:0;animation:none!important}
+  .scrap{display:none}
   .marquee-track{width:auto!important;animation:none!important}
-  .marquee .chips{flex-wrap:wrap;justify-content:center;padding:0 1.5rem}
+  .marquee .chips{flex-wrap:wrap;justify-content:center;padding:0 1.2rem}
   .marquee .chips+.chips{display:none}
-  .tape-pause{display:none}
-  .cut-name__strip{will-change:auto}
-  .desk-art::before,.desk-art::after{animation:none}
-  .desk-scrap{display:none}
+  .pod[data-down="true"]{transform:none}
+  .mascot,.mascot-bubble{transition:none}
 }
 </style>
 </head>
 <body>
 <div class="desk-art" aria-hidden="true">
-  <canvas id="paperCanvas" class="paper-canvas"></canvas>
-  <span class="desk-scrap scrap-1"></span>
-  <span class="desk-scrap scrap-2"></span>
-  <span class="desk-scrap scrap-3"></span>
-  <span class="desk-scrap scrap-float float-1"></span>
-  <span class="desk-scrap scrap-float float-2"></span>
+  <span class="scrap scrap--cream scrap--s0" style="--top:7%;--w:148px;--dur:56s;--delay:-11s;--r1:-9deg;--r2:7deg;--y1:12px;--y2:-16px"></span>
+  <span class="scrap scrap--red scrap--s1" style="--top:18%;--w:92px;--dur:68s;--delay:-41s;--r1:8deg;--r2:-6deg;--y1:-10px;--y2:14px"></span>
+  <span class="scrap scrap--cream scrap--s2" style="--top:31%;--w:118px;--dur:47s;--delay:-23s;--r1:-4deg;--r2:9deg;--y1:18px;--y2:-8px"></span>
+  <span class="scrap scrap--ink scrap--s3" style="--top:44%;--w:76px;--dur:61s;--delay:-55s;--r1:6deg;--r2:-8deg;--y1:-14px;--y2:10px"></span>
+  <span class="scrap scrap--cream scrap--s1" style="--top:55%;--w:132px;--dur:52s;--delay:-33s;--r1:-7deg;--r2:5deg;--y1:8px;--y2:-12px"></span>
+  <span class="scrap scrap--red scrap--s2" style="--top:65%;--w:84px;--dur:38s;--delay:-7s;--r1:5deg;--r2:-9deg;--y1:-8px;--y2:16px"></span>
+  <span class="scrap scrap--cream scrap--s3" style="--top:74%;--w:108px;--dur:64s;--delay:-47s;--r1:-6deg;--r2:8deg;--y1:14px;--y2:-10px"></span>
+  <span class="scrap scrap--ink scrap--s0" style="--top:84%;--w:70px;--dur:43s;--delay:-19s;--r1:9deg;--r2:-5deg;--y1:-12px;--y2:8px"></span>
+  <span class="scrap scrap--red scrap--s1" style="--top:91%;--w:122px;--dur:58s;--delay:-63s;--r1:-8deg;--r2:6deg;--y1:10px;--y2:-14px"></span>
 </div>
 <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -413,7 +409,7 @@ img,svg{display:block;max-width:100%}
   <div class="container masthead paper">
     <div class="clip">
       <div class="masthead-top">
-        <a class="brand" href="#" aria-label="Okechukwu.dev home">okechukwu<span>.dev</span></a>
+        <a class="brand" href="#main" aria-label="Okechukwu.dev home">okechukwu<span>.dev</span></a>
         <nav aria-label="Primary">
           <ul class="nav-list">
             <li><a href="#experience">experience</a></li>
@@ -421,73 +417,78 @@ img,svg{display:block;max-width:100%}
             <li><a href="#projects">projects</a></li>
             <li><a href="#skills">skills</a></li>
             <li><a href="#contact" class="nav-cta">contact</a></li>
-            <li><button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button></li>
+            <li><button class="mascot-toggle" id="mascotToggle" type="button" aria-controls="mascotWrap" aria-expanded="true" hidden>Hide mascot</button></li>
           </ul>
         </nav>
       </div>
       <div class="dateline">
-        <time id="dateline" datetime="2026-10-26">October 26, 2026</time>
+        <time id="dateline" datetime="2026-10-31">Latest edition</time>
+        <span class="dateline__sep" aria-hidden="true">·</span>
         <span>remote edition</span>
       </div>
     </div>
   </div>
 </header>
 
-<main class="main" id="main">
+<main id="main">
   <section class="hero" aria-labelledby="hero-title">
-    <div class="container hero-inner">
-      <svg class="thread" viewBox="0 0 1120 260" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path d="M-40 176 C 140 34, 306 246, 500 122 S 792 26, 1160 172" pathLength="1"></path>
-      </svg>
-      <div class="hero-grid">
-        <div class="hero-main">
-          <div class="name-wrap">
-            <div class="cut-name" id="cutName" data-cut="on">
-              <h1 class="cut-name__base" id="hero-title"><span>Okechukwu</span> <span>Joshua</span> <span>Onyedikachi</span></h1>
-              <div class="cut-name__layers" aria-hidden="true"></div>
-            </div>
+    <svg class="thread" viewBox="0 0 1120 260" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M-40 176 C 140 34, 306 246, 500 122 S 792 26, 1160 172" pathLength="1"></path>
+    </svg>
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <div class="cut-name is-sliced" id="cutName">
+          <div class="cut-name__strip cut-name__strip--base">
+            <h1 class="cut-name__base" id="hero-title"><span>Okechukwu</span> <span>Joshua</span> <span>Onyedikachi</span></h1>
           </div>
-          <button class="cut-toggle" id="cutToggle" type="button" aria-pressed="false" hidden>Line it up</button>
-          <div class="role-label">DevOps Engineer and SRE</div>
-          <div class="hero-note paper tilt-r">
-            <div class="clip">
-              <p class="hero-description">I build production-discipline systems across FinTech, EdTech and startups: GitOps delivery, SLOs and observability, and infrastructure as code on AWS and Azure. I default to security-first delivery and document everything from release runbooks to blameless postmortems.</p>
-            </div>
-          </div>
-          <div class="hero-actions">
-            <a href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf" class="btn btn-primary">Download résumé</a>
-            <a href="https://github.com/kaacchhiii" target="_blank" rel="noopener" class="btn">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/onyedikachiokechukwu/" target="_blank" rel="noopener" class="btn">LinkedIn ↗</a>
+          <div class="cut-name__layers" aria-hidden="true">
+            <div class="cut-name__strip"><div class="cut-name__base"><span>Okechukwu</span> <span>Joshua</span> <span>Onyedikachi</span></div></div>
+            <div class="cut-name__strip"><div class="cut-name__base"><span>Okechukwu</span> <span>Joshua</span> <span>Onyedikachi</span></div></div>
+            <div class="cut-name__strip"><div class="cut-name__base"><span>Okechukwu</span> <span>Joshua</span> <span>Onyedikachi</span></div></div>
+            <div class="cut-name__strip"><div class="cut-name__base"><span>Okechukwu</span> <span>Joshua</span> <span>Onyedikachi</span></div></div>
+            <div class="cut-name__strip"><div class="cut-name__base"><span>Okechukwu</span> <span>Joshua</span> <span>Onyedikachi</span></div></div>
           </div>
         </div>
-        <aside class="hero-side" aria-label="Profile details">
-          <div class="stamp" aria-hidden="true">Open to roles</div>
-          <article class="meta paper tilt-l pin">
-            <div class="clip">
-              <span class="meta-label">Location</span>
-              <span class="meta-value">Nigeria · Remote</span>
-            </div>
-          </article>
-          <article class="meta paper tilt-r">
-            <div class="clip">
-              <span class="meta-label">Focus</span>
-              <span class="meta-value">Cloud &amp; Platform Engineering</span>
-            </div>
-          </article>
-          <article class="meta paper tilt-l pin">
-            <div class="clip">
-              <span class="meta-label">Experience</span>
-              <span class="meta-value">3+ years</span>
-            </div>
-          </article>
-          <article class="meta paper tilt-r">
-            <div class="clip">
-              <span class="meta-label">Primary stack</span>
-              <span class="meta-value">AWS · Kubernetes · Terraform</span>
-            </div>
-          </article>
-        </aside>
+        <button class="cut-toggle" id="cutToggle" type="button" aria-controls="cutName" hidden>Line it up</button>
+        <div class="role-label">DevOps Engineer and SRE</div>
+        <div class="hero-note paper tilt-r">
+          <div class="clip">
+            <p class="hero-description">DevOps Engineer / SRE with hands-on experience across FinTech, EdTech, and startup environments, working in concurrent contract roles spanning CI/CD, Kubernetes, and cloud infrastructure on AWS and Azure. Builds and operates production-discipline systems end-to-end: GitOps delivery pipelines, observability with defined SLOs and error budgets, and infrastructure as code with Terraform/Terragrunt. Practices security-first delivery (DevSecOps gates, secret scanning, policy-as-code) and documents rigorously, from release runbooks to blameless postmortems.</p>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="Okechukwu_Joshua_Onyedikachi_Resume.pdf">Résumé</a>
+          <a class="btn" href="https://github.com/kaacchhiii" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/onyedikachiokechukwu/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
+      <aside class="hero-side" aria-label="Profile details">
+        <div class="stamp" aria-hidden="true">Open to roles</div>
+        <article class="meta paper tilt-l pin">
+          <div class="clip">
+            <span class="meta-label">Location</span>
+            <span class="meta-value">Lagos, Nigeria · remote</span>
+          </div>
+        </article>
+        <article class="meta paper tilt-r">
+          <div class="clip">
+            <span class="meta-label">Focus</span>
+            <span class="meta-value">Cloud and platform engineering</span>
+          </div>
+        </article>
+        <article class="meta paper tilt-l">
+          <div class="clip">
+            <span class="meta-label">Experience</span>
+            <span class="meta-value">3+ years across FinTech, EdTech and startups</span>
+          </div>
+        </article>
+        <article class="meta paper tilt-r pin">
+          <div class="clip">
+            <span class="meta-label">Primary stack</span>
+            <span class="meta-value">AWS · Kubernetes · Terraform</span>
+          </div>
+        </article>
+      </aside>
     </div>
   </section>
 
@@ -505,6 +506,21 @@ img,svg{display:block;max-width:100%}
             <li>Kubernetes</li>
             <li>Terraform</li>
             <li>Docker</li>
+            <li>Azure DevOps</li>
+            <li>GitHub Actions</li>
+            <li>GitLab CI</li>
+            <li>ArgoCD</li>
+            <li>Prometheus</li>
+            <li>Grafana</li>
+            <li>Python</li>
+            <li>Linux</li>
+          </ul>
+          <ul class="chips" aria-hidden="true">
+            <li>AWS</li>
+            <li>Kubernetes</li>
+            <li>Terraform</li>
+            <li>Docker</li>
+            <li>Azure DevOps</li>
             <li>GitHub Actions</li>
             <li>GitLab CI</li>
             <li>ArgoCD</li>
@@ -519,96 +535,84 @@ img,svg{display:block;max-width:100%}
   </section>
 
   <div class="container content">
-    <section id="experience">
+    <section id="experience" aria-labelledby="experience-title">
       <div class="section-head">
         <span class="eyebrow">01 / Deployment history</span>
-        <h2 class="section-title">Experience</h2>
-        <div class="section-note paper tilt-r">
-          <div class="clip">
-            <p class="section-description">Engineering experience across FinTech, EdTech, startups and platform environments, with emphasis on automation, reliability and delivery.</p>
-          </div>
-        </div>
+        <h2 class="section-title" id="experience-title">Experience</h2>
       </div>
-
       <div class="experience-grid">
         <article class="job paper tilt-l pin">
           <div class="clip">
-            <div class="job-date">SEP 2026 — PRESENT<br>LAGOS · CURRENT</div>
-            <h3>DevOps Engineer <span class="job-company">— First Bank of Nigeria</span></h3>
-            <div class="job-focus">Release Automation · Azure DevOps · Test Gates</div>
+            <div class="job-date">Sep 2026 - present · Lagos, Nigeria <span class="current-tag">Current role</span></div>
+            <div class="job-role"><span class="role-label">DevOps Engineer</span><span class="job-company">First Bank of Nigeria</span></div>
             <ul>
-              <li>Building end-to-end release automation on Azure DevOps, covering deployment pipelines and automated unit, integration, security and smoke testing across environments.</li>
-              <li>Defined the approval gates and rollback procedures production releases follow, making promotions consistent and reversible.</li>
+              <li>Building end-to-end release automation on Azure DevOps, covering deployment pipelines and automated unit, integration, security, and smoke testing across environments.</li>
+              <li>Defined the approval gates and rollback procedures that production releases follow, so promotions are consistent and reversible.</li>
             </ul>
-            <div class="tech"><span>Azure DevOps</span><span>CI/CD</span><span>Release Automation</span><span>Testing</span><span>Security</span></div>
+            <div class="tech">Azure DevOps · CI/CD · release automation · testing</div>
           </div>
         </article>
 
         <article class="job paper tilt-r">
           <div class="clip">
-            <div class="job-date">DEC 2025 — JUN 2026<br>REMOTE · CONTRACT · CONCURRENT</div>
-            <h3>Platform Engineer <span class="job-company">— Odera Training Academy</span></h3>
-            <div class="job-focus">Platform Engineering · Infrastructure Automation</div>
+            <div class="job-date">Dec 2025 - Jun 2026 · Remote · Contract, concurrent</div>
+            <div class="job-role"><span class="role-label">Platform Engineer</span><span class="job-company">Odera Training Academy</span></div>
             <ul>
-              <li>Designed a multi-region learning platform delivering lessons and exercises to an international audience.</li>
-              <li>Automating student server setup with Terraform and scripts; currently piloting with a learner group.</li>
-              <li>Developing CLI tools and documentation for SSH, firewall and runtime configuration.</li>
+              <li>Designed a multi-region web application to deliver lessons and exercises to an international audience.</li>
+              <li>Automated student server setup with Terraform and scripts and ran a pilot with a learner group.</li>
+              <li>Developed CLI tools and documentation to help learners configure SSH, firewalls, and runtimes on remote servers.</li>
             </ul>
-            <div class="tech"><span>Terraform</span><span>AWS</span><span>Linux</span><span>Python</span><span>Automation</span></div>
+            <div class="tech">Terraform · automation · CLI tooling · remote servers</div>
           </div>
         </article>
 
         <article class="job paper tilt-l">
           <div class="clip">
-            <div class="job-date">FEB 2025 — JAN 2026<br>LAGOS · CONTRACT · CONCURRENT</div>
-            <h3>DevOps Engineer <span class="job-company">— First Bank of Nigeria</span></h3>
-            <div class="job-focus">DevSecOps · CI/CD · Release Engineering</div>
+            <div class="job-date">Feb 2025 - Jan 2026 · Lagos, Nigeria · Contract, concurrent</div>
+            <div class="job-role"><span class="role-label">DevOps Engineer</span><span class="job-company">First Bank of Nigeria</span></div>
             <ul>
-              <li>Led weekly DevSecOps training with live Q&amp;A on container security scanning and static analysis.</li>
-              <li>Built the roadmap that added security gates across development, staging and testing pipelines.</li>
-              <li>Authored release documentation on approval gates, environment promotion and rollback; it became the production standard.</li>
+              <li>Led weekly DevSecOps training sessions with live Q&amp;A on container security scanning and static analysis for technical teams; built the roadmap that added security gates across dev, staging, and testing pipelines.</li>
+              <li>Authored comprehensive release workflow documentation on approval gates, environment promotion, and rollback procedures, which became the production release standard.</li>
             </ul>
-            <div class="tech"><span>DevSecOps</span><span>CI/CD</span><span>Docker</span><span>Security</span><span>Release Engineering</span></div>
+            <div class="tech">DevSecOps · container security · static analysis · release workflow</div>
           </div>
         </article>
 
         <article class="job paper tilt-r pin">
           <div class="clip">
-            <div class="job-date">AUG 2024 — JUL 2025<br>REMOTE · CONTRACT · CONCURRENT</div>
-            <h3>DevOps Engineer <span class="job-company">— Techwings Global LLC</span></h3>
-            <div class="job-focus">Cloud Infrastructure · Python · Terraform</div>
+            <div class="job-date">Aug 2024 - Jul 2025 · Remote · Contract, concurrent</div>
+            <div class="job-role"><span class="role-label">DevOps Engineer</span><span class="job-company">Techwings Global LLC</span></div>
             <ul>
-              <li>Ensured zero-downtime deployments through autoscaling and capacity planning for Python microservices on DigitalOcean.</li>
-              <li>Resolved throughput issues by tuning Redis and workers, meeting targets without extra infrastructure or cost.</li>
+              <li>Implemented auto-scaling and capacity planning for Python microservices on DigitalOcean, achieving zero-downtime deployments.</li>
+              <li>Fine-tuned Redis and worker configurations to resolve throughput issues without adding infrastructure or cost.</li>
               <li>Reduced test and production environment setup time by 60% by replacing manual provisioning with Terraform, while auditing and resolving state drift across load balancers and compute nodes.</li>
             </ul>
-            <div class="tech"><span>DigitalOcean</span><span>Terraform</span><span>Python</span><span>Redis</span><span>Docker</span></div>
+            <div class="tech">DigitalOcean · Python · Redis · Terraform</div>
           </div>
         </article>
 
         <article class="job paper tilt-l">
           <div class="clip">
-            <div class="job-date">DEC 2022 — APR 2024<br>INTERNSHIP / TRAINING PROGRAM</div>
-            <h3>Junior DevOps Engineer <span class="job-company">— Shuttle9ja</span></h3>
-            <div class="job-focus">CI/CD · Monitoring · Containerization</div>
+            <div class="job-date">Dec 2022 - Apr 2024 · Internship and training program · Ogun, Nigeria</div>
+            <div class="job-role"><span class="role-label">Junior DevOps Engineer</span><span class="job-company">Shuttle9ja</span></div>
             <ul>
-              <li>Developed the team's first CI/CD pipeline with GitLab CI, automating SSH deployments to reduce errors and speed delivery.</li>
+              <li>Developed the team’s first CI/CD pipeline with GitLab CI, automating SSH deployments to reduce errors and accelerate delivery.</li>
               <li>Deployed Prometheus and Grafana, shifting from reactive monitoring to real-time system health visibility.</li>
               <li>Prevented crash cycles during peak load by enforcing CPU and memory limits on Docker containers.</li>
             </ul>
-            <div class="tech"><span>GitLab CI</span><span>Docker</span><span>Prometheus</span><span>Grafana</span><span>Linux</span></div>
+            <div class="tech">GitLab CI · Prometheus · Grafana · Docker</div>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="homelab">
+    <section id="homelab" aria-labelledby="homelab-title">
       <div class="section-head">
         <span class="eyebrow">02 / Infrastructure lab</span>
-        <h2 class="section-title section-title--red">Engineering under constraints</h2>
+        <h2 class="section-title section-title--red" id="homelab-title">Engineering under constraints</h2>
         <div class="section-note paper tilt-l">
           <div class="clip">
-            <p class="section-description">A self-hosted environment used to practice production engineering principles where hardware limitations make bad decisions visible. Full narrative in the <a class="text-link" href="https://github.com/kaacchhiii/homelab#readme" target="_blank" rel="noopener">README case study ↗</a>. Currently expanding to a self-managed, multi-node Kubernetes cluster.</p>
+            <p class="section-description">A self-hosted environment used to practice production engineering principles where hardware limitations make bad decisions visible. Full narrative in the <a href="https://github.com/kaacchhiii/homelab#readme" target="_blank" rel="noopener">README case study</a>.</p>
           </div>
         </div>
       </div>
@@ -616,116 +620,128 @@ img,svg{display:block;max-width:100%}
       <div class="lab-panel paper tilt-r pin">
         <div class="clip">
           <div class="lab-top">
-            <div class="lab-title">homelab / production-environment</div>
-            <a class="status-link" href="https://omo.colobus-fir.ts.net/status/portfolio" target="_blank" rel="noopener" title="Live public status page">
+            <div class="lab-title">homelab / production environment</div>
+            <a class="status-link" href="https://omo.colobus-fir.ts.net/status/portfolio" target="_blank" rel="noopener">
               <span class="status-dot" aria-hidden="true"></span>
-              <span class="status-word">OPERATIONAL</span>
-              <span aria-hidden="true">—</span>
-              <span>view live status ↗</span>
+              <span class="status-word">Operational</span>
+              <span>view live status</span>
             </a>
           </div>
 
-          <div class="stats">
-            <div class="stat"><span class="stat-label">Services</span><span class="stat-value">21</span></div>
-            <div class="stat"><span class="stat-label">Monthly cost</span><span class="stat-value">$0</span></div>
-            <div class="stat"><span class="stat-label">Memory</span><span class="stat-value">3.7 GB</span></div>
-            <div class="stat"><span class="stat-label">CPU</span><span class="stat-value">i3-3220</span></div>
-          </div>
+          <dl class="stats">
+            <div class="stat"><dt>Services</dt><dd>21</dd></div>
+            <div class="stat"><dt>Monthly cost</dt><dd>$0</dd></div>
+            <div class="stat"><dt>Memory</dt><dd>3.7 GB</dd></div>
+            <div class="stat"><dt>CPU</dt><dd>i3-3220</dd></div>
+          </dl>
 
           <div class="pod-board">
             <div class="pod-kicker">Chaos Monkey / simulation</div>
             <h3>Break the homelab</h3>
             <p class="pod-copy">Cross out a pod and watch it come back. This is a local simulation of the 21-service homelab, not the live cluster.</p>
-            <div class="pod-stats" role="status" aria-live="polite">
+            <div class="pod-stats" role="status" aria-live="polite" aria-atomic="true">
               <span>Pods up <b id="podsUp">21/21</b></span>
               <span>Crossed out <b id="podsOut">0</b></span>
             </div>
-            <div class="pod-grid" id="podGrid" role="group" aria-label="Simulated pods. Activate a running pod to cross it out."></div>
+            <div class="pod-grid" id="podGrid" role="group" aria-label="Simulated pods. Activate a running pod to cross it out.">
+              <button class="pod" type="button" data-pod="1" aria-label="Cross out pod 01"><span aria-hidden="true">01</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="2" aria-label="Cross out pod 02"><span aria-hidden="true">02</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="3" aria-label="Cross out pod 03"><span aria-hidden="true">03</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="4" aria-label="Cross out pod 04"><span aria-hidden="true">04</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="5" aria-label="Cross out pod 05"><span aria-hidden="true">05</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="6" aria-label="Cross out pod 06"><span aria-hidden="true">06</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="7" aria-label="Cross out pod 07"><span aria-hidden="true">07</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="8" aria-label="Cross out pod 08"><span aria-hidden="true">08</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="9" aria-label="Cross out pod 09"><span aria-hidden="true">09</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="10" aria-label="Cross out pod 10"><span aria-hidden="true">10</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="11" aria-label="Cross out pod 11"><span aria-hidden="true">11</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="12" aria-label="Cross out pod 12"><span aria-hidden="true">12</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="13" aria-label="Cross out pod 13"><span aria-hidden="true">13</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="14" aria-label="Cross out pod 14"><span aria-hidden="true">14</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="15" aria-label="Cross out pod 15"><span aria-hidden="true">15</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="16" aria-label="Cross out pod 16"><span aria-hidden="true">16</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="17" aria-label="Cross out pod 17"><span aria-hidden="true">17</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="18" aria-label="Cross out pod 18"><span aria-hidden="true">18</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="19" aria-label="Cross out pod 19"><span aria-hidden="true">19</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="20" aria-label="Cross out pod 20"><span aria-hidden="true">20</span><span class="pod-x" aria-hidden="true"></span></button>
+              <button class="pod" type="button" data-pod="21" aria-label="Cross out pod 21"><span aria-hidden="true">21</span><span class="pod-x" aria-hidden="true"></span></button>
+            </div>
             <noscript>
-              <p class="pod-copy">Enable JavaScript to run the Chaos Monkey simulation.</p>
+              <p class="pod-copy">Enable JavaScript to run the simulation.</p>
             </noscript>
-            <p class="sim-note">simulation · not connected to the live cluster</p>
+            <p class="sim-note">Simulation, not connected to the live cluster.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" aria-labelledby="projects-title">
       <div class="section-head">
         <span class="eyebrow">03 / Selected engineering work</span>
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title" id="projects-title">Projects</h2>
       </div>
 
-      <article class="featured-project paper tilt-l pin">
+      <article class="featured paper tilt-l pin">
         <div class="clip">
-          <div class="featured-label">Featured · Kubernetes / SRE · May 2026 — present</div>
-          <h3>Production-grade Kubernetes platform</h3>
-          <div class="featured-body">
-            <p>A Kubernetes engineering program built around deployment safety, observability, security and platform engineering rather than simply running containers.</p>
-            <ul>
-              <li>Built Kubernetes environments with kubeadm and Kind, including workload scheduling and cluster configuration.</li>
-              <li>Implemented HPA/VPA, PodDisruptionBudgets and rolling, blue-green and canary deployment strategies.</li>
-              <li>Deployed Prometheus, Grafana, Loki and kube-state-metrics for cluster and application observability.</li>
-              <li>Integrated Trivy, Checkov and Gitleaks into delivery workflows.</li>
-              <li>Built a GitOps delivery platform on ArgoCD with pull-request-based multi-environment promotion.</li>
-              <li>Implemented Terraform modules with Terragrunt, remote state and state locking.</li>
-              <li>Deployed AWS infrastructure across EKS/ECS with least-privilege IAM and VPC design, plus CloudWatch and X-Ray observability.</li>
-              <li>Added SQS/EventBridge event-driven components and documented architecture decisions in ADRs.</li>
-              <li>Built a Backstage developer portal with a software catalog and golden-path templates; ran Prowler and remediated IAM, S3 and networking findings.</li>
-              <li>Defined SLIs/SLOs and error budgets; ran LitmusChaos experiments, blameless post-mortems and runbooks.</li>
-            </ul>
-          </div>
+          <div class="featured-label">Featured · May 2026 to present</div>
+          <h3>Kubernetes, Cloud and SRE engineering program</h3>
+          <ul class="news-cols">
+            <li>Provisioned a production-grade Kubernetes cluster with kubeadm on Kind and implemented HPA/VPA, PodDisruptionBudgets, and rolling, blue-green, and canary deployment strategies.</li>
+            <li>Deployed a full observability stack (Prometheus, Grafana, Loki, kube-state-metrics) and integrated Trivy image scanning into the deployment workflow.</li>
+            <li>Built a GitOps delivery platform on ArgoCD with pull-request-based multi-environment promotion, plus a Backstage internal developer portal with a software catalog and golden-path templates.</li>
+            <li>Modularized Terraform using Terragrunt with remote state and state locking, added Checkov policy scanning and Gitleaks secret scanning to every commit.</li>
+            <li>Deployed the platform to AWS (EKS/ECS) with least-privilege IAM and VPC design; ran Prowler against the environment and remediated findings across IAM, S3, and networking.</li>
+            <li>Implemented CloudWatch and X-Ray observability, event-driven components with SQS/EventBridge, and produced architecture decision records (ADRs) for key design choices.</li>
+            <li>Defined SLIs/SLOs and error budgets, ran chaos experiments with LitmusChaos, and simulated incidents with blameless post-mortems and runbook documentation.</li>
+          </ul>
           <div class="tags">
             <span>Kubernetes</span><span>AWS</span><span>Terraform</span><span>Terragrunt</span><span>ArgoCD</span><span>Prometheus</span><span>Grafana</span><span>Loki</span><span>Trivy</span><span>Backstage</span><span>Prowler</span><span>LitmusChaos</span>
           </div>
         </div>
       </article>
 
-      <div class="project-grid">
-        <article class="project paper tilt-r">
-          <div class="clip">
-            <div class="project-kicker">Infrastructure / GitOps · Mar 2026 — present</div>
-            <h3>Self-hosted GitOps infrastructure</h3>
-            <p>Runs 21 containerized services on constrained hardware (2-core i3-3220, 3.7 GB RAM) at $0/month, with per-container limits, three SLOs and error budgets. A pull-based GitOps pipeline manages updates; Grafana, Prometheus, Portainer and Vaultwarden stay private, with only the status page exposed via Tailscale Funnel.</p>
-            <div class="tags"><span>Docker</span><span>Docker Compose</span><span>Linux</span><span>GitOps</span><span>Prometheus</span><span>Grafana</span><span>Tailscale</span><span>SLOs</span></div>
+      <article class="featured paper tilt-r">
+        <div class="clip">
+          <div class="featured-label">Featured · Mar 2026 to present</div>
+          <h3>Self-hosted infrastructure lab</h3>
+          <ul class="news-cols">
+            <li>Architected and operate a GitOps-managed platform running 21 containerized services on constrained hardware (2-core i3-3220, 3.7 GB RAM) at $0/month, with per-container resource limits enforced to prevent contention on shared memory.</li>
+            <li>Defined 3 SLOs with formal error budgets (99.5% gateway availability, 99% media responsiveness, 99% pipeline health) and enforced a budget policy requiring a written postmortem before any new feature ships once 50% of a budget is burned.</li>
+            <li>Built a pull-based GitOps pipeline (systemd timer polling origin every 5 min, docker compose up -d on change) instead of a self-hosted CI runner, removing all inbound reachability from GitHub into the network.</li>
+            <li>Diagnosed a monitoring blind spot where node-exporter and cadvisor had never been deployed and Prometheus’s own self-scrape had silently failed; fixed all four gaps and restored coverage the error-budget alerts actually depend on.</li>
+            <li>Recovered from a 15-hour sudo lockout after a credential rotation using the pipeline’s own break-glass mechanism, then fixed a latent bug the recovery exposed that would have broken every future deployment.</li>
+            <li>Reduced the public attack surface to one allowlisted route (status page via Tailscale Funnel); Grafana, Prometheus, Portainer, and Vaultwarden stay LAN-only.</li>
+          </ul>
+          <div class="tags">
+            <span>Docker</span><span>Docker Compose</span><span>Linux</span><span>GitOps</span><span>Prometheus</span><span>Grafana</span><span>Tailscale</span><span>SLOs</span>
           </div>
-        </article>
-
-        <article class="project paper tilt-l">
-          <div class="clip">
-            <div class="project-kicker">Platform Engineering</div>
-            <h3>Developer platform</h3>
-            <p>Backstage-based developer portal with software catalog, golden-path templates and self-service infrastructure concepts.</p>
-            <div class="tags"><span>Backstage</span><span>GitOps</span><span>Terraform</span><span>Kubernetes</span></div>
-          </div>
-        </article>
-      </div>
+        </div>
+      </article>
     </section>
 
-    <section id="approach">
+    <section id="approach" aria-labelledby="approach-title">
       <div class="section-head">
         <span class="eyebrow">04 / Operating philosophy</span>
-        <h2 class="section-title section-title--red">How I approach infrastructure</h2>
+        <h2 class="section-title section-title--red" id="approach-title">How I approach infrastructure</h2>
       </div>
-
       <div class="approach-grid">
         <article class="approach paper tilt-l">
           <div class="clip">
-            <div class="approach-number">01</div>
+            <span class="quote-mark" aria-hidden="true">“</span>
             <h3>Automate the repeatable</h3>
             <p>If an operation is performed repeatedly, it should become code, a pipeline or a self-service workflow.</p>
           </div>
         </article>
         <article class="approach paper tilt-r">
           <div class="clip">
-            <div class="approach-number">02</div>
+            <span class="quote-mark" aria-hidden="true">“</span>
             <h3>Observe before optimizing</h3>
             <p>Metrics, logs and traces should establish what is actually happening before infrastructure is changed.</p>
           </div>
         </article>
         <article class="approach paper tilt-l">
           <div class="clip">
-            <div class="approach-number">03</div>
+            <span class="quote-mark" aria-hidden="true">“</span>
             <h3>Design for failure</h3>
             <p>Reliability comes from explicit failure handling, safe deployments, resource limits and documented recovery paths.</p>
           </div>
@@ -733,59 +749,68 @@ img,svg{display:block;max-width:100%}
       </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" aria-labelledby="skills-title">
       <div class="section-head">
         <span class="eyebrow">05 / Technical specification</span>
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title" id="skills-title">Skills</h2>
       </div>
-
       <div class="skills-panel paper tilt-r">
         <div class="clip">
           <div class="classifieds">
-            <div class="skill"><h3>Cloud</h3><p>AWS, EKS, ECS, Lambda, IAM, VPC, CloudWatch, X-Ray, GuardDuty, Cost Explorer, Azure, DigitalOcean</p></div>
-            <div class="skill"><h3>Containers &amp; orchestration</h3><p>Docker, Kubernetes, kubeadm, CRDs, Operators, Helm</p></div>
-            <div class="skill"><h3>Infrastructure as code</h3><p>Terraform (modules, remote state, state locking), Terragrunt, Ansible, Bash</p></div>
-            <div class="skill"><h3>CI/CD &amp; GitOps</h3><p>GitHub Actions, GitLab CI, Jenkins, Azure DevOps (YAML pipelines), ArgoCD, Git</p></div>
-            <div class="skill"><h3>Observability &amp; SRE</h3><p>Prometheus, Grafana, Loki, kube-state-metrics, Azure Monitor, CA UIM, ManageEngine, SLIs, SLOs, error budgets, incident response, LitmusChaos</p></div>
-            <div class="skill"><h3>Security</h3><p>Trivy, Gitleaks, Checkov, Prowler, container and image scanning, DevSecOps</p></div>
-            <div class="skill"><h3>Programming &amp; automation</h3><p>Python (FastAPI, Click CLI tooling), Go, Bash, PowerShell</p></div>
-            <div class="skill"><h3>Platform engineering</h3><p>Backstage, software catalogs, golden paths, internal developer platforms and self-service infrastructure</p></div>
-            <div class="skill"><h3>Practices</h3><p>GitOps, DevSecOps, incident management, blameless post-mortems, cost optimization</p></div>
+            <div class="skill"><h3>Containerization</h3><p>Docker, Kubernetes (Cluster Architecture, CRDs, Operators, kubeadm), Helm.</p></div>
+            <div class="skill"><h3>CI/CD &amp; Automation</h3><p>Azure DevOps (YAML Pipelines), GitHub Actions, Jenkins, GitLab CI, ArgoCD, Git.</p></div>
+            <div class="skill"><h3>Cloud Platforms</h3><p>AWS (EKS, ECS, Lambda, IAM, VPC, CloudWatch, X-Ray, GuardDuty, Cost Explorer), Azure (DevOps, Monitor), DigitalOcean.</p></div>
+            <div class="skill"><h3>Scripting &amp; Automation</h3><p>Python (Automation/Tooling, CLI design with Click), Go, Bash, PowerShell.</p></div>
+            <div class="skill"><h3>Observability &amp; SRE</h3><p>Prometheus, Grafana, Loki, kube-state-metrics, Azure Monitor, CA UIM, ManageEngine, SLIs/SLOs, error budgets, chaos engineering (LitmusChaos).</p></div>
+            <div class="skill"><h3>Infrastructure as Code</h3><p>Terraform (Modules, Remote State, State Locking), Terragrunt, Ansible, Bash Scripting.</p></div>
+            <div class="skill"><h3>Security &amp; Compliance</h3><p>Trivy, Gitleaks, Checkov, Prowler, container/image scanning, DevSecOps.</p></div>
+            <div class="skill"><h3>Practices</h3><p>GitOps, DevSecOps, Incident Management, Blameless Post-Mortems, Cost Optimization.</p></div>
+            <div class="skill"><h3>Platform Engineering</h3><p>Backstage (software catalog, golden-path templates), self-service infrastructure, internal developer platforms.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="education">
+    <section id="education" aria-labelledby="education-title">
       <div class="section-head">
         <span class="eyebrow">06 / Credentials</span>
-        <h2 class="section-title section-title--red">Education &amp; certifications</h2>
+        <h2 class="section-title section-title--red" id="education-title">Education and certifications</h2>
       </div>
-
       <div class="records-panel paper tilt-l">
         <div class="clip">
-          <div class="records-grid">
-            <div class="record"><span class="record-name">B.Sc. Computer Science — Babcock University</span><span class="record-date">2024</span></div>
-            <div class="record"><span class="record-name">Oracle Cloud Infrastructure DevOps Professional</span><span class="record-date">2023</span></div>
-            <div class="record"><span class="record-name">Oracle Cloud Infrastructure AI Foundations Associate</span><span class="record-date">2025</span></div>
-            <div class="record"><span class="record-name">NYSC Discharge Certificate</span><span class="record-date">2026</span></div>
+          <h3 class="records-subhead">Education</h3>
+          <div class="record">
+            <span class="record-name">B.Sc. Computer Science, Babcock University</span>
+            <span class="record-date">2024</span>
+          </div>
+          <h3 class="records-subhead">Certifications</h3>
+          <div class="record">
+            <span class="record-name">Oracle Cloud Infrastructure (OCI) DevOps Professional</span>
+            <span class="record-date">2023</span>
+          </div>
+          <div class="record">
+            <span class="record-name">Oracle Cloud Infrastructure AI Foundations Associate</span>
+            <span class="record-date">2025</span>
+          </div>
+          <div class="record">
+            <span class="record-name">National Youth Service Corps (NYSC): Discharge Certificate</span>
+            <span class="record-date">2026</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" aria-labelledby="contact-title">
       <div class="contact-card paper tilt-r pin">
         <div class="clip">
           <span class="eyebrow">07 / Contact</span>
-          <h2>Building infrastructure?</h2>
+          <h2 id="contact-title">Building infrastructure?</h2>
           <p>Open to DevOps, SRE and Platform Engineering opportunities. Email is the fastest way to reach me.</p>
           <div class="contact-links">
-            <a class="btn btn-on-red" href="mailto:onyedikachi0813@gmail.com">Email me</a>
-            <a class="btn btn-outline" href="tel:+2349056105963" aria-label="Call +234 905 610 5963">Call</a>
-            <a class="btn btn-outline" href="https://www.linkedin.com/in/onyedikachiokechukwu/" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a class="btn btn-outline" href="https://github.com/kaacchhiii" target="_blank" rel="noopener">GitHub ↗</a>
-            <a class="btn btn-outline" href="./Okechukwu_Joshua_Onyedikachi_Resume.pdf">Résumé PDF</a>
+            <a class="btn" href="mailto:onyedikachi0813@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/onyedikachiokechukwu/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/kaacchhiii" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="Okechukwu_Joshua_Onyedikachi_Resume.pdf">Résumé</a>
           </div>
         </div>
       </div>
@@ -807,201 +832,331 @@ img,svg{display:block;max-width:100%}
   </div>
 </footer>
 
+<div class="mascot-wrap" id="mascotWrap" hidden>
+  <p class="mascot-bubble" id="mascotBubble" role="status" aria-live="polite"></p>
+  <button class="mascot" id="mascot" type="button" aria-label="On-call robot. Activate to hop. Drag to move.">
+    <span class="mascot__head" aria-hidden="true">
+      <span class="mascot__eye mascot__eye--l"><span class="mascot__pupil"></span></span>
+      <span class="mascot__eye mascot__eye--r"><span class="mascot__pupil"></span></span>
+      <span class="mascot__mouth"></span>
+      <span class="mascot__pin"></span>
+    </span>
+    <span class="mascot__body" aria-hidden="true"></span>
+    <span class="mascot__foot mascot__foot--l" aria-hidden="true"></span>
+    <span class="mascot__foot mascot__foot--r" aria-hidden="true"></span>
+  </button>
+</div>
+
 <script>
 (() => {
-  const themeToggle = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("theme") || "auto";
-  if (savedTheme !== "auto") {
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  }
-  if (themeToggle) {
-    const updateThemeIcon = () => {
-      const theme = document.documentElement.getAttribute("data-theme") || "auto";
-      if (theme === "black") themeToggle.textContent = "⚫";
-      else if (theme === "dark") themeToggle.textContent = "🌙";
-      else themeToggle.textContent = "☀️";
-    };
-    updateThemeIcon();
-    themeToggle.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme") || "auto";
-      if (current === "auto") {
-        document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-      } else if (current === "dark") {
-        document.documentElement.setAttribute("data-theme", "black");
-        localStorage.setItem("theme", "black");
-      } else {
-        document.documentElement.removeAttribute("data-theme");
-        localStorage.setItem("theme", "auto");
-      }
-      updateThemeIcon();
-    });
-  }
+  "use strict";
+  const MQ = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let reduce = MQ.matches;
+  const hooks = [];
+  const $ = (s, c = document) => c.querySelector(s);
+  const clamp = (n, a, b) => Math.min(b, Math.max(a, n));
 
-  const paperCanvas = document.getElementById("paperCanvas");
-  if (paperCanvas) {
-    const ctx = paperCanvas.getContext("2d");
-    const phrases = [
-      "Terraform all the things",
-      "Kubernetes for reliability",
-      "GitOps delivery pipelines",
-      "SLOs and error budgets",
-      "Blameless postmortems",
-      "Zero-downtime deployments",
-      "Infrastructure as Code",
-      "Observability first",
-      "Chaos engineering",
-      "Platform engineering",
-      "DevSecOps gates",
-      "Azure DevOps automation",
-      "21 containerized services",
-      "GitOps-managed homelab",
-      "First Bank of Nigeria",
-      "Release automation",
-      "Cloud-native architecture",
-      "Container orchestration"
-    ];
-    const resizeCanvas = () => {
-      paperCanvas.width = window.innerWidth;
-      paperCanvas.height = window.innerHeight;
-    };
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-    const items = [];
-    for (let i = 0; i < 15; i++) {
-      items.push({
-        x: Math.random() * paperCanvas.width,
-        y: Math.random() * paperCanvas.height,
-        text: phrases[Math.floor(Math.random() * phrases.length)],
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.2,
-        opacity: Math.random() * 0.4 + 0.1,
-        rotation: (Math.random() - 0.5) * 0.3
-      });
-    }
-    function animateCanvas() {
-      ctx.clearRect(0, 0, paperCanvas.width, paperCanvas.height);
-      ctx.save();
-      for (const item of items) {
-        item.x += item.vx;
-        item.y += item.vy;
-        if (item.x < -200) item.x = paperCanvas.width + 200;
-        if (item.x > paperCanvas.width + 200) item.x = -200;
-        if (item.y < -50) item.y = paperCanvas.height + 50;
-        if (item.y > paperCanvas.height + 50) item.y = -50;
-        ctx.save();
-        ctx.translate(item.x, item.y);
-        ctx.rotate(item.rotation);
-        ctx.globalAlpha = item.opacity;
-        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#17130e';
-        ctx.font = '14px "Old Standard TT", Georgia, serif';
-        ctx.fillText(item.text, 0, 0);
-        ctx.restore();
-      }
-      ctx.restore();
-      requestAnimationFrame(animateCanvas);
-    }
-    animateCanvas();
-  }
-
-  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const dateline = document.getElementById("dateline");
+  const dateline = $("#dateline");
   if (dateline) {
     const now = new Date();
-    dateline.textContent = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(now);
-    dateline.dateTime = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+    dateline.dateTime = now.toISOString().slice(0, 10);
+    dateline.textContent = now.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
   }
 
-  const cut = document.getElementById("cutName");
-  const cutBase = cut && cut.querySelector(".cut-name__base");
-  const cutLayers = cut && cut.querySelector(".cut-name__layers");
-  const cutToggle = document.getElementById("cutToggle");
-  if (cut && cutBase && cutLayers) {
-    for (let i = 0; i < 6; i++) {
-      const strip = document.createElement("div");
-      strip.className = "cut-name__strip";
-      strip.innerHTML = '<div class="cut-name__base cut-name__ghost">' + cutBase.innerHTML + "</div>";
-      cutLayers.append(strip);
-    }
-    cut.classList.add("is-sliced");
-    if (cutToggle) {
-      cutToggle.hidden = false;
-      let lined = false;
-      cut.addEventListener("pointermove", (event) => {
-        if (reduced.matches || lined) return;
-        const box = cut.getBoundingClientRect();
-        cut.style.setProperty("--px", ((event.clientX - box.left) / box.width - .5) * 28 + "px");
-      });
-      cut.addEventListener("pointerleave", () => cut.style.setProperty("--px", "0px"));
-      cutToggle.addEventListener("click", () => {
-        lined = !lined;
-        cut.dataset.cut = lined ? "off" : "on";
-        cutToggle.textContent = lined ? "Cut it again" : "Line it up";
-        cutToggle.setAttribute("aria-pressed", String(lined));
-        if (lined) cut.style.setProperty("--px", "0px");
-      });
-    }
-  }
-
-  const marquee = document.getElementById("stackMarquee");
-  const marqueeTrack = marquee && marquee.querySelector(".marquee-track");
-  const marqueeChips = marqueeTrack && marqueeTrack.querySelector(".chips");
-  const marqueePause = document.getElementById("stackPause");
-  if (marquee && marqueeTrack && marqueeChips) {
-    if (!reduced.matches) {
-      const clone = marqueeChips.cloneNode(true);
-      clone.setAttribute("aria-hidden", "true");
-      marqueeTrack.append(clone);
-      marquee.classList.add("is-running");
-      if (marqueePause) {
-        marqueePause.hidden = false;
-        marqueePause.addEventListener("click", () => {
-          const paused = marquee.classList.toggle("is-paused");
-          marqueePause.textContent = paused ? "Play" : "Pause";
-          marqueePause.setAttribute("aria-pressed", String(paused));
-        });
-      }
-    }
-  }
-
-  const podGrid = document.getElementById("podGrid");
-  if (podGrid) {
-    const podsUp = document.getElementById("podsUp");
-    const podsOut = document.getElementById("podsOut");
-    let crossedOut = 0;
-    const pods = [];
-    for (let i = 1; i <= 21; i++) {
-      const number = String(i).padStart(2, "0");
-      const pod = document.createElement("button");
-      pod.type = "button";
-      pod.className = "pod";
-      pod.dataset.pod = number;
-      pod.textContent = number;
-      pod.setAttribute("aria-label", "Pod " + number + " running. Cross it out.");
-      podGrid.append(pod);
-      pods.push(pod);
-    }
-    const countUp = () => {
-      const down = podGrid.querySelectorAll(".is-down").length;
-      podsUp.textContent = (pods.length - down) + "/" + pods.length;
+  const cut = $("#cutName");
+  const cutToggle = $("#cutToggle");
+  if (cut && cutToggle) {
+    cutToggle.hidden = false;
+    let move = null;
+    const reset = () => cut.style.setProperty("--px", "0px");
+    const add = () => {
+      if (move || reduce) return;
+      move = (e) => {
+        if (e.pointerType === "touch") return;
+        const r = cut.getBoundingClientRect();
+        cut.style.setProperty("--px", (clamp(((e.clientX - r.left) / r.width) * 2 - 1, -1, 1) * 6).toFixed(2) + "px");
+      };
+      cut.addEventListener("pointermove", move);
+      cut.addEventListener("pointerleave", reset);
     };
-    podGrid.addEventListener("click", (event) => {
-      const pod = event.target.closest(".pod");
-      if (!pod || pod.classList.contains("is-down")) return;
-      pod.classList.add("is-down");
+    const remove = () => {
+      if (!move) return;
+      cut.removeEventListener("pointermove", move);
+      cut.removeEventListener("pointerleave", reset);
+      move = null;
+      reset();
+    };
+    cutToggle.addEventListener("click", () => {
+      const off = cut.getAttribute("data-cut") === "off";
+      cut.setAttribute("data-cut", off ? "on" : "off");
+      cutToggle.textContent = off ? "Line it up" : "Cut it again";
+    });
+    add();
+    hooks.push(() => (reduce ? remove() : add()));
+  }
+
+  const marquee = $("#stackMarquee");
+  const pauseBtn = $("#stackPause");
+  if (marquee && pauseBtn) {
+    const sync = () => {
+      marquee.classList.toggle("is-running", !reduce);
+      marquee.classList.remove("is-paused");
+      pauseBtn.hidden = reduce;
+      pauseBtn.textContent = "Pause";
+      pauseBtn.setAttribute("aria-pressed", "false");
+    };
+    pauseBtn.addEventListener("click", () => {
+      const paused = marquee.classList.toggle("is-paused");
+      pauseBtn.textContent = paused ? "Play" : "Pause";
+      pauseBtn.setAttribute("aria-pressed", String(paused));
+    });
+    hooks.push(sync);
+    sync();
+  }
+
+  const wrap = $("#mascotWrap");
+  const robot = $("#mascot");
+  const bubble = $("#mascotBubble");
+  const mascotToggle = $("#mascotToggle");
+  if (wrap && robot && bubble && mascotToggle) {
+    const W = 70, H = 96, G = 0.65;
+    let sl = 0, sr = 0, st = 0, sb = 0;
+    const S = { x: 0, y: 0, vx: 0, vy: 0, drag: false, hidden: false, raf: 0, timer: 0, moved: 0, stx: 0, sty: 0, ox: 0, oy: 0, lx: 0, ly: 0, lt: 0, landed: false };
+    const lines = [
+      "Hi, I’m the on-call robot.",
+      "21 services on 3.7 GB. Don’t drop me.",
+      "Cross out a pod. I dare you.",
+      "Blameless postmortem: gravity did it."
+    ];
+    const measure = () => {
+      const cs = getComputedStyle(document.documentElement);
+      sl = parseFloat(cs.getPropertyValue("--safe-l")) || 0;
+      sr = parseFloat(cs.getPropertyValue("--safe-r")) || 0;
+      st = parseFloat(cs.getPropertyValue("--safe-t")) || 0;
+      sb = parseFloat(cs.getPropertyValue("--safe-b")) || 0;
+    };
+    const floorY = () => Math.max(st, innerHeight - H - sb);
+    const clampX = (x) => clamp(x, sl, Math.max(sl, innerWidth - W - sr));
+    const clampY = (y) => clamp(y, st, floorY());
+    const say = (text, ms = 3800) => {
+      if (S.hidden || !text) return;
+      bubble.textContent = text;
+      bubble.classList.add("is-visible");
+      clearTimeout(S.timer);
+      S.timer = setTimeout(() => bubble.classList.remove("is-visible"), ms);
+    };
+    const pose = () => {
+      const air = S.y < floorY() - 1;
+      robot.classList.toggle("is-air", air);
+      const k = air ? clamp(S.vy / 90, -0.16, 0.16) : 0;
+      robot.style.transform = "rotate(" + clamp(S.vx * 0.55, -13, 13).toFixed(2) + "deg) scale(" + (1 + k).toFixed(3) + "," + (1 - k).toFixed(3) + ")";
+    };
+    const draw = () => {
+      wrap.style.transform = "translate3d(" + S.x.toFixed(2) + "px," + S.y.toFixed(2) + "px,0)";
+      wrap.classList.toggle("is-near-right", S.x + W > innerWidth - Math.min(260, innerWidth * 0.55) - sr);
+      wrap.classList.toggle("is-near-left", S.x < sl + 70);
+    };
+    const place = (x, y) => {
+      S.x = clampX(x);
+      S.y = clampY(y);
+      draw();
+    };
+    const stop = () => {
+      if (S.raf) cancelAnimationFrame(S.raf);
+      S.raf = 0;
+    };
+    const step = () => {
+      if (S.drag || S.hidden) {
+        S.raf = 0;
+        return;
+      }
+      S.vy += G;
+      S.x += S.vx;
+      S.y += S.vy;
+      if (S.x < sl) {
+        S.x = sl;
+        S.vx *= -0.6;
+      }
+      if (S.x > innerWidth - W - sr) {
+        S.x = innerWidth - W - sr;
+        S.vx *= -0.6;
+      }
+      if (S.y < st) {
+        S.y = st;
+        S.vy *= -0.6;
+      }
+      const floor = floorY();
+      if (S.y > floor) {
+        const impact = S.vy;
+        S.y = floor;
+        S.vy = impact > 2 ? -impact * 0.5 : 0;
+        S.vx *= 0.8;
+        if (impact > 15 && S.landed) say("Ow. Writing a postmortem.", 3200);
+        S.landed = true;
+      }
+      if (S.y >= floor - 0.5) S.vx *= 0.9;
+      if (Math.abs(S.vx) < 0.12) S.vx = 0;
+      if (Math.abs(S.vy) < 0.35 && S.y >= floor - 0.5) S.vy = 0;
+      pose();
+      draw();
+      if (S.y >= floor - 0.5 && !S.vx && !S.vy) {
+        S.raf = 0;
+        return;
+      }
+      S.raf = requestAnimationFrame(step);
+    };
+    const start = () => {
+      if (!reduce && !S.raf && !S.hidden) S.raf = requestAnimationFrame(step);
+    };
+    const hide = () => {
+      S.hidden = true;
+      stop();
+      clearTimeout(S.timer);
+      bubble.classList.remove("is-visible");
+      wrap.hidden = true;
+      mascotToggle.textContent = "Show mascot";
+      mascotToggle.setAttribute("aria-expanded", "false");
+    };
+    const show = () => {
+      measure();
+      S.hidden = false;
+      wrap.hidden = false;
+      place(innerWidth - W - sr - 12, floorY());
+      pose();
+      mascotToggle.textContent = "Hide mascot";
+      mascotToggle.setAttribute("aria-expanded", "true");
+      say("Back on call.", 2600);
+    };
+    mascotToggle.hidden = false;
+    mascotToggle.addEventListener("click", () => (S.hidden ? show() : hide()));
+    window.addEventListener("resize", () => {
+      measure();
+      place(S.x, S.y);
+    });
+    robot.addEventListener("pointerdown", (e) => {
+      if (e.button) return;
+      S.drag = true;
+      S.moved = 0;
+      S.stx = e.clientX;
+      S.sty = e.clientY;
+      S.ox = e.clientX - S.x;
+      S.oy = e.clientY - S.y;
+      S.lx = e.clientX;
+      S.ly = e.clientY;
+      S.lt = performance.now();
+      S.vx = 0;
+      S.vy = 0;
+      stop();
+      robot.classList.add("is-dragging");
+      robot.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    robot.addEventListener("pointermove", (e) => {
+      if (!S.drag) return;
+      const now = performance.now(), dt = Math.max(16, now - S.lt);
+      S.vx = ((e.clientX - S.lx) / dt) * 16;
+      S.vy = ((e.clientY - S.ly) / dt) * 16;
+      S.lx = e.clientX;
+      S.ly = e.clientY;
+      S.lt = now;
+      S.moved = Math.max(S.moved, Math.hypot(e.clientX - S.stx, e.clientY - S.sty));
+      place(e.clientX - S.ox, e.clientY - S.oy);
+    });
+    const hop = () => {
+      say(lines[Math.floor(Math.random() * lines.length)]);
+      if (!reduce) {
+        S.vx = Math.random() * 6 - 3;
+        S.vy = -15;
+        start();
+      }
+    };
+    const release = (e) => {
+      if (!S.drag) return;
+      S.drag = false;
+      robot.classList.remove("is-dragging");
+      try {
+        robot.releasePointerCapture(e.pointerId);
+      } catch (err) {}
+      const still = performance.now() - S.lt > 80;
+      if (S.moved < 8) {
+        hop();
+        return;
+      }
+      if (reduce) {
+        S.vx = 0;
+        S.vy = 0;
+        pose();
+        return;
+      }
+      S.vx = still ? 0 : clamp(S.vx, -40, 40);
+      S.vy = still ? 0 : clamp(S.vy, -40, 40);
+      if (Math.hypot(S.vx, S.vy) > 22) say("Whee!", 2400);
+      start();
+    };
+    robot.addEventListener("pointerup", release);
+    robot.addEventListener("pointercancel", release);
+    robot.addEventListener("click", (e) => {
+      if (!e.detail) hop();
+    });
+    hooks.push(() => {
+      if (reduce) {
+        stop();
+        S.vx = 0;
+        S.vy = 0;
+        place(S.x, S.y);
+        pose();
+      } else {
+        start();
+      }
+    });
+    measure();
+    wrap.hidden = false;
+    mascotToggle.textContent = "Hide mascot";
+    mascotToggle.setAttribute("aria-expanded", "true");
+    if (reduce) {
+      place(innerWidth - W - sr - 12, floorY());
+      pose();
+      say("Hi, I’m the on-call robot.", 4500);
+    } else {
+      place(innerWidth - W - sr - 12, st - H - 10);
+      say("Hi, I'm the on-call robot.", 4500);
+      if (window.requestIdleCallback) requestIdleCallback(start, { timeout: 1800 });
+      else setTimeout(start, 600);
+    }
+  }
+
+  const podGrid = $("#podGrid");
+  const podsUp = $("#podsUp");
+  const podsOut = $("#podsOut");
+  if (podGrid && podsUp && podsOut) {
+    let down = 0;
+    const render = () => {
+      podsUp.textContent = (21 - down) + "/21";
+      podsOut.textContent = down;
+    };
+    podGrid.addEventListener("click", (e) => {
+      const pod = e.target.closest(".pod");
+      if (!pod || pod.dataset.down) return;
+      const n = pod.textContent.trim();
+      pod.dataset.down = "1";
       pod.setAttribute("aria-disabled", "true");
-      pod.setAttribute("aria-label", "Pod " + pod.dataset.pod + " crossed out. Recovering.");
-      crossedOut++;
-      podsOut.textContent = crossedOut;
-      countUp();
+      pod.setAttribute("aria-label", "Pod " + n + " crossed out, recovering");
+      down += 1;
+      render();
       setTimeout(() => {
-        pod.classList.remove("is-down");
+        delete pod.dataset.down;
         pod.removeAttribute("aria-disabled");
-        pod.setAttribute("aria-label", "Pod " + pod.dataset.pod + " running. Cross it out.");
-        countUp();
+        pod.setAttribute("aria-label", "Cross out pod " + n);
+        down -= 1;
+        render();
       }, 1600);
     });
+    render();
   }
+
+  const syncMotion = () => hooks.forEach((fn) => fn());
+  if (MQ.addEventListener) MQ.addEventListener("change", (e) => { reduce = e.matches; syncMotion(); });
+  else if (MQ.addListener) MQ.addListener((e) => { reduce = e.matches; syncMotion(); });
 })();
 </script>
 </body>
